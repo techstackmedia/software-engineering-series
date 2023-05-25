@@ -77,6 +77,10 @@ List the files in the /bin directory and the/etc directory in long format
 ls -la ..
 ```
 
+```sh
+ls -la /foldername
+```
+
 List all files (even the ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format.
 
 Most commands operate like this:
