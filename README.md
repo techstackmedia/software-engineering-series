@@ -89,7 +89,7 @@ Most commands operate like this:
 command -option arguments
 ```
 
-## A Closer Look at Long Format
+#### A Closer Look at Long Format
 
 For example try `ls -la`, you will get more information about the file.
 
@@ -115,6 +115,20 @@ Let's break down the output:
    - `197610`: This indicates the file size in bytes. In this case, the file `README.md` is 3092 bytes.
    - `May 25 14:28`: This represents the last modification date and time of the file.
    - `README.md`: This is the name of the file.
+
+### `less`
+
+less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.
+
+Click `q` to quit or keep clicking enter till you done reading the file.
+
+```sh
+less text_file
+```
+
+```sh
+less README.md
+```
 
 ---
 
