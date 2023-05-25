@@ -10,7 +10,7 @@
 - A directory may contain files and subdirectories
 - The first directory in the file system is called the **root directory**
 
-One important difference between Window and Unix-like os like Linux is that Linux does not employ the concept of drive letters. While windows drive letters split the file system into a series of different trees (one for each device), Linux always has a single tree.
+One important difference between Window and Unix-like OS like Linux is that Linux does not employ the concept of drive letters. While windows drive letters split the file system into a series of different trees (one for each device), Linux always has a single tree.
 
 ### `pwd`
 
@@ -59,25 +59,25 @@ Linux has no concept of a **file extension** like Windows system. You may name f
 
 Though **Linux supports long file names** which may contain embedded spaces and punctuation, limit the punctuation characters to period, dash and underscore. **Use underscores instead of spaces** to represent spaces between words in a file name.
 
-### ls
+### `ls`
 
 #### `ls -l`
 
 List the files in the working directory in long format
 
-```pwsh
+```sh
 ls -l
 ```
 
 #### `ls -l /etc /bin`
 
-List the files in the /bin directory and the/etc directory in long format
+List the files in the `/bin` directory and the `/etc` directory in long format
 
-```pwsh
+```sh
 ls -la ..
 ```
 
-```pwsh
+```sh
 ls -la /foldername
 ```
 
