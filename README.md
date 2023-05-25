@@ -14,7 +14,7 @@ One important difference between Window and Unix-like OS like Linux is that Linu
 
 ### `pwd`
 
-The directory we are standing in is called the working directory. To see the name of the working directory, we use the pwd command
+The directory we are standing in is called the working directory. To see the name of the working directory, we use the pwd command.
 
 ### `cd`
 
@@ -35,7 +35,7 @@ cd /foldername
 
 #### Relative pathname
 
-The `.` notation refers to the working directory itself and `..` notation refers to the working directory's parent directory
+The `.` notation refers to the working directory itself and `..` notation refers to the working directory's parent directory.
 
 ```sh
 cd ..
@@ -51,7 +51,7 @@ A relative shortcut is to type `cd ~user_name`.
 
 File names that begin with a period character are hidden. This only means that `ls` will not list them unless we say `ls -la`.
 
-- Example is `.git`
+- Example is `.git`.
 
 File names in **Linux**, like Unix, are **case sensitive**. The file names _File1_ and _file 1_ refer to different files.
 
@@ -63,7 +63,7 @@ Though **Linux supports long file names** which may contain embedded spaces and 
 
 #### `ls -l`
 
-List the files in the working directory in long format
+List the files in the working directory in long format.
 
 ```sh
 ls -l
@@ -71,7 +71,7 @@ ls -l
 
 #### `ls -l /etc /bin`
 
-List the files in the `/bin` directory and the `/etc` directory in long format
+List the files in the `/bin` directory and the `/etc` directory in long format.
 
 ```sh
 ls -la ..
@@ -94,6 +94,27 @@ command -option arguments
 For example try `ls -la`, you will get more information about the file.
 
 ![show ls -la command possible information](https://res.cloudinary.com/bizstak/image/upload/v1685049199/ls-la-command-info_kgiglf.png)
+
+If you run the command `ls -l` you will get the output that looks like:
+
+```sh
+total 4
+-rw-r--r-- 1 TechstackMedia - Osagie 197610 3092 May 25 14:28 README.md
+```
+
+Let's break down the output:
+
+1. `total 4`: This line represents the total number of 1KB blocks used by the files listed below it. In this case, the total size is 4KB.
+
+2. `-rw-r--r-- 1 TechstackMedia - Osagie 197610 3092 May 25 14:28 README.md`: This line represents the details of a specific file called README.md. Let's analyze each part:
+   - `-rw-r--r--`: This section represents the file permissions. In this example, it indicates that the file is readable and writable by the owner (`rw-`), readable by the group (`r--`), and readable by others (`r--`).
+   - `1`: The number 1 represents the number of hard links to the file. In this case, there is only one hard link pointing to the file.
+   - `TechstackMedia`: This is the owner of the file. In this case, the file is owned by the user `TechstackMedia`.
+   - `-`: This hyphen represents the group associated with the file. In this case, the group is not explicitly specified.
+   - `Osagie`: This represents the group associated with the file. In this example, the group is `Osagie`.
+   - `197610`: This indicates the file size in bytes. In this case, the file `README.md` is 3092 bytes.
+   - `May 25 14:28`: This represents the last modification date and time of the file.
+   - `README.md`: This is the name of the file.
 
 ---
 
