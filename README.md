@@ -91,4 +91,8 @@ Click on the button dropdown to see my notes from chapter to chapter (branch to 
 
 Feel free to contribute. You can edit this file
 
-<a href="https://github.com/techstackmedia/software-engineering-series/edit/main/README.md" class="_btn _blue">Edit on GitHub</a>
+[Edit on GitHub](https://github.com/techstackmedia/software-engineering-series/edit/main/README.md)
+
+---
+
+![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
