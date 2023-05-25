@@ -65,7 +65,7 @@ Though **Linux supports long file names** which may contain embedded spaces and 
 
 List the files in the working directory in long format
 
-```sh
+```pwsh
 ls -l
 ```
 
@@ -73,11 +73,11 @@ ls -l
 
 List the files in the /bin directory and the/etc directory in long format
 
-```sh
+```pwsh
 ls -la ..
 ```
 
-```sh
+```pwsh
 ls -la /foldername
 ```
 
