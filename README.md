@@ -89,14 +89,20 @@ Most commands operate like this:
 command -option arguments
 ```
 
+## A Closer Look at Long Format
+
+For example try `ls -la`, you will get more information about the file.
+
+![show ls -la command possible information](https://res.cloudinary.com/bizstak/image/upload/v1685049199/ls-la-command-info_kgiglf.png)
+
 ---
 
 Click on the button dropdown to see my notes from chapter to chapter (branch to branch) and feel contribute. It is open source after all.
 
 Feel free to contribute. You can edit this file
 
-[Edit on GitHub](https://github.com/techstackmedia/software-engineering-series/edit/main/README.md)
+![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
 
 ---
 
-![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
+[Edit on GitHub](https://github.com/techstackmedia/software-engineering-series/edit/main/README.md)
