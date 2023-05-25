@@ -89,6 +89,6 @@ command -option arguments
 
 Click on the button dropdown to see my notes from chapter to chapter (branch to branch) and feel contribute. It is open source after all.
 
-Fill free to contribute. You can edit this file
+Feel free to contribute. You can edit this file
 
 <a href="https://github.com/techstackmedia/software-engineering-series/edit/main/README.md" class="_btn _blue">Edit on GitHub</a>
