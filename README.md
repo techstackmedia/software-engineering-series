@@ -6,15 +6,15 @@
 
 ## File system
 
-- In a tree-like pattern of directory (folder)
+- In a tree-like pattern of the directory (folder)
 - A directory may contain files and subdirectories
 - The first directory in the file system is called the **root directory**
 
-One important difference between Window and Unix-like OS like Linux is that Linux does not employ the concept of drive letters. While windows drive letters split the file system into a series of different trees (one for each device), Linux always has a single tree.
+One important difference between Windows and Unix-like OS like Linux is that Linux does not employ the concept of drive letters. While Windows drive letters split the file system into a series of different trees (one for each device), Linux always has a single tree.
 
 ### `pwd`
 
-The directory we are standing in is called the working directory. To see the name of the working directory, we use the pwd command.
+The directory we are standing in is called the working directory. To see the name of the working directory, we use the `pwd` command.
 
 ### `cd`
 
@@ -81,7 +81,7 @@ ls -la ..
 ls -la /foldername
 ```
 
-List all files (even the ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format.
+List all files (even the ones with names beginning with a period character, which are normally hidden) in the working directory's parent in a long format.
 
 Most commands operate like this:
 
@@ -91,11 +91,11 @@ command -option arguments
 
 #### A Closer Look at Long Format
 
-For example try `ls -la`, you will get more information about the file.
+For example, try `ls -la`, you will get more information about the file.
 
 ![show ls -la command possible information](https://res.cloudinary.com/bizstak/image/upload/v1685049199/ls-la-command-info_kgiglf.png)
 
-If you run the command `ls -l` you will get the output that looks like:
+If you run the command `ls -l` you will get the output that looks like this:
 
 ```sh
 total 4
@@ -113,7 +113,7 @@ Let's break down the output:
    - `-`: This hyphen represents the group associated with the file. In this case, the group is not explicitly specified.
    - `Osagie`: This represents the group associated with the file. In this example, the group is `Osagie`.
    - `197610`: This indicates the file size in bytes. In this case, the file `README.md` is 3092 bytes.
-   - `May 25 14:28`: This represents the last modification date and time of the file.
+   - `May 25 14:28`: This represents the file's last modification date and time.
    - `README.md`: This is the name of the file.
 
 ### `less`
@@ -132,9 +132,9 @@ less README.md
 
 ---
 
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch) and feel contribute. It is open source after all.
+Click on the button dropdown to see my notes from chapter to chapter (branch to branch) and feel contribute. It is open source after all.
 
-Feel free to contribute. You can edit this file
+Feel free to contribute. You can edit this file.
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
 
