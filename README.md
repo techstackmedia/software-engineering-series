@@ -2,7 +2,7 @@
 
 ## Installation
 
-If you are using Windows, checkout the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s)
+If you are using Windows, check out the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s)
 
 Common terminals to use are:
 
