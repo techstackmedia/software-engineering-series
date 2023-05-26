@@ -151,4 +151,7 @@ Feel free to contribute. You can edit this file.
 
 ---
 
-[Edit on GitHub](https://github.com/techstackmedia/software-engineering-series/edit/main/README.md)
+## References
+
+- [View on Hashnode](https://blog.techstackmedia.com/shell-navigation)
+- [View on Dev.to](https://dev.to/bello/shell-navigation-4j0f)
