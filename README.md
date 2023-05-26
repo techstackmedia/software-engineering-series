@@ -1,5 +1,16 @@
 # Shell Navigation
 
+## Installation
+
+If you are using Windows, checkout the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s)
+
+Common terminals to use are:
+
+- [Cmder](https://cmder.app)
+- [Git Bash](https://git-scm.com/downloads)
+- [Hyper](https://hyper.is/#installation)
+- [iTerm2](https://iterm2.com/downloads.html)
+
 ## Common Commands
 
 - `pwd` (print working directory), `cd` (change directory), `ls` (list file and directory)
