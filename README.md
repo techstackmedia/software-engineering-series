@@ -1,5 +1,7 @@
 # Shell Navigation
 
+![Shell Navigation Cover](https://res.cloudinary.com/bizstak/image/upload/v1685096215/GitHub_Cover_agii6x.png)
+
 ## Installation
 
 If you are using Windows, check out the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s)
