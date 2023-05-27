@@ -1,6 +1,6 @@
 # Shell Navigation
 
-![Shell Navigation Cover](https://res.cloudinary.com/bizstak/image/upload/v1685096215/GitHub_Cover_agii6x.png)
+![Shell Navigation Cover](https://res.cloudinary.com/bizstak/image/upload/v1685174291/GitHub_Cover_Image_jvvxr9.png)
 
 ## Installation
 
@@ -145,9 +145,7 @@ less README.md
 
 ---
 
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch) and feel contribute. It is open source after all.
-
-Feel free to contribute. You can edit this file.
+Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
 
