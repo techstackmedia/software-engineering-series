@@ -243,13 +243,14 @@ Remember to choose meaningful and descriptive names for your directories to keep
 
 ---
 
+## References
+
+- [Hashnode](https://blog.techstackmedia.com/files-manipulation)
+- [Dev.to](https://dev.to/bello/files-manipulation-50j7)
+
+---
+
 Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
 
----
-
-## References
-
-- [Hashnode](https://blog.techstackmedia.com/shell-navigation)
-- [Dev.to](https://dev.to/bello/shell-navigation-4j0f)
