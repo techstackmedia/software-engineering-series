@@ -1,260 +1,196 @@
-# Files Manipulation
+# Mastering Linux Command Line
 
-![Files Manipulation](https://res.cloudinary.com/bizstak/image/upload/v1685178632/GitHub_Cover_ezue6o.png)
+![Mastering Linux Command Line Cover Image](https://res.cloudinary.com/bizstak/image/upload/v1685209785/GitHub_Cover_audops.png)
 
-When working with files and directories, there are basic commands that can be used for manipulation. These commands include:
+The Linux command line is a powerful tool for executing tasks and managing your system efficiently. However, to navigate the command line with confidence, it's essential to identify the type of command you're working with. Linux offers several methods to determine the nature of a command, such as the `type`, `which`, `help`, and `man` commands.
 
-- `cp` (copy)
-- `mv` (move)
-- `rm` (remove)
-- `mkdir` (make directory)
+In this comprehensive guide, we'll explore these command identification techniques and delve into the documentation available for each command type. By understanding how to identify commands accurately and access their documentation, you'll gain a deeper understanding of the command line ecosystem and unleash the full potential of Linux command line tools.
 
-Before we delve into these commands, let's create a new file. Name it `filename.txt` and add some random text to it. Make sure you navigate to its directory using your terminal.
+Let's dive in and discover how these methods can enhance your command line proficiency.
 
-## `cp` - Copy
+- `type`
+- `which`
+- `help`
+- `man`
 
-The `cp` command is used to copy files or directories from one location to another. It creates a duplicate of the specified file or directory, which can be placed in the same directory or a different one. The common format for the `cp` command is:
+## Command Identification
 
-```sh
-cp <file_name> <new_file_name>
-```
+### The `type` Command
 
-For example, in the code below, `README.md` already exists. We will create `contribute.md` and copy all the contents from `README.md` into `contribute.md`:
+The `type` command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
 ```sh
-cp README.md contribute.md
+type [command]
 ```
 
-The `cp` command can also be used to copy multiple files. Make sure `file_name1`, `file_name2`, etc., exist:
+The "type" command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
 ```sh
-cp  <file_name1> <file_name2> ...<new_file_name2> 
+type [command]
 ```
 
-In the code below, `README.md` and `contribute.md` already exist:
+By replacing `[command]` with the name of the command in question, we can unveil its classification. Let's explore a few examples:
 
 ```sh
-cp  README.md contribute.md support.md 
+type ls
 ```
 
-If you want to copy all the contents from all the `.md` files in a directory to a destination file, you can use the wildcard `*`:
+The output is shown below
 
 ```sh
-cp *.md <destination_file_name>
+ls is aliased to `ls --color=auto'
 ```
 
-For example:
+In the above case, we discover that the "ls" command is an alias with the additional option "--color=auto". This knowledge explains why the output of "ls" is displayed in color.
 
 ```sh
-cp *md teams.md
+type cp
 ```
 
-To copy a file to a specific directory, create a new directory or folder in your root directory and run the command in the following format:
+The output is shown below
 
 ```sh
-cp <file_name> <directory/new_file_name>
+cp is hashed (/usr/bin/cp)
 ```
 
-For example:
+For the `cp` command, the output reveals that it is an executable program located at `usr/bin/cp`. Such insights allow us to better understand the behavior and functionality of various commands.
+
+The `which` Command:
+In scenarios where multiple versions of an executable program exist on a system, the `which` command proves invaluable. Its purpose is to determine the precise location of a given executable. Usage is as follows:
 
 ```sh
-cp README.md folder/contribute.md
+which [command]
 ```
 
-Just like the commands above, you can add the `-i` flag to the cp command. When used, it prompts for confirmation before overwriting an existing file.
+By replacing `[command]` with the desired command name, we can ascertain its exact location. It's important to note that `which` exclusively works for executable programs and cannot identify built-ins or aliases acting as substitutes.
 
-To create a new file and put content in it, which is different from an already existing file:
+By utilizing the `type` and `which` commands, we can effectively identify the type of command in question and gain insights into its execution within the Linux environment. This knowledge equips us with a deeper understanding of the command line ecosystem.
+
+### The `help` Command
+
+The bash shell incorporates a built-in help facility that provides documentation for each shell buil-tin. To access it, simply type "help" followed by the name of the shell built-in. Optionally, the "-m" option can be added to modify the output format. Let's consider an example:
 
 ```sh
-cp -i <file_name1> <file_name2>
+help -m cd
 ```
 
-For example:
+Upon executing the above command, the following information about the "cd" command will be displayed:
 
 ```sh
-cp -i README.md contribute.md
+NAME
+    cd - Change the shell working directory.
+
+SYNOPSIS
+    cd [-L|[-P [-e]] [-@]] [dir]
+
+DESCRIPTION
+    Change the shell working directory.
+
+    Change the current directory to DIR.  The default DIR is the value of the
+    HOME shell variable.
+
+    The variable CDPATH defines the search path for the directory containing
+    DIR.  Alternative directory names in CDPATH are separated by a colon (:).
+    A null directory name is the same as the current directory.  If DIR begins
+    with a slash (/), then CDPATH is not used.
+
+    If the directory is not found, and the shell option `cdable_vars' is set,
+    the word is assumed to be  a variable name.  If that variable has a value,
+    its value is used for DIR.
+
+    Options:
+      -L        force symbolic links to be followed: resolve symbolic
+                links in DIR after processing instances of `..'
+      -P        use the physical directory structure without following
+                symbolic links: resolve symbolic links in DIR before
+                processing instances of `..'
+      -e        if the -P option is supplied, and the current working
+                directory cannot be determined successfully, exit with
+                a non-zero status
+      -@        on systems that support it, present a file with extended
+                attributes as a directory containing the file attributes
+
+    The default is to follow symbolic links, as if `-L' were specified.
+    `..' is processed by removing the immediately previous pathname component
+    back to a slash or the beginning of DIR.
+
+    Exit Status:
+    Returns 0 if the directory is changed, and if $PWD is set successfully when
+    -P is used; non-zero otherwise.
+
+SEE ALSO
+    bash(1)
+
+IMPLEMENTATION
+    GNU bash, version 5.1.16(1)-release (x86_64-pc-msys)
+    Copyright (C) 2020 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 ```
 
-When you run the above code in your terminal, you will be prompted if you want to overwrite the file (if `<file_name2>`already exists). You can enter `y` (or `yes`) to override the content of `<file_name2>` with the content of `<file_name1>`. Enter `n` (or `no`) or just click the enter button if you do not want to overwrite it.
+Note: In command syntax descriptions, square brackets denote optional items, while a vertical bar indicates mutually exclusive choices. For instance, the notation for the "cd" command:
 
 ```sh
-cp: overwrite 'support.md'? 
+cd [-L|-P] [dir]
 ```
 
-When you need to copy the contents of an existing directory `<dir1>` to a new directory `<dir2>`, including all subdirectories and files, you can utilize the `cp` command with the `-R` flag. This flag enables recursive copying, ensuring that the entire directory structure is preserved.
+This indicates that the `cd` command can be optionally followed by either `-L` or `-P` and further optionally by the argument `dir`.
 
-Here's how you can accomplish this:
+## Command Documentation
+
+### The "--help" Option
+
+Many executable programs support a `--help` option, which provides a detailed description of the command's syntax and supported options. For instance:
 
 ```sh
-cp -R <dir1> <dir2>
+mkdir --help
 ```
 
-In this command, `<dir1>` represents the source directory whose contents you want to copy, and `<dir2>` is the destination directory where you want to create the copied contents.
-
-The `-R` flag tells the `cp` command to perform a recursive copy, ensuring that all subdirectories and files within `<dir1>` are copied to `<dir2>`. If `<dir2>` does not exist, it will be created during the copying process.
-
-It's important to note that the `-R` flag is crucial when you want to copy directories, as it allows for the copying of both the directory's contents and its subdirectories.
-
-By utilizing the `cp` command with the `-R` flag, you can efficiently copy the entire contents of one directory to another, preserving the structure and ensuring that all files and subdirectories are successfully copied.
-
-Suppose you have an existing directory named `documentation`, and you want to move all of its files and subdirectories to a new directory called `reserve`. You can achieve this by using the `cp` command with the `-R` flag for recursive copying.
+Executing the command above will display the following information about the `mkdir` command:
 
 ```sh
-cp -R documentation reserve
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
 ```
 
-## `mv` - Move
+Although not all programs support the `--help` option, it is worth attempting as it often provides similar usage information, even if it results in an error message.
 
-The `mv` command not only allows you to move individual files but also provides the flexibility to move multiple files into another directory (folder) simultaneously.
+## The `man` Command
 
-To move multiple files to a destination directory, you can use the following syntax:
+Note that the command from man is by default only available on Unix OS. Most command-line executable programs offer comprehensive documentation known as a manual or man page. The "man" command enables us to view these pages conveniently. Usage of the "man" command is as follows:
 
 ```sh
-mv <file1> <file2> <destination_directory>
+man program
 ```
 
-In this example, both `<file1>` and `<file2>` will be moved to `<destination_directory>`. The files will no longer exist in their original location and will be consolidated in the specified `<destination_directory>`.
-
-For instance, consider the command:
+Replace `program` with the name of the command to access its manual page. Man pages typically include a title, a synopsis of the command's syntax, a description of its purpose, and a list and explanation of each option. However, they are primarily designed as references rather than tutorials. Let's view the man page for the `ls` command:
 
 ```sh
-mv file1 file2 destination_folder
+man ls
 ```
 
-After executing this command, both `file1` and `file2` will be moved to the `destination_folder`. These files will no longer be present in their original location, ensuring a streamlined organization of your files.
+On most Linux systems, the `man` command employs the `less` program to display the manual page, allowing the use of familiar `less` commands for navigation.
 
-The `mv` command's ability to move multiple files simultaneously simplifies the process of managing and rearranging files within your system.
-
-Note you can use the wildcard pattern `*` and the `i` flag if you wish to:
-
-```sh
-mv -i *.txt backup
-```
-
-Using the wildcard pattern * in combination with the mv command allows for efficient and streamlined file movements, especially when dealing with large numbers of files.
-
-```sh
-mv doc/accordion.md documentation
-```
-
-In this case, the file `accordion.md` located in the doc directory will be moved to the `documentation` directory. The file will be deleted from the `doc` directory, and if the `documentation` directory does not exist, it will be created automatically.
-
-The `mv` command is a versatile tool for organizing files and directories within your system. It allows you to seamlessly move files between directories, ensuring that your file structure remains well-organized and up-to-date.
-
-## `rm`- Remove
-
-The `rm` command is used to delete files and directories from your system. It is important to exercise caution when using this command, as deleted files or folders cannot be recovered.
-
-To remove a single file, use the following command:
-
-```sh
-rm <file_name>
-```
-
-Alternatively, you can use the -i flag to be prompted for confirmation before deleting a file or folder:
-
-```sh
-rm -i <file_name>
-```
-
-For example, to remove the file "accordion.md" located in the "doc" directory, you can run:
-
-```sh
-rm -i doc/accordion.md
-```
-
-The prompt will ask the following question:
-
-```sh
-rm: remove regular file 'doc/accordion.md'? 
-```
-
-If you type `y` (or `yes`), the file will be deleted.
-
-To delete an entire folder or directory, you need to use the -r flag, which stands for "recursive":
-
-```sh
-rm -r <dir>
-```
-
-For instance, to delete the "folder1" directory and its contents, you can execute:
-
-```sh
-rm -r folder1
-```
-
-If you wish to delete multiple folders or directories, you can use either the `-r` or `-rf` flag:
-
-```sh
-rm -r <dir1> <dir2> ...
-```
-
-```sh
-rm -rf <dir1> <dir2> ...
-```
-
-It's important to note that the `rm -rf` command is more aggressive and powerful than `rm -r`. It bypasses confirmation prompts and forcefully removes directories and their contents. This option should be used with caution to prevent accidental data loss.
-
-Remember to double-check your commands before executing them to ensure you are deleting the intended files or directories.
-
-## `mkdir` - Make Directory
-
-The `mkdir` command is used to create a new directory.
-
-To create a single directory, use the following command:
-
-```sh
-mkdir <dir_name>
-```
-
-For example, to create a directory named "folder", you can run:
-
-```sh
-mkdir folder
-```
-
-You can also create multiple directories at once by specifying their names:
-
-```sh
-mkdir <dir1> <dir2> ...
-```
-
-For example, to create directories named "folder1", "folder2", and "folder3", you can execute:
-
-```sh
-mkdir folder1 folder2 folder3
-```
-
-It is important to note that if a directory with the same name already exists, the `mkdir` command will generate an error. To avoid this, you can use the `-p` flag, which stands for "parents" and allows the creation of nested directories. This way, if any intermediate directories are missing, they will be created as well.
-
-```sh
-mkdir -p <dir_path>
-```
-
-For instance, to create a directory named "nested" inside a directory named "parent" (assuming "parent" doesn't exist yet), you can use:
-
-```sh
-mkdir -p parent/nested
-```
-
-This will create both the "parent" and "nested" directories.
-
-Remember to choose meaningful and descriptive names for your directories to keep your file system organized and easily navigable.
-
-## `rmdir` - Remove Directory
-
-The command `rmdir` is the opposite of `mkdir`. It deletes a folder only when it is empty.
-
-```sh
-rmdir <dir_name>
-```
-
----
+By utilizing the `help`, `--help`, and `man` commands, we can access comprehensive documentation for each command type, enabling us to leverage the full potential of Linux command line tools. These resources facilitate efficient command usage, ensuring optimal productivity within the Linux environment.
 
 ## References
 
 - [Hashnode](https://blog.techstackmedia.com/files-manipulation)
-- [Dev.to](https://dev.to/bello/files-manipulation-50j7)
+- [Dev.to](https://blog.techstackmedia.com/mastering-linux-command-line)
 
 ---
 
