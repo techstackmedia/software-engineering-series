@@ -153,5 +153,5 @@ Click on the button dropdown to see my notes from chapter to chapter (branch to 
 
 ## References
 
-- [View on Hashnode](https://blog.techstackmedia.com/shell-navigation)
-- [View on Dev.to](https://dev.to/bello/shell-navigation-4j0f)
+- [Hashnode](https://blog.techstackmedia.com/shell-navigation)
+- [Dev.to](https://dev.to/bello/shell-navigation-4j0f)
