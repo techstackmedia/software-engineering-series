@@ -27,7 +27,7 @@ One important difference between Windows and Unix-like OS like Linux is that Lin
 
 ### `pwd`
 
-The acronym PWD stands for "Present Working Directory." It is commonly used in the context of command-line interfaces and operating systems to refer to the current directory in which a user is working. The `pwd` command is often used to retrieve and display the full path of the current directory. That is the directory we are standing in is called the working directory. To see the name of the working directory, we use the `pwd` command.
+The acronym **PWD** stands for _Present Working Directory_. It is commonly used in the context of command-line interfaces and operating systems to refer to the current directory in which a user is working. The `pwd` command is often used to retrieve and display the full path of the current directory. That is the directory we are standing in is called the working directory. To see the name of the working directory, we use the `pwd` command.
 
 ### `cd`
 
