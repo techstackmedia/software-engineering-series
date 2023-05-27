@@ -1,157 +1,205 @@
-# Shell Navigation
+# Mastering Linux Command Line
 
-![Shell Navigation Cover](https://res.cloudinary.com/bizstak/image/upload/v1685174291/GitHub_Cover_Image_jvvxr9.png)
+![Mastering Linux Command Line Cover Image](https://res.cloudinary.com/bizstak/image/upload/v1685209785/GitHub_Cover_audops.png)
 
-## Installation
+The Linux command line is a powerful tool for executing tasks and managing your system efficiently. However, to navigate the command line with confidence, it's essential to identify the type of command you're working with. Linux offers several methods to determine the nature of a command, such as the `type`, `which`, `help`, and `man` commands.
 
-Search **terminal** on your Operating system, but if you are using Windows, don't use the default Windows terminal. Check out the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s). For Mac users, you don't need installation, use the default terminal.
+In this comprehensive guide, we'll explore these command identification techniques and delve into the documentation available for each command type. By understanding how to identify commands accurately and access their documentation, you'll gain a deeper understanding of the command line ecosystem and unleash the full potential of Linux command line tools.
 
-Common terminals to use are:
+Let's dive in and discover how these methods can enhance your command line proficiency.
 
-- [Cmder](https://cmder.app)
-- [Git Bash](https://git-scm.com/downloads)
-- [Hyper](https://hyper.is/#installation)
-- [iTerm2](https://iterm2.com/downloads.html)
+- `type`
+- `which`
+- `help`
+- `man`
 
-## Common Commands
+## Command Identification
 
-- `pwd` (print working directory), `cd` (change directory), `ls` (list file and directory)
+### The `type` Command
 
-## File system
-
-- In a tree-like pattern of the directory (folder)
-- A directory may contain files and subdirectories
-- The first directory in the file system is called the **root directory**
-
-One important difference between Windows and Unix-like OS like Linux is that Linux does not employ the concept of drive letters. While Windows drive letters split the file system into a series of different trees (one for each device), Linux always has a single tree.
-
-### `pwd`
-
-The acronym **PWD** stands for _Present Working Directory_. It is commonly used in the context of command-line interfaces and operating systems to refer to the current directory in which a user is working. The `pwd` command is often used to retrieve and display the full path of the current directory. That is the directory we are standing in is called the working directory. To see the name of the working directory, we use the `pwd` command.
-
-### `cd`
-
-1. Absolute pathname
-2. Relative pathname
-
-#### Absolute pathname
-
-Example
+The `type` command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
 ```sh
-cd /user/bin
+type [command]
 ```
+
+The `type` command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
 ```sh
-cd /foldername
+type [command]
 ```
 
-#### Relative pathname
-
-The `.` notation refers to the working directory itself and `..` notation refers to the working directory's parent directory.
+By replacing `[command]` with the name of the command in question, we can unveil its classification. Let's explore a few examples:
 
 ```sh
-cd ..
+type ls
 ```
+
+The output is shown below
 
 ```sh
-cd ../foldername
+ls is aliased to `ls --color=auto'
 ```
 
-If we type `cd` followed by nothing, `cd` will change the working directory to our home directory.
-
-A relative shortcut is to type `cd ~user_name`.
-
-File names that begin with a period character are hidden. This only means that `ls` will not list them unless we say `ls -la`.
-
-- Example is `.git`.
-
-File names in **Linux**, like Unix, are **case sensitive**. The file names _File1_ and _file 1_ refer to different files.
-
-Linux has no concept of a **file extension** like Windows system. You may name files any way you like. However, while Linux itself does not care about file extensions, many application programs do.
-
-Though **Linux supports long file names** which may contain embedded spaces and punctuation, limit the punctuation characters to period, dash and underscore. **Use underscores instead of spaces** to represent spaces between words in a file name.
-
-### `ls`
-
-#### `ls -l`
-
-List the files in the working directory in long format.
+In the above case, we discover that the "ls" command is an alias with the additional option "--color=auto". This knowledge explains why the output of "ls" is displayed in color.
 
 ```sh
-ls -l
+type cp
 ```
 
-#### `ls -l /etc /bin`
-
-List the files in the `/bin` directory and the `/etc` directory in long format.
+The output is shown below
 
 ```sh
-ls -la ..
+cp is hashed (/usr/bin/cp)
 ```
+
+For the `cp` command, the output reveals that it is an executable program located at `usr/bin/cp`. Such insights allow us to better understand the behavior and functionality of various commands.
+
+The `which` Command:
+In scenarios where multiple versions of an executable program exist on a system, the `which` command proves invaluable. Its purpose is to determine the precise location of a given executable. Usage is as follows:
 
 ```sh
-ls -la /foldername
+which [command]
 ```
 
-List all files (even the ones with names beginning with a period character, which are normally hidden) in the working directory's parent in a long format.
+By replacing `[command]` with the desired command name, we can ascertain its exact location. It's important to note that `which` exclusively works for executable programs and cannot identify built-ins or aliases acting as substitutes.
 
-Most commands operate like this:
+By utilizing the `type` and `which` commands, we can effectively identify the type of command in question and gain insights into its execution within the Linux environment. This knowledge equips us with a deeper understanding of the command line ecosystem.
+
+### The `help` Command
+
+The bash shell incorporates a built-in help facility that provides documentation for each shell buil-tin. To access it, simply type "help" followed by the name of the shell built-in. Optionally, the "-m" option can be added to modify the output format. Let's consider an example:
 
 ```sh
-command -option arguments
+help -m cd
 ```
 
-#### A Closer Look at Long Format
-
-For example, try `ls -la`, you will get more information about the file.
-
-![show ls -la command possible information](https://res.cloudinary.com/bizstak/image/upload/v1685049199/ls-la-command-info_kgiglf.png)
-
-If you run the command `ls -l` you will get the output that looks like this:
+Upon executing the above command, the following information about the "cd" command will be displayed:
 
 ```sh
-total 4
--rw-r--r-- 1 TechstackMedia - Osagie 197610 3092 May 25 14:28 README.md
+NAME
+    cd - Change the shell working directory.
+
+SYNOPSIS
+    cd [-L|[-P [-e]] [-@]] [dir]
+
+DESCRIPTION
+    Change the shell working directory.
+
+    Change the current directory to DIR.  The default DIR is the value of the
+    HOME shell variable.
+
+    The variable CDPATH defines the search path for the directory containing
+    DIR.  Alternative directory names in CDPATH are separated by a colon (:).
+    A null directory name is the same as the current directory.  If DIR begins
+    with a slash (/), then CDPATH is not used.
+
+    If the directory is not found, and the shell option `cdable_vars' is set,
+    the word is assumed to be  a variable name.  If that variable has a value,
+    its value is used for DIR.
+
+    Options:
+      -L        force symbolic links to be followed: resolve symbolic
+                links in DIR after processing instances of `..'
+      -P        use the physical directory structure without following
+                symbolic links: resolve symbolic links in DIR before
+                processing instances of `..'
+      -e        if the -P option is supplied, and the current working
+                directory cannot be determined successfully, exit with
+                a non-zero status
+      -@        on systems that support it, present a file with extended
+                attributes as a directory containing the file attributes
+
+    The default is to follow symbolic links, as if `-L' were specified.
+    `..' is processed by removing the immediately previous pathname component
+    back to a slash or the beginning of DIR.
+
+    Exit Status:
+    Returns 0 if the directory is changed, and if $PWD is set successfully when
+    -P is used; non-zero otherwise.
+
+SEE ALSO
+    bash(1)
+
+IMPLEMENTATION
+    GNU bash, version 5.1.16(1)-release (x86_64-pc-msys)
+    Copyright (C) 2020 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 ```
 
-Let's break down the output:
-
-1. `total 4`: This line represents the total number of 1KB blocks used by the files listed below it. In this case, the total size is 4KB.
-
-2. `-rw-r--r-- 1 TechstackMedia - Osagie 197610 3092 May 25 14:28 README.md`: This line represents the details of a specific file called README.md. Let's analyze each part:
-   - `-rw-r--r--`: This section represents the file permissions. In this example, it indicates that the file is readable and writable by the owner (`rw-`), readable by the group (`r--`), and readable by others (`r--`).
-   - `1`: The number 1 represents the number of hard links to the file. In this case, there is only one hard link pointing to the file.
-   - `TechstackMedia`: This is the owner of the file. In this case, the file is owned by the user `TechstackMedia`.
-   - `-`: This hyphen represents the group associated with the file. In this case, the group is not explicitly specified.
-   - `Osagie`: This represents the group associated with the file. In this example, the group is `Osagie`.
-   - `197610`: This indicates the file size in bytes. In this case, the file `README.md` is 3092 bytes.
-   - `May 25 14:28`: This represents the file's last modification date and time.
-   - `README.md`: This is the name of the file.
-
-### `less`
-
-less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.
-
-Click `q` to quit or keep clicking enter till you done reading the file.
+Note: In command syntax descriptions, square brackets denote optional items, while a vertical bar indicates mutually exclusive choices. For instance, the notation for the "cd" command:
 
 ```sh
-less text_file
+cd [-L|-P] [dir]
 ```
+
+This indicates that the `cd` command can be optionally followed by either `-L` or `-P` and further optionally by the argument `dir`.
+
+## Command Documentation
+
+### The "--help" Option
+
+Many executable programs support a `--help` option, which provides a detailed description of the command's syntax and supported options. For instance:
 
 ```sh
-less README.md
+mkdir --help
 ```
 
----
+Executing the command above will display the following information about the `mkdir` command:
 
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+```sh
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
 
-![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
+```
+
+Although not all programs support the `--help` option, it is worth attempting as it often provides similar usage information, even if it results in an error message.
+
+## The `man` Command
+
+Note that the command from man is by default only available on Unix OS. Most command-line executable programs offer comprehensive documentation known as a manual or man page. The "man" command enables us to view these pages conveniently. Usage of the "man" command is as follows:
+
+```sh
+man program
+```
+
+Replace `program` with the name of the command to access its manual page. Man pages typically include a title, a synopsis of the command's syntax, a description of its purpose, and a list and explanation of each option. However, they are primarily designed as references rather than tutorials. Let's view the man page for the `ls` command:
+
+```sh
+man ls
+```
+
+On most Linux systems, the `man` command employs the `less` program to display the manual page, allowing the use of familiar `less` commands for navigation.
+
+By utilizing the `help`, `--help`, and `man` commands, we can access comprehensive documentation for each command type, enabling us to leverage the full potential of Linux command line tools. These resources facilitate efficient command usage, ensuring optimal productivity within the Linux environment.
+
+### Note
+
+On your system, various software packages are installed, each accompanied by documentation files located in the `/usr/share/doc directory`. These files primarily exist in plain text format, which can be easily accessed and viewed using the `less` command. However, there are instances where certain files are in HTML format, enabling them to be conveniently viewed using a web browser. It is worth noting that some files in this directory may be compressed with the gzip compression program, denoted by the `.gz` extension. To handle such compressed text files, the gzip package provides a specialized version of `less` called `zless`, which allows the contents of gzip-compressed files to be displayed seamlessly.
 
 ---
 
 ## References
 
-- [Hashnode](https://blog.techstackmedia.com/shell-navigation)
-- [Dev.to](https://dev.to/bello/shell-navigation-4j0f)
+- [Hashnode](https://blog.techstackmedia.com/files-manipulation)
+- [Dev.to](https://blog.techstackmedia.com/mastering-linux-command-line)
+
+---
+
+Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
+
+![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
