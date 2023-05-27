@@ -4,10 +4,10 @@
 
 When working with files and directories, there are basic commands that can be used for manipulation. These commands include:
 
-- cp (copy)
-- mv (move)
-- rm (remove)
-- mkdir (make directory)
+- `cp` (copy)
+- `mv` (move)
+- `rm` (remove)
+- `mkdir` (make directory)
 
 Before we delve into these commands, let's create a new file. Name it `filename.txt` and add some random text to it. Make sure you navigate to its directory using your terminal.
 
@@ -15,7 +15,7 @@ Before we delve into these commands, let's create a new file. Name it `filename.
 
 The `cp` command is used to copy files or directories from one location to another. It creates a duplicate of the specified file or directory, which can be placed in the same directory or a different one. The common format for the `cp` command is:
 
-```bash
+```sh
 cp <file_name> <new_file_name>
 ```
 
@@ -27,13 +27,13 @@ cp README.md contribute.md
 
 The `cp` command can also be used to copy multiple files. Make sure `file_name1`, `file_name2`, etc., exist:
 
-```bash
+```sh
 cp  <file_name1> <file_name2> ...<new_file_name2> 
 ```
 
 In the code below, `README.md` and `contribute.md` already exist:
 
-```bash
+```sh
 cp  README.md contribute.md support.md 
 ```
 
@@ -51,7 +51,7 @@ cp *md teams.md
 
 To copy a file to a specific directory, create a new directory or folder in your root directory and run the command in the following format:
 
-```bash
+```sh
 cp <file_name> <directory/new_file_name>
 ```
 
@@ -61,7 +61,7 @@ For example:
 cp README.md folder/contribute.md
 ```
 
-Just like the commands above, you can add the -i flag to the cp command. When used, it prompts for confirmation before overwriting an existing file.
+Just like the commands above, you can add the `-i` flag to the cp command. When used, it prompts for confirmation before overwriting an existing file.
 
 To create a new file and put content in it, which is different from an already existing file:
 
@@ -75,7 +75,7 @@ For example:
 cp -i README.md contribute.md
 ```
 
-When you run the above code in your terminal, you will be prompted if you want to overwrite the file (if `<file_name2>`already exists). You can enter `y` (or `yes`) to override the content of <`file_name2`> with the content of <`file_name1`>. Enter `n` (or `no`) or just click the enter button if you do not want to overwrite it.
+When you run the above code in your terminal, you will be prompted if you want to overwrite the file (if `<file_name2>`already exists). You can enter `y` (or `yes`) to override the content of `<file_name2>` with the content of `<file_name1>`. Enter `n` (or `no`) or just click the enter button if you do not want to overwrite it.
 
 ```sh
 cp: overwrite 'support.md'? 
@@ -109,7 +109,7 @@ The `mv` command not only allows you to move individual files but also provides 
 
 To move multiple files to a destination directory, you can use the following syntax:
 
-```bash
+```sh
 mv <file1> <file2> <destination_directory>
 ```
 
@@ -117,7 +117,7 @@ In this example, both `<file1>` and `<file2>` will be moved to `<destination_dir
 
 For instance, consider the command:
 
-```bash
+```sh
 mv file1 file2 destination_folder
 ```
 
@@ -197,7 +197,7 @@ It's important to note that the `rm -rf` command is more aggressive and powerful
 
 Remember to double-check your commands before executing them to ensure you are deleting the intended files or directories.
 
-## mkdir - Make DIrectory
+## `mkdir` - Make Directory
 
 The `mkdir` command is used to create a new directory.
 
