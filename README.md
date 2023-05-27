@@ -4,7 +4,7 @@
 
 ## Installation
 
-If you are using Windows, check out the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s)
+Search **terminal** on your Operating system, but if you are using Windows, check out the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s). For Mac users you don't need installation.
 
 Common terminals to use are:
 
