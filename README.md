@@ -15,7 +15,10 @@ Common terminals to use are:
 
 ## Common Commands
 
-- `pwd` (print working directory), `cd` (change directory), `ls` (list file and directory)
+- `pwd` (print working directory) 
+- `cd` (change directory)
+- `ls` (list file and directory)
+- `touch`
 
 ## File system
 
@@ -27,7 +30,7 @@ One important difference between Windows and Unix-like OS like Linux is that Lin
 
 ### `pwd`
 
-The acronym **PWD** stands for _Present Working Directory. It is commonly used in the context of command-line interfaces and operating systems to refer to the current directory in which a user is working. The `pwd` command is often used to retrieve and display the full path of the current directory. That is the directory we are standing in is called the working directory. To see the name of the working directory, we use the `pwd` command.
+The acronym **PWD** stands for _Present Working Directory_. It is commonly used in the context of command-line interfaces and operating systems to refer to the current directory in which a user is working. The `pwd` command is often used to retrieve and display the full path of the current directory. That is the directory we are standing in is called the working directory. To see the name of the working directory, we use the `pwd` command.
 
 ### `cd`
 
@@ -129,11 +132,27 @@ Let's break down the output:
    - `May 25 14:28`: This represents the file's last modification date and time.
    - `README.md`: This is the name of the file.
 
+### `touch`
+
+The `touch` command is a versatile and powerful tool that allows you to create and modify files with ease in various operating systems, including Linux, macOS, and Unix. Its simplicity and efficiency make it a fundamental command for managing files and timestamps.
+
+One of the primary functions of the touch command is to create a new file. Using the command is as simple as typing touch followed by the desired filename. For example, to create a file called _example.txt_, you would execute the following command: 
+
+```sh
+touch example.txt
+```
+
+You can also specify the timestamp. In the example below a file named _custom.txt_ with a specific timestamp of _December 31, 2022, at 12:30 PM_, you would execute the following command:
+
+```sh
+touch -t 202212311230 custom.txt
+```
+
 ### `less`
 
-less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.
+less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human-readable.
 
-Click `q` to quit or keep clicking enter till you done reading the file.
+Click `q` to quit or keep clicking enter till you are done reading the file.
 
 ```sh
 less text_file
@@ -142,12 +161,6 @@ less text_file
 ```sh
 less README.md
 ```
-
----
-
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
-
-![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
 
 ---
 
