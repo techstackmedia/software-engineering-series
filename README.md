@@ -1,184 +1,205 @@
-# Writing Pseudocode: A Beginner's Guide
+# Mastering Linux Command Line
 
-![Writing Pseudocode Article Cover](https://res.cloudinary.com/bizstak/image/upload/v1685295673/GitHub_Cover_qwkpme.png)
+![Mastering Linux Command Line Cover Image](https://res.cloudinary.com/bizstak/image/upload/v1685209785/GitHub_Cover_audops.png)
 
-**Pseudocode** is a valuable tool for expressing algorithms in a high-level and abstract manner. It serves as a bridge between human understanding and actual programming languages. In this blog post, we will explore what pseudocode is, and its purpose, and provide examples of its usage in real-life scenarios.
+The Linux command line is a powerful tool for executing tasks and managing your system efficiently. However, to navigate the command line with confidence, it's essential to identify the type of command you're working with. Linux offers several methods to determine the nature of a command, such as the `type`, `which`, `help`, and `man` commands.
 
-## What is Pseudocode?
+In this comprehensive guide, we'll explore these command identification techniques and delve into the documentation available for each command type. By understanding how to identify commands accurately and access their documentation, you'll gain a deeper understanding of the command line ecosystem and unleash the full potential of Linux command line tools.
 
-Pseudocode is not an actual programming language but a representation of code that resembles a programming language without adhering to its strict syntax rules. The term _pseudo_ refers to something false or fake, indicating that pseudocode is a simulated version of code. It allows programmers to focus on the logic and functionality of an algorithm rather than the specific language syntax.
+Let's dive in and discover how these methods can enhance your command line proficiency.
 
-## The Purpose of Pseudocode
+- `type`
+- `which`
+- `help`
+- `man`
 
-The primary purpose of pseudocode is to provide a high-level and abstract representation of an algorithm, independent of any particular programming language. By using pseudocode, programmers can simplify complex problems, avoid language-specific limitations, and facilitate understanding and implementation across different languages.
+## Command Identification
 
-Pseudocode acts as a communication tool between programmers, enabling them to discuss and share algorithms without being constrained by specific programming languages. It allows for flexibility, as the same algorithm can be implemented in different languages based on the pseudocode's logic and structure.
+### The `type` Command
 
-## Exam Board Pseudocode
+The `type` command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
-In academic settings, exam boards often use standardized pseudocode in their questions and marking schemes. While these standardized versions of pseudocode may differ slightly between exam boards, they serve the purpose of ensuring consistency and ease of evaluation. However, it's important to note that these specific syntax rules are often only applicable within the context of exams and may not reflect real-world pseudocode usage.
-
-## Real-Life Examples
-
-To understand how pseudocode is used in practice, let's examine some real-life examples. One such example can be found in university textbooks, where complex algorithms are explained using pseudocode. These textbooks often present machine learning algorithms, such as decision trees, and provide pseudocode representations to illustrate their functionality.
-
-While the pseudocode in textbooks may appear different from what you encounter in exams, the core concepts remain the same. Pseudocode still utilizes familiar programming constructs like _functions_, _parameters_, _conditionals_ (_if-else statements_), _loops_, and _variables_. The notation used in these examples simplifies the algorithm's implementation while excluding language-specific details.
-
-Using pseudocode instead of actual programming languages has several advantages. Pseudocode condenses complex algorithms into concise representations, making them easier to understand. It also allows for algorithm portability, enabling programmers to implement the same logic across different programming languages. Additionally, pseudocode serves as a future-proof solution since it remains relevant even as programming languages evolve.
-
-## Understanding Pseudocode
-
-Pseudocode is a simulated version of code that resembles a programming language but does not adhere to its strict syntax rules. It aims to focus on the logic and functionality of an algorithm, making it independent of any specific programming language. Pseudocode facilitates communication among programmers and enables the implementation of algorithms across different languages.
-
-## Writing Pseudocode
-
-When writing pseudocode, remember that there is no one correct syntax. It's more important to focus on the algorithm's logic and functionality rather than adhering to specific formatting rules. Pseudocode should be clear and easily understandable by competent programmers familiar with the problem domain.
-
-To illustrate the process of writing pseudocode, let's consider an example.
-
-```txt
-Example pseudocode for finding the average of two numbers.
-
-Main program
-input1 = get user input for number1
-input2 = get user input for number2
-result = calculateAverage(input1, input2)
-display result
+```sh
+type [command]
 ```
 
-If I was to implement the logic in code using JavaScript, it would look like the example below:
+The "type" command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
-```js
-function calculateAverage(number1, number2) {
-    sum = number1 + number2
-    average = sum / 2
-    return average
-}
-
-calculateAverage(2, 8)
+```sh
+type [command]
 ```
 
-In this example, we define a function `calculateAverage` that takes two numbers as input, calculates their sum, computes the average, and returns it. The main program obtains user inputs, calls the `calculateAverage` function, and displays the result.
+By replacing `[command]` with the name of the command in question, we can unveil its classification. Let's explore a few examples:
 
-Here is another example:
-
-```txt
-The Problem:
-Write a program that prints the number from 1 to 20:
-
-For multiples of three print `"FIZZ"` instead of the number
-For the multiple of five print `"Buzz"` instead of the number
-For numbers which are multiples of both three and five print `"FizzBuzz"`
-For numbers not divisible by 3, 5, or both print the number as 15.
+```sh
+type ls
 ```
 
-The pseudocode would look like this:
+The output is shown below
 
-```txt
-FOR LOOP:
-SET counter to 1
-Break when counter reaches 20
-Increment counter by 1
-    IF number MOD 15 === 0
-        print 'FizzBuzz'
-    ELSE IF number MOD 3 === 0
-        print 'Fizz'
-    ELSE iF number MOD 5 === 0
-        print 'Buzz'
-    ELSE
-        print number
+```sh
+ls is aliased to `ls --color=auto'
 ```
 
-Someone else could write the code as shown below and they will mean the same:
+In the above case, we discover that the "ls" command is an alias with the additional option "--color=auto". This knowledge explains why the output of "ls" is displayed in color.
 
-```txt
-FOR i = 1 to 20 DO
-    IF i is divisible by 3 and 5 THEN
-        PRINT "FizzBuzz"
-    ELSE IF i is divisible by 3 THEN
-        PRINT "Fizz"
-    ELSE IF i is divisible by 5 THEN
-        PRINT "Buzz"
-    ELSE
-        PRINT i
-    END IF
-END FOR
+```sh
+type cp
 ```
 
-The code snippets show that writing pseudocode is based on your pattern.
+The output is shown below
 
-Note that using this keyword like `FOR`, `IF`, `ELSE IF` `ELSE`, `END`, etc. are not mandatory because Pseudocode is flexible and allows for the use of alternative keywords or descriptive phrases as long as they effectively convey the intended logic and structure of the algorithm.
-
-For example, instead of using `FOR`, you could use `REPEAT` or `LOOP`. Similarly, instead of `END`, you could use `STOP` or `FINISH`. The key is to maintain consistency within your pseudocode and ensure that the chosen keywords or phrases accurately represent the intended flow of the algorithm. The example below is the same as the pseudocode above but with a different approach.
-
-```txt
-Set i as 1
-Repeat until i reaches 20:
-    If i is divisible by both 3 and 5:
-        Output "FizzBuzz"
-    Otherwise, if i is divisible by 3:
-        Output "Fizz"
-    Otherwise, if i is divisible by 5:
-        Output "Buzz"
-    Otherwise:
-        Output i
-    Increment i by 1
-End repeat
+```sh
+cp is hashed (/usr/bin/cp)
 ```
 
-The code in JavaScript would look like this:
+For the `cp` command, the output reveals that it is an executable program located at `usr/bin/cp`. Such insights allow us to better understand the behavior and functionality of various commands.
 
-```js
-for (let i = 1; i <= 20; i++) {
-    if (i % 15 === 0) {
-        console.log('FizzBuzz')
-    } else if (i % 3 === 0) {
-        console.log('Fizz')
-    } else if (i % 5 === 0) {
-        console.log('Buzz')
-    } else {
-        console.log(i)
-    }
-}
+The `which` Command:
+In scenarios where multiple versions of an executable program exist on a system, the `which` command proves invaluable. Its purpose is to determine the precise location of a given executable. Usage is as follows:
+
+```sh
+which [command]
 ```
 
-As you can see, the pseudocode resembles a programming language but avoids specific syntax requirements.
+By replacing `[command]` with the desired command name, we can ascertain its exact location. It's important to note that `which` exclusively works for executable programs and cannot identify built-ins or aliases acting as substitutes.
 
-### Tips for Writing Pseudocode
+By utilizing the `type` and `which` commands, we can effectively identify the type of command in question and gain insights into its execution within the Linux environment. This knowledge equips us with a deeper understanding of the command line ecosystem.
 
-#### Familiarize Yourself with Real Code
+### The `help` Command
 
-To effectively write and understand pseudocode, it is crucial to have a foundation in a real programming language. Learning a programming language such as Python or Java will provide you with the necessary knowledge and concepts to express algorithms in pseudocode.
+The bash shell incorporates a built-in help facility that provides documentation for each shell buil-tin. To access it, simply type "help" followed by the name of the shell built-in. Optionally, the "-m" option can be added to modify the output format. Let's consider an example:
 
-#### Simplify and Generalize
+```sh
+help -m cd
+```
 
-When writing pseudocode, aim to simplify the code by excluding language-specific details and unnecessary complexities. Make it as general as possible while retaining clarity and readability. Remember, pseudocode is a high-level representation, so focus on expressing the algorithm's logic rather than the specific syntax.
+Upon executing the above command, the following information about the "cd" command will be displayed:
 
-#### Be Consistent
+```sh
+NAME
+    cd - Change the shell working directory.
 
-Maintain consistency in your pseudocode by using a uniform style and notation throughout. Choose a convention for variable assignment, function calls, and control structures (such as braces or indentation) and stick to it. Inconsistencies can lead to confusion and may result in lower marks in examinations.
+SYNOPSIS
+    cd [-L|[-P [-e]] [-@]] [dir]
 
-#### Practice Problem Solving
+DESCRIPTION
+    Change the shell working directory.
 
-To improve your pseudocode writing skills, engage in problem-solving exercises that require expressing solutions using pseudocode. Work through algorithmic questions and practice implementing the logic in pseudocode. This practice will enhance your ability to translate real-world problems into pseudocode representations.
+    Change the current directory to DIR.  The default DIR is the value of the
+    HOME shell variable.
 
-#### Learn from Examples and Resources
+    The variable CDPATH defines the search path for the directory containing
+    DIR.  Alternative directory names in CDPATH are separated by a colon (:).
+    A null directory name is the same as the current directory.  If DIR begins
+    with a slash (/), then CDPATH is not used.
 
-Study examples of pseudocode from textbooks, online resources, and tutorial videos. Analyze how experts express complex algorithms in pseudocode and learn from their approach. Additionally, seek out resources specific to your academic curriculum or exam board for standardized pseudocode guidelines.
+    If the directory is not found, and the shell option `cdable_vars' is set,
+    the word is assumed to be  a variable name.  If that variable has a value,
+    its value is used for DIR.
 
-#### Remember, Pseudocode Is Not Executable Code
+    Options:
+      -L        force symbolic links to be followed: resolve symbolic
+                links in DIR after processing instances of `..'
+      -P        use the physical directory structure without following
+                symbolic links: resolve symbolic links in DIR before
+                processing instances of `..'
+      -e        if the -P option is supplied, and the current working
+                directory cannot be determined successfully, exit with
+                a non-zero status
+      -@        on systems that support it, present a file with extended
+                attributes as a directory containing the file attributes
 
-Always keep in mind that pseudocode is a simplified representation and is not meant to be executed as actual code. It is a tool for communicating algorithmic ideas, not a programming language itself. Therefore, don't stress over small syntax details or worry about the code's executability.
+    The default is to follow symbolic links, as if `-L' were specified.
+    `..' is processed by removing the immediately previous pathname component
+    back to a slash or the beginning of DIR.
+
+    Exit Status:
+    Returns 0 if the directory is changed, and if $PWD is set successfully when
+    -P is used; non-zero otherwise.
+
+SEE ALSO
+    bash(1)
+
+IMPLEMENTATION
+    GNU bash, version 5.1.16(1)-release (x86_64-pc-msys)
+    Copyright (C) 2020 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+```
+
+Note: In command syntax descriptions, square brackets denote optional items, while a vertical bar indicates mutually exclusive choices. For instance, the notation for the "cd" command:
+
+```sh
+cd [-L|-P] [dir]
+```
+
+This indicates that the `cd` command can be optionally followed by either `-L` or `-P` and further optionally by the argument `dir`.
+
+## Command Documentation
+
+### The "--help" Option
+
+Many executable programs support a `--help` option, which provides a detailed description of the command's syntax and supported options. For instance:
+
+```sh
+mkdir --help
+```
+
+Executing the command above will display the following information about the `mkdir` command:
+
+```sh
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
+```
+
+Although not all programs support the `--help` option, it is worth attempting as it often provides similar usage information, even if it results in an error message.
+
+## The `man` Command
+
+Note that the command from man is by default only available on Unix OS. Most command-line executable programs offer comprehensive documentation known as a manual or man page. The "man" command enables us to view these pages conveniently. Usage of the "man" command is as follows:
+
+```sh
+man program
+```
+
+Replace `program` with the name of the command to access its manual page. Man pages typically include a title, a synopsis of the command's syntax, a description of its purpose, and a list and explanation of each option. However, they are primarily designed as references rather than tutorials. Let's view the man page for the `ls` command:
+
+```sh
+man ls
+```
+
+On most Linux systems, the `man` command employs the `less` program to display the manual page, allowing the use of familiar `less` commands for navigation.
+
+By utilizing the `help`, `--help`, and `man` commands, we can access comprehensive documentation for each command type, enabling us to leverage the full potential of Linux command line tools. These resources facilitate efficient command usage, ensuring optimal productivity within the Linux environment.
+
+### Note
+
+On your system, various software packages are installed, each accompanied by documentation files located in the `/usr/share/doc directory`. These files primarily exist in plain text format, which can be easily accessed and viewed using the `less` command. However, there are instances where certain files are in HTML format, enabling them to be conveniently viewed using a web browser. It is worth noting that some files in this directory may be compressed with the gzip compression program, denoted by the `.gz` extension. To handle such compressed text files, the gzip package provides a specialized version of `less` called `zless`, which allows the contents of gzip-compressed files to be displayed seamlessly.
 
 ---
 
 ## References
 
-- [Hashnode](https://blog.techstackmedia.com/writing-pseudocode-a-beginners-guide)
-- [Dev.to](https://dev.to/bello/writing-pseudocode-a-beginners-guide-1b73)
+- [Hashnode](https://blog.techstackmedia.com/files-manipulation)
+- [Dev.to](https://blog.techstackmedia.com/mastering-linux-command-line)
 
 ---
 
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
