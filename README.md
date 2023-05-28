@@ -148,7 +148,6 @@ Let me know if you have any questions or need further assistance!
 
 ## References
 
-- [GitHub Repository](https://github.com/techstackmedia/software-engineering-series/tree/04-exploring-file-contents-with-common-commands-in-linux)
 - [Hashnode](https://blog.techstackmedia.com/exploring-file-contents-with-common-commands-in-linux)
 - [Dev.to](https://dev.to/bello/exploring-file-contents-with-common-commands-in-linux-3jop)
 
