@@ -2,11 +2,11 @@
 
 ![Writing Pseudocode Article Cover](https://res.cloudinary.com/bizstak/image/upload/v1685295673/GitHub_Cover_qwkpme.png)
 
-**Pseudocode** is a valuable tool for expressing algorithms in a high-level and abstract manner. It serves as a bridge between human understanding and actual programming languages. In this blog post, we will explore what pseudocode is, its purpose, and provide examples of its usage in real-life scenarios.
+**Pseudocode** is a valuable tool for expressing algorithms in a high-level and abstract manner. It serves as a bridge between human understanding and actual programming languages. In this blog post, we will explore what pseudocode is, and its purpose, and provide examples of its usage in real-life scenarios.
 
 ## What is Pseudocode?
 
-Pseudocode is not an actual programming language but a representation of code that resembles a programming language without adhering to its strict syntax rules. The term "pseudo" refers to something false or fake, indicating that pseudocode is a simulated version of code. It allows programmers to focus on the logic and functionality of an algorithm rather than the specific language syntax.
+Pseudocode is not an actual programming language but a representation of code that resembles a programming language without adhering to its strict syntax rules. The term _pseudo_ refers to something false or fake, indicating that pseudocode is a simulated version of code. It allows programmers to focus on the logic and functionality of an algorithm rather than the specific language syntax.
 
 ## The Purpose of Pseudocode
 
@@ -22,9 +22,9 @@ In academic settings, exam boards often use standardized pseudocode in their que
 
 To understand how pseudocode is used in practice, let's examine some real-life examples. One such example can be found in university textbooks, where complex algorithms are explained using pseudocode. These textbooks often present machine learning algorithms, such as decision trees, and provide pseudocode representations to illustrate their functionality.
 
-While the pseudocode in textbooks may appear different from what you encounter in exams, the core concepts remain the same. Pseudocode still utilizes familiar programming constructs like functions, parameters, conditionals (if-else statements), loops, and variables. The notation used in these examples simplifies the algorithm's implementation while excluding language-specific details.
+While the pseudocode in textbooks may appear different from what you encounter in exams, the core concepts remain the same. Pseudocode still utilizes familiar programming constructs like _functions_, _parameters_, _conditionals_ (_if-else statements_), _loops_, and _variables_. The notation used in these examples simplifies the algorithm's implementation while excluding language-specific details.
 
-Using pseudocode instead of actual programming languages has several advantages. Pseudocode condenses complex algorithms into concise representations, making them easier to understand. It also allows for algorithm portability, enabling programmers to implement the same logic across different programming languages. Additionally, pseudocode serves as a future-proof solution since it remains relevant even as programming languages evolve over time.
+Using pseudocode instead of actual programming languages has several advantages. Pseudocode condenses complex algorithms into concise representations, making them easier to understand. It also allows for algorithm portability, enabling programmers to implement the same logic across different programming languages. Additionally, pseudocode serves as a future-proof solution since it remains relevant even as programming languages evolve.
 
 ## Understanding Pseudocode
 
@@ -34,10 +34,10 @@ Pseudocode is a simulated version of code that resembles a programming language 
 
 When writing pseudocode, remember that there is no one correct syntax. It's more important to focus on the algorithm's logic and functionality rather than adhering to specific formatting rules. Pseudocode should be clear and easily understandable by competent programmers familiar with the problem domain.
 
-To illustrate the process of writing pseudocode, let's consider an example
+To illustrate the process of writing pseudocode, let's consider an example.
 
 ```txt
-Example pseudocode for finding the average of two numbers
+Example pseudocode for finding the average of two numbers.
 
 Main program
 input1 = get user input for number1
@@ -66,13 +66,13 @@ Here is another example:
 The Problem:
 Write a program that prints the number from 1 to 20:
 
-For multiples pf three print "FIZZ" instead of the number
-For the multitple of five print "Buzz" instead of the number
-For numbers which are multiples of both three and five print "FizzBuzz"
-For number not divisible by 3, or 5, or both print the number as 15
+For multiples of three print `"FIZZ"` instead of the number
+For the multiple of five print `"Buzz"` instead of the number
+For numbers which are multiples of both three and five print `"FizzBuzz"`
+For numbers not divisible by 3, 5, or both print the number as 15.
 ```
 
-The pseudocode would look like:
+The pseudocode would look like this:
 
 ```txt
 FOR LOOP:
@@ -105,11 +105,11 @@ FOR i = 1 to 20 DO
 END FOR
 ```
 
-The code snippets shows that writting pseudocode is based on your pattern.
+The code snippets show that writing pseudocode is based on your pattern.
 
-Note that using this keywords like `FOR`, `IF`, `ELSE IF` `ELSE`, `END`, etc are not mandatory because Pseudocode is flexible and allows for the use of alternative keywords or descriptive phrases as long as they effectively convey the intended logic and structure of the algorithm.
+Note that using this keyword like `FOR`, `IF`, `ELSE IF` `ELSE`, `END`, etc. are not mandatory because Pseudocode is flexible and allows for the use of alternative keywords or descriptive phrases as long as they effectively convey the intended logic and structure of the algorithm.
 
-For example, instead of using "FOR," you could use "REPEAT" or "LOOP." Similarly, instead of "END," you could use "STOP" or "FINISH." The key is to maintain consistency within your pseudocode and ensure that the chosen keywords or phrases accurately represent the intended flow of the algorithm. The example below is the same as the pseudocode above but in a different approach.
+For example, instead of using `FOR`, you could use `REPEAT` or `LOOP`. Similarly, instead of `END`, you could use `STOP` or `FINISH`. The key is to maintain consistency within your pseudocode and ensure that the chosen keywords or phrases accurately represent the intended flow of the algorithm. The example below is the same as the pseudocode above but with a different approach.
 
 ```txt
 Set i as 1
@@ -126,7 +126,7 @@ Repeat until i reaches 20:
 End repeat
 ```
 
-The code in JavaScript would look like:
+The code in JavaScript would look like this:
 
 ```js
 for (let i = 1; i <= 20; i++) {
@@ -162,20 +162,20 @@ Maintain consistency in your pseudocode by using a uniform style and notation th
 
 To improve your pseudocode writing skills, engage in problem-solving exercises that require expressing solutions using pseudocode. Work through algorithmic questions and practice implementing the logic in pseudocode. This practice will enhance your ability to translate real-world problems into pseudocode representations.
 
-### Learn from Examples and Resources
+#### Learn from Examples and Resources
 
 Study examples of pseudocode from textbooks, online resources, and tutorial videos. Analyze how experts express complex algorithms in pseudocode and learn from their approach. Additionally, seek out resources specific to your academic curriculum or exam board for standardized pseudocode guidelines.
 
 #### Remember, Pseudocode Is Not Executable Code
 
-Always keep in mind that pseudocode is a simplified representation and not meant to be executed as actual code. It is a tool for communicating algorithmic ideas, not a programming language itself. Therefore, don't stress over small syntax details or worry about the code's executability.
+Always keep in mind that pseudocode is a simplified representation and is not meant to be executed as actual code. It is a tool for communicating algorithmic ideas, not a programming language itself. Therefore, don't stress over small syntax details or worry about the code's executability.
 
 ---
 
 ## References
 
-- [Hashnode](https://blog.techstackmedia.com/shell-navigation)
-- [Dev.to](https://dev.to/bello/shell-navigation-4j0f)
+- [Hashnode](https://blog.techstackmedia.com/writing-pseudocode-a-beginners-guide)
+- [Dev.to](https://dev.to/bello/writing-pseudocode-a-beginners-guide-1b73)
 
 ---
 
