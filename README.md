@@ -38,7 +38,7 @@ type ls
 The output is shown below
 
 ```sh
-ls is aliased to `ls --color=auto'
+ls is aliased to `ls -F --color=auto --show-control-chars'
 ```
 
 In the above case, we discover that the "ls" command is an alias with the additional option "--color=auto". This knowledge explains why the output of "ls" is displayed in color.
@@ -189,7 +189,7 @@ By utilizing the `help`, `--help`, and `man` commands, we can access comprehensi
 
 ### Note
 
-On your system, various software packages are installed, each accompanied by documentation files located in the `/usr/share/doc directory`. These files primarily exist in plain text format, which can be easily accessed and viewed using the `less` command. However, there are instances where certain files are in HTML format, enabling them to be conveniently viewed using a web browser. It is worth noting that some files in this directory may be compressed with the gzip compression program, denoted by the `.gz` extension. To handle such compressed text files, the gzip package provides a specialized version of `less` called `zless`, which allows the contents of gzip-compressed files to be displayed seamlessly.
+On your system, various software packages are installed, each accompanied by documentation files located in the `/usr/share/doc` directory. These files primarily exist in plain text format, which can be easily accessed and viewed using the `less` command. However, there are instances where certain files are in HTML format, enabling them to be conveniently viewed using a web browser. It is worth noting that some files in this directory may be compressed with the gzip compression program, denoted by the `.gz` extension. To handle such compressed text files, the gzip package provides a specialized version of `less` called `zless`, which allows the contents of gzip-compressed files to be displayed seamlessly.
 
 ---
 
