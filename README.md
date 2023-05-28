@@ -1,166 +1,174 @@
-# Shell Navigation
+# Writing Pseudocode: A Beginner's Guide
 
-![Shell Navigation Cover](https://res.cloudinary.com/bizstak/image/upload/v1685174291/GitHub_Cover_Image_jvvxr9.png)
+![Writing Pseudocode Article Cover](https://res.cloudinary.com/bizstak/image/upload/v1685295673/GitHub_Cover_qwkpme.png)
 
-## Installation
+**Pseudocode** is a valuable tool for expressing algorithms in a high-level and abstract manner. It serves as a bridge between human understanding and actual programming languages. In this blog post, we will explore what pseudocode is, its purpose, and provide examples of its usage in real-life scenarios.
 
-Search **terminal** on your Operating system, but if you are using Windows, don't use the default Windows terminal. Check out the [video on how to install a terminal emulator](https://www.youtube.com/watch?v=N-Eu7g8Zv7o&t=2s). For Mac users, you don't need installation, use the default terminal.
+## What is Pseudocode?
 
-Common terminals to use are:
+Pseudocode is not an actual programming language but a representation of code that resembles a programming language without adhering to its strict syntax rules. The term "pseudo" refers to something false or fake, indicating that pseudocode is a simulated version of code. It allows programmers to focus on the logic and functionality of an algorithm rather than the specific language syntax.
 
-- [Cmder](https://cmder.app)
-- [Git Bash](https://git-scm.com/downloads)
-- [Hyper](https://hyper.is/#installation)
-- [iTerm2](https://iterm2.com/downloads.html)
+## The Purpose of Pseudocode
 
-## Common Commands
+The primary purpose of pseudocode is to provide a high-level and abstract representation of an algorithm, independent of any particular programming language. By using pseudocode, programmers can simplify complex problems, avoid language-specific limitations, and facilitate understanding and implementation across different languages.
 
-- `pwd` (print working directory)
-- `cd` (change directory)
-- `ls` (list file and directory)
-- `touch`
+Pseudocode acts as a communication tool between programmers, enabling them to discuss and share algorithms without being constrained by specific programming languages. It allows for flexibility, as the same algorithm can be implemented in different languages based on the pseudocode's logic and structure.
 
-## File system
+## Exam Board Pseudocode
 
-- In a tree-like pattern of the directory (folder)
-- A directory may contain files and subdirectories
-- The first directory in the file system is called the **root directory**
+In academic settings, exam boards often use standardized pseudocode in their questions and marking schemes. While these standardized versions of pseudocode may differ slightly between exam boards, they serve the purpose of ensuring consistency and ease of evaluation. However, it's important to note that these specific syntax rules are often only applicable within the context of exams and may not reflect real-world pseudocode usage.
 
-One important difference between Windows and Unix-like OS like Linux is that Linux does not employ the concept of drive letters. While Windows drive letters split the file system into a series of different trees (one for each device), Linux always has a single tree.
+## Real-Life Examples
 
-### `pwd`
+To understand how pseudocode is used in practice, let's examine some real-life examples. One such example can be found in university textbooks, where complex algorithms are explained using pseudocode. These textbooks often present machine learning algorithms, such as decision trees, and provide pseudocode representations to illustrate their functionality.
 
-The acronym **PWD** stands for _Present Working Directory_. It is commonly used in the context of command-line interfaces and operating systems to refer to the current directory in which a user is working. The `pwd` command is often used to retrieve and display the full path of the current directory. That is the directory we are standing in is called the working directory. To see the name of the working directory, we use the `pwd` command.
+While the pseudocode in textbooks may appear different from what you encounter in exams, the core concepts remain the same. Pseudocode still utilizes familiar programming constructs like functions, parameters, conditionals (if-else statements), loops, and variables. The notation used in these examples simplifies the algorithm's implementation while excluding language-specific details.
 
-### `cd`
+Using pseudocode instead of actual programming languages has several advantages. Pseudocode condenses complex algorithms into concise representations, making them easier to understand. It also allows for algorithm portability, enabling programmers to implement the same logic across different programming languages. Additionally, pseudocode serves as a future-proof solution since it remains relevant even as programming languages evolve over time.
 
-1. Absolute pathname
-2. Relative pathname
+## Understanding Pseudocode
 
-#### Absolute pathname
+Pseudocode is a simulated version of code that resembles a programming language but does not adhere to its strict syntax rules. It aims to focus on the logic and functionality of an algorithm, making it independent of any specific programming language. Pseudocode facilitates communication among programmers and enables the implementation of algorithms across different languages.
 
-Example
+## Writing Pseudocode
 
-```sh
-cd /user/bin
+When writing pseudocode, remember that there is no one correct syntax. It's more important to focus on the algorithm's logic and functionality rather than adhering to specific formatting rules. Pseudocode should be clear and easily understandable by competent programmers familiar with the problem domain.
+
+To illustrate the process of writing pseudocode, let's consider an example
+
+```txt
+Example pseudocode for finding the average of two numbers
+
+Main program
+input1 = get user input for number1
+input2 = get user input for number2
+result = calculateAverage(input1, input2)
+display result
 ```
 
-```sh
-cd /foldername
+If I was to implement the logic in code using JavaScript, it would look like the example below:
+
+```js
+function calculateAverage(number1, number2) {
+    sum = number1 + number2
+    average = sum / 2
+    return average
+}
+
+calculateAverage(2, 8)
 ```
 
-#### Relative pathname
+In this example, we define a function `calculateAverage` that takes two numbers as input, calculates their sum, computes the average, and returns it. The main program obtains user inputs, calls the `calculateAverage` function, and displays the result.
 
-The `.` notation refers to the working directory itself and `..` notation refers to the working directory's parent directory.
+Here is another example:
 
-```sh
-cd ..
+```txt
+The Problem:
+Write a program that prints the number from 1 to 20:
+
+For multiples pf three print "FIZZ" instead of the number
+For the multitple of five print "Buzz" instead of the number
+For numbers which are multiples of both three and five print "FizzBuzz"
+For number not divisible by 3, or 5, or both print the number as 15
 ```
 
-```sh
-cd ../foldername
+The pseudocode would look like:
+
+```txt
+FOR LOOP:
+SET counter to 1
+Break when counter reaches 20
+Increment counter by 1
+    IF number MOD 15 === 0
+        print 'FizzBuzz'
+    ELSE IF number MOD 3 === 0
+        print 'Fizz'
+    ELSE iF number MOD 5 === 0
+        print 'Buzz'
+    ELSE
+        print number
 ```
 
-If we type `cd` followed by nothing, `cd` will change the working directory to our home directory.
+Someone else could write the code as shown below and they will mean the same:
 
-A relative shortcut is to type `cd ~user_name`.
-
-File names that begin with a period character are hidden. This only means that `ls` will not list them unless we say `ls -la`.
-
-- Example is `.git`.
-
-File names in **Linux**, like Unix, are **case sensitive**. The file names _File1_ and _file 1_ refer to different files.
-
-Linux has no concept of a **file extension** like Windows system. You may name files any way you like. However, while Linux itself does not care about file extensions, many application programs do.
-
-Though **Linux supports long file names** which may contain embedded spaces and punctuation, limit the punctuation characters to period, dash and underscore. **Use underscores instead of spaces** to represent spaces between words in a file name.
-
-### `ls`
-
-#### `ls -l`
-
-List the files in the working directory in long format.
-
-```sh
-ls -l
+```txt
+FOR i = 1 to 20 DO
+    IF i is divisible by 3 and 5 THEN
+        PRINT "FizzBuzz"
+    ELSE IF i is divisible by 3 THEN
+        PRINT "Fizz"
+    ELSE IF i is divisible by 5 THEN
+        PRINT "Buzz"
+    ELSE
+        PRINT i
+    END IF
+END FOR
 ```
 
-#### `ls -l /etc /bin`
+The code snippets shows that writting pseudocode is based on your pattern.
 
-List the files in the `/bin` directory and the `/etc` directory in long format.
+Note that using this keywords like `FOR`, `IF`, `ELSE IF` `ELSE`, `END`, etc are not mandatory because Pseudocode is flexible and allows for the use of alternative keywords or descriptive phrases as long as they effectively convey the intended logic and structure of the algorithm.
 
-```sh
-ls -la ..
+For example, instead of using "FOR," you could use "REPEAT" or "LOOP." Similarly, instead of "END," you could use "STOP" or "FINISH." The key is to maintain consistency within your pseudocode and ensure that the chosen keywords or phrases accurately represent the intended flow of the algorithm. The example below is the same as the pseudocode above but in a different approach.
+
+```txt
+Set i as 1
+Repeat until i reaches 20:
+    If i is divisible by both 3 and 5:
+        Output "FizzBuzz"
+    Otherwise, if i is divisible by 3:
+        Output "Fizz"
+    Otherwise, if i is divisible by 5:
+        Output "Buzz"
+    Otherwise:
+        Output i
+    Increment i by 1
+End repeat
 ```
 
-```sh
-ls -la /foldername
+The code in JavaScript would look like:
+
+```js
+for (let i = 1; i <= 20; i++) {
+    if (i % 15 === 0) {
+        console.log('FizzBuzz')
+    } else if (i % 3 === 0) {
+        console.log('Fizz')
+    } else if (i % 5 === 0) {
+        console.log('Buzz')
+    } else {
+        console.log(i)
+    }
+}
 ```
 
-List all files (even the ones with names beginning with a period character, which are normally hidden) in the working directory's parent in a long format.
+As you can see, the pseudocode resembles a programming language but avoids specific syntax requirements.
 
-Most commands operate like this:
+### Tips for Writing Pseudocode
 
-```sh
-command -option arguments
-```
+#### Familiarize Yourself with Real Code
 
-#### A Closer Look at Long Format
+To effectively write and understand pseudocode, it is crucial to have a foundation in a real programming language. Learning a programming language such as Python or Java will provide you with the necessary knowledge and concepts to express algorithms in pseudocode.
 
-For example, try `ls -la`, you will get more information about the file.
+#### Simplify and Generalize
 
-![show ls -la command possible information](https://res.cloudinary.com/bizstak/image/upload/v1685049199/ls-la-command-info_kgiglf.png)
+When writing pseudocode, aim to simplify the code by excluding language-specific details and unnecessary complexities. Make it as general as possible while retaining clarity and readability. Remember, pseudocode is a high-level representation, so focus on expressing the algorithm's logic rather than the specific syntax.
 
-If you run the command `ls -l` you will get the output that looks like this:
+#### Be Consistent
 
-```sh
-total 4
--rw-r--r-- 1 TechstackMedia - Osagie 197610 3092 May 25 14:28 README.md
-```
+Maintain consistency in your pseudocode by using a uniform style and notation throughout. Choose a convention for variable assignment, function calls, and control structures (such as braces or indentation) and stick to it. Inconsistencies can lead to confusion and may result in lower marks in examinations.
 
-Let's break down the output:
+#### Practice Problem Solving
 
-1. `total 4`: This line represents the total number of 1KB blocks used by the files listed below it. In this case, the total size is 4KB.
+To improve your pseudocode writing skills, engage in problem-solving exercises that require expressing solutions using pseudocode. Work through algorithmic questions and practice implementing the logic in pseudocode. This practice will enhance your ability to translate real-world problems into pseudocode representations.
 
-2. `-rw-r--r-- 1 TechstackMedia - Osagie 197610 3092 May 25 14:28 README.md`: This line represents the details of a specific file called README.md. Let's analyze each part:
-   - `-rw-r--r--`: This section represents the file permissions. In this example, it indicates that the file is readable and writable by the owner (`rw-`), readable by the group (`r--`), and readable by others (`r--`).
-   - `1`: The number 1 represents the number of hard links to the file. In this case, there is only one hard link pointing to the file.
-   - `TechstackMedia`: This is the owner of the file. In this case, the file is owned by the user `TechstackMedia`.
-   - `-`: This hyphen represents the group associated with the file. In this case, the group is not explicitly specified.
-   - `Osagie`: This represents the group associated with the file. In this example, the group is `Osagie`.
-   - `197610`: This indicates the file size in bytes. In this case, the file `README.md` is 3092 bytes.
-   - `May 25 14:28`: This represents the file's last modification date and time.
-   - `README.md`: This is the name of the file.
+### Learn from Examples and Resources
 
-### `touch`
+Study examples of pseudocode from textbooks, online resources, and tutorial videos. Analyze how experts express complex algorithms in pseudocode and learn from their approach. Additionally, seek out resources specific to your academic curriculum or exam board for standardized pseudocode guidelines.
 
-The `touch` command is a versatile and powerful tool that allows you to create and modify files with ease in various operating systems, including Linux, macOS, and Unix. Its simplicity and efficiency make it a fundamental command for managing files and timestamps.
+#### Remember, Pseudocode Is Not Executable Code
 
-One of the primary functions of the touch command is to create a new file. Using the command is as simple as typing touch followed by the desired filename. For example, to create a file called _example.txt_, you would execute the following command
-
-```sh
-touch example.txt
-```
-
-You can also specify the timestamp. In the example below a file named _custom.txt_ with a specific timestamp of _December 31, 2022, at 12:30 PM_, you would execute the following command:
-
-```sh
-touch -t 202212311230 custom.txt
-```
-
-### `less`
-
-less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human-readable.
-
-Click `q` to quit or keep clicking enter till you are done reading the file.
-
-```sh
-less text_file
-```
-
-```sh
-less README.md
-```
+Always keep in mind that pseudocode is a simplified representation and not meant to be executed as actual code. It is a tool for communicating algorithmic ideas, not a programming language itself. Therefore, don't stress over small syntax details or worry about the code's executability.
 
 ---
 
