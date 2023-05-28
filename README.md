@@ -1,158 +1,205 @@
-# Exploring File Contents with Common Commands in Linux
+# Mastering Linux Command Line
 
-![Exploring File Contents with Common Commands in Linux Cover](https://res.cloudinary.com/bizstak/image/upload/v1685265836/GitHub_Cover_vn0xjy.png)
+![Mastering Linux Command Line Cover Image](https://res.cloudinary.com/bizstak/image/upload/v1685209785/GitHub_Cover_audops.png)
 
-## Commands to Work with File Contents
+The Linux command line is a powerful tool for executing tasks and managing your system efficiently. However, to navigate the command line with confidence, it's essential to identify the type of command you're working with. Linux offers several methods to determine the nature of a command, such as the `type`, `which`, `help`, and `man` commands.
 
-In Linux, there are several commands you can use to examine the contents of text files. Let's take a closer look at these commands, their functionalities, and how they can be used effectively.
+In this comprehensive guide, we'll explore these command identification techniques and delve into the documentation available for each command type. By understanding how to identify commands accurately and access their documentation, you'll gain a deeper understanding of the command line ecosystem and unleash the full potential of Linux command line tools.
 
-You can use the following commands to look at the contents of text files:
+Let's dive in and discover how these methods can enhance your command line proficiency.
 
-- `head`
-- `tail`
-- `cat`
-- `less`
-- `echo`
-- `wc`
-- `grep`
+- `type`
+- `which`
+- `help`
+- `man`
 
-### `head`
+## Command Identification
 
-The `head` command displays the first part of a file. By default, it shows the first 10 lines, but you can specify a different number using the `-n` flag.
+### The `type` Command
 
-```sh
-head <filename>
-```
+The `type` command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
 ```sh
-head README.md
+type [command]
 ```
 
-If you want to specify a different number `-n` of lines to show, run the code in the format
+The "type" command serves as a shell built-in and reveals the nature of a given command to be executed by the shell. Its usage is as follows:
 
 ```sh
-head -n <number of lines> <filename>
+type [command]
 ```
+
+By replacing `[command]` with the name of the command in question, we can unveil its classification. Let's explore a few examples:
 
 ```sh
-head -n 6 README.md
+type ls
 ```
 
-### `tail`
-
-The `tail` command prints the last 10 lines of a file. You can also customize the number of lines to be displayed by using the `-n` flag. Additionally, the `-f` flag allows you to continuously monitor changes made to a file, which is useful for log files.
+The output is shown below
 
 ```sh
-tail <filename>
+ls is aliased to `ls --color=auto'
 ```
+
+In the above case, we discover that the "ls" command is an alias with the additional option "--color=auto". This knowledge explains why the output of "ls" is displayed in color.
 
 ```sh
-tail README.md
+type cp
 ```
 
-If you want to specify a different number `-n` of lines to show, run the code in the format
+The output is shown below
 
 ```sh
-head -n <number of lines> <filename>
+cp is hashed (/usr/bin/cp)
 ```
+
+For the `cp` command, the output reveals that it is an executable program located at `usr/bin/cp`. Such insights allow us to better understand the behavior and functionality of various commands.
+
+The `which` Command:
+In scenarios where multiple versions of an executable program exist on a system, the `which` command proves invaluable. Its purpose is to determine the precise location of a given executable. Usage is as follows:
 
 ```sh
-tail -n 5 README.md
+which [command]
 ```
 
-### `cat`
+By replacing `[command]` with the desired command name, we can ascertain its exact location. It's important to note that `which` exclusively works for executable programs and cannot identify built-ins or aliases acting as substitutes.
 
-The `cat` command is versatile and can be used for multiple purposes. Primarily, it prints the content of a file to the standard output. It can also be used to concatenate files or create new ones.
+By utilizing the `type` and `which` commands, we can effectively identify the type of command in question and gain insights into its execution within the Linux environment. This knowledge equips us with a deeper understanding of the command line ecosystem.
 
-Printing the content of a file:
+### The `help` Command
+
+The bash shell incorporates a built-in help facility that provides documentation for each shell buil-tin. To access it, simply type "help" followed by the name of the shell built-in. Optionally, the "-m" option can be added to modify the output format. Let's consider an example:
 
 ```sh
-cat <filename>
+help -m cd
 ```
+
+Upon executing the above command, the following information about the "cd" command will be displayed:
 
 ```sh
-cat README.md
+NAME
+    cd - Change the shell working directory.
+
+SYNOPSIS
+    cd [-L|[-P [-e]] [-@]] [dir]
+
+DESCRIPTION
+    Change the shell working directory.
+
+    Change the current directory to DIR.  The default DIR is the value of the
+    HOME shell variable.
+
+    The variable CDPATH defines the search path for the directory containing
+    DIR.  Alternative directory names in CDPATH are separated by a colon (:).
+    A null directory name is the same as the current directory.  If DIR begins
+    with a slash (/), then CDPATH is not used.
+
+    If the directory is not found, and the shell option `cdable_vars' is set,
+    the word is assumed to be  a variable name.  If that variable has a value,
+    its value is used for DIR.
+
+    Options:
+      -L        force symbolic links to be followed: resolve symbolic
+                links in DIR after processing instances of `..'
+      -P        use the physical directory structure without following
+                symbolic links: resolve symbolic links in DIR before
+                processing instances of `..'
+      -e        if the -P option is supplied, and the current working
+                directory cannot be determined successfully, exit with
+                a non-zero status
+      -@        on systems that support it, present a file with extended
+                attributes as a directory containing the file attributes
+
+    The default is to follow symbolic links, as if `-L' were specified.
+    `..' is processed by removing the immediately previous pathname component
+    back to a slash or the beginning of DIR.
+
+    Exit Status:
+    Returns 0 if the directory is changed, and if $PWD is set successfully when
+    -P is used; non-zero otherwise.
+
+SEE ALSO
+    bash(1)
+
+IMPLEMENTATION
+    GNU bash, version 5.1.16(1)-release (x86_64-pc-msys)
+    Copyright (C) 2020 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 ```
 
-Concatenating multiple files into a new file:
+Note: In command syntax descriptions, square brackets denote optional items, while a vertical bar indicates mutually exclusive choices. For instance, the notation for the "cd" command:
 
 ```sh
-cat doc.txt contribute.txt > combine.txt
+cd [-L|-P] [dir]
 ```
 
-Creating a new file:
+This indicates that the `cd` command can be optionally followed by either `-L` or `-P` and further optionally by the argument `dir`.
+
+## Command Documentation
+
+### The "--help" Option
+
+Many executable programs support a `--help` option, which provides a detailed description of the command's syntax and supported options. For instance:
 
 ```sh
-cat > newfile.txt
+mkdir --help
 ```
 
-### `less`
-
-The `less` command provides an interactive and user-friendly way to view file content. It displays file contents in a paginated manner, allowing you to scroll, search, and navigate easily.
+Executing the command above will display the following information about the `mkdir` command:
 
 ```sh
-less README.md
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
 ```
 
-Useful commands within less:
+Although not all programs support the `--help` option, it is worth attempting as it often provides similar usage information, even if it results in an error message.
 
-- b: Scroll up one page
-- G: Go to the end of the file
-- g: Go to the beginning of the file
-- q: Quit the command
+## The `man` Command
 
-### `echo`
-
-The `echo` command prints the argument passed to it to the output.
+Note that the command from man is by default only available on Unix OS. Most command-line executable programs offer comprehensive documentation known as a manual or man page. The "man" command enables us to view these pages conveniently. Usage of the "man" command is as follows:
 
 ```sh
-echo 'Hello world'
+man program
 ```
 
-### `wc`
-
-The `wc` command, short for word count, provides information about a given input, such as the number of lines, words, and bytes in the content.
-
-Options for `wc`:
-
-`-l`: Prints the newline count
-`-m`: Prints the character count
-`-c`: Prints the byte count
-`-w`: Prints the word count
-
-For example:
+Replace `program` with the name of the command to access its manual page. Man pages typically include a title, a synopsis of the command's syntax, a description of its purpose, and a list and explanation of each option. However, they are primarily designed as references rather than tutorials. Let's view the man page for the `ls` command:
 
 ```sh
-wc -l README.md
+man ls
 ```
 
-### `grep`
+On most Linux systems, the `man` command employs the `less` program to display the manual page, allowing the use of familiar `less` commands for navigation.
 
-The `grep` command is a powerful text manipulation tool that allows you to filter the content of a file based on a specific pattern. It displays only the lines that match the given pattern.
+By utilizing the `help`, `--help`, and `man` commands, we can access comprehensive documentation for each command type, enabling us to leverage the full potential of Linux command line tools. These resources facilitate efficient command usage, ensuring optimal productivity within the Linux environment.
 
-For instance, if you want to see all lines in a file that include the word "command," you can use `grep` in combination with `cat`:
+### Note
 
-```sh
-cat README.md | grep command
-```
-
-In this command, the output of `cat README.md` is piped (`|`) to `grep command` for further filtering.
-
-These commands provide a solid foundation for examining and manipulating file content in Linux. With their flexibility and varied functionalities, you can efficiently navigate and process text files according to your needs.
-
-Please note that the examples provided here are simplified, and there are many more options and use cases for each command. Further exploration and practice will enhance your understanding and proficiency in working with these commands.
-
-Let me know if you have any questions or need further assistance!
+On your system, various software packages are installed, each accompanied by documentation files located in the `/usr/share/doc directory`. These files primarily exist in plain text format, which can be easily accessed and viewed using the `less` command. However, there are instances where certain files are in HTML format, enabling them to be conveniently viewed using a web browser. It is worth noting that some files in this directory may be compressed with the gzip compression program, denoted by the `.gz` extension. To handle such compressed text files, the gzip package provides a specialized version of `less` called `zless`, which allows the contents of gzip-compressed files to be displayed seamlessly.
 
 ---
 
 ## References
 
-- [Hashnode](https://blog.techstackmedia.com/exploring-file-contents-with-common-commands-in-linux)
-- [Dev.to](https://dev.to/bello/exploring-file-contents-with-common-commands-in-linux-3jop)
+- [Hashnode](https://blog.techstackmedia.com/files-manipulation)
+- [Dev.to](https://blog.techstackmedia.com/mastering-linux-command-line)
 
 ---
 
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
