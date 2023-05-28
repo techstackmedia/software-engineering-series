@@ -15,7 +15,7 @@ Common terminals to use are:
 
 ## Common Commands
 
-- `pwd` (print working directory) 
+- `pwd` (print working directory)
 - `cd` (change directory)
 - `ls` (list file and directory)
 - `touch`
@@ -136,7 +136,7 @@ Let's break down the output:
 
 The `touch` command is a versatile and powerful tool that allows you to create and modify files with ease in various operating systems, including Linux, macOS, and Unix. Its simplicity and efficiency make it a fundamental command for managing files and timestamps.
 
-One of the primary functions of the touch command is to create a new file. Using the command is as simple as typing touch followed by the desired filename. For example, to create a file called _example.txt_, you would execute the following command: 
+One of the primary functions of the touch command is to create a new file. Using the command is as simple as typing touch followed by the desired filename. For example, to create a file called _example.txt_, you would execute the following command
 
 ```sh
 touch example.txt
