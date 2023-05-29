@@ -290,9 +290,7 @@ git log --graph
 The `git diff` command shows the differences between the working directory and the staging area (changes not yet staged) or between the staging area and the repository (changes staged but not yet committed). It helps you review changes before committing. For example:
 
 ```sh
-git
-
- diff              # Show unstaged changes
+git diff              # Show unstaged changes
 git diff --staged     # Show staged changes
 ```
 
