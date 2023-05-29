@@ -1,184 +1,322 @@
-# Writing Pseudocode: A Beginner's Guide
+# A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands
 
-![Writing Pseudocode Article Cover](https://res.cloudinary.com/bizstak/image/upload/v1685295673/GitHub_Cover_qwkpme.png)
+![A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands Cover](https://res.cloudinary.com/bizstak/image/upload/v1685360412/GitHub_Cover_weeg2n.png)
 
-**Pseudocode** is a valuable tool for expressing algorithms in a high-level and abstract manner. It serves as a bridge between human understanding and actual programming languages. In this blog post, we will explore what pseudocode is, and its purpose, and provide examples of its usage in real-life scenarios.
+## Introduction
 
-## What is Pseudocode?
+Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
 
-Pseudocode is not an actual programming language but a representation of code that resembles a programming language without adhering to its strict syntax rules. The term _pseudo_ refers to something false or fake, indicating that pseudocode is a simulated version of code. It allows programmers to focus on the logic and functionality of an algorithm rather than the specific language syntax.
+### Basic Concepts
 
-## The Purpose of Pseudocode
+Before we delve into the commands, let's quickly review some basic concepts of Git:
 
-The primary purpose of pseudocode is to provide a high-level and abstract representation of an algorithm, independent of any particular programming language. By using pseudocode, programmers can simplify complex problems, avoid language-specific limitations, and facilitate understanding and implementation across different languages.
+#### ls -la
 
-Pseudocode acts as a communication tool between programmers, enabling them to discuss and share algorithms without being constrained by specific programming languages. It allows for flexibility, as the same algorithm can be implemented in different languages based on the pseudocode's logic and structure.
+The `ls -la` command (or `ls` on Windows) lists all files and directories, including hidden ones, in the current directory. It helps you get a comprehensive view of the files present.
 
-## Exam Board Pseudocode
+#### git commit -m "commit msg" -m "desc. msg"
 
-In academic settings, exam boards often use standardized pseudocode in their questions and marking schemes. While these standardized versions of pseudocode may differ slightly between exam boards, they serve the purpose of ensuring consistency and ease of evaluation. However, it's important to note that these specific syntax rules are often only applicable within the context of exams and may not reflect real-world pseudocode usage.
+The `git commit` command records changes to the repository. By specifying a commit message (`-m` flag), you provide a concise description of the changes made. It's good practice to include both a short commit message and a more detailed description.
 
-## Real-Life Examples
+### Generating SSH Keys
 
-To understand how pseudocode is used in practice, let's examine some real-life examples. One such example can be found in university textbooks, where complex algorithms are explained using pseudocode. These textbooks often present machine learning algorithms, such as decision trees, and provide pseudocode representations to illustrate their functionality.
+You can generate SSH keys to securely connect with remote repositories, such as GitHub. Here's a step-by-step guide:
 
-While the pseudocode in textbooks may appear different from what you encounter in exams, the core concepts remain the same. Pseudocode still utilizes familiar programming constructs like _functions_, _parameters_, _conditionals_ (_if-else statements_), _loops_, and _variables_. The notation used in these examples simplifies the algorithm's implementation while excluding language-specific details.
+#### Generate the SSH key
 
-Using pseudocode instead of actual programming languages has several advantages. Pseudocode condenses complex algorithms into concise representations, making them easier to understand. It also allows for algorithm portability, enabling programmers to implement the same logic across different programming languages. Additionally, pseudocode serves as a future-proof solution since it remains relevant even as programming languages evolve.
+Use the `ssh-keygen` command to generate a new SSH key. For example:
 
-## Understanding Pseudocode
-
-Pseudocode is a simulated version of code that resembles a programming language but does not adhere to its strict syntax rules. It aims to focus on the logic and functionality of an algorithm, making it independent of any specific programming language. Pseudocode facilitates communication among programmers and enables the implementation of algorithms across different languages.
-
-## Writing Pseudocode
-
-When writing pseudocode, remember that there is no one correct syntax. It's more important to focus on the algorithm's logic and functionality rather than adhering to specific formatting rules. Pseudocode should be clear and easily understandable by competent programmers familiar with the problem domain.
-
-To illustrate the process of writing pseudocode, let's consider an example.
-
-```txt
-Example pseudocode for finding the average of two numbers.
-
-Main program
-input1 = get user input for number1
-input2 = get user input for number2
-result = calculateAverage(input1, input2)
-display result
+```sh
+ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
 ```
 
-If I was to implement the logic in code using JavaScript, it would look like the example below:
+#### Locate the key file
 
-```js
-function calculateAverage(number1, number2) {
-    sum = number1 + number2
-    average = sum / 2
-    return average
-}
+After generating the key, you can find it using the `ls` command combined with `grep`. For instance:
 
-calculateAverage(2, 8)
+```sh
+ls | grep testkey
 ```
 
-In this example, we define a function `calculateAverage` that takes two numbers as input, calculates their sum, computes the average, and returns it. The main program obtains user inputs, calls the `calculateAverage` function, and displays the result.
+Here, `testkey` is the file name containing the SSH key.
 
-Here is another example:
+#### Copy the public key
 
-```txt
-The Problem:
-Write a program that prints the number from 1 to 20:
+The public key (with a `.pub` extension) is the key you'll upload to your GitHub interface. Use the following command to copy it to your clipboard:
 
-For multiples of three print `"FIZZ"` instead of the number
-For the multiple of five print `"Buzz"` instead of the number
-For numbers which are multiples of both three and five print `"FizzBuzz"`
-For numbers not divisible by 3, 5, or both print the number as 15.
+```sh
+pbcopy < ~/testkey.pub
 ```
 
-The pseudocode would look like this:
+#### Add the SSH key on GitHub
 
-```txt
-FOR LOOP:
-SET counter to 1
-Break when counter reaches 20
-Increment counter by 1
-    IF number MOD 15 === 0
-        print 'FizzBuzz'
-    ELSE IF number MOD 3 === 0
-        print 'Fizz'
-    ELSE iF number MOD 5 === 0
-        print 'Buzz'
-    ELSE
-        print number
+Navigate to your GitHub account's settings, select "SSH and GPG keys," and add a new SSH key. Paste the copied key into the designated field.
+
+#### Configure the local Git command interface
+
+Modify the `~/ssh/config` file to inform the Git command interface about the generated key. Use a text editor like Vim to open the file and add the following lines at the end:
+
+```sh
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
 ```
 
-Someone else could write the code as shown below and they will mean the same:
+Save the changes and exit the editor.
 
-```txt
-FOR i = 1 to 20 DO
-    IF i is divisible by 3 and 5 THEN
-        PRINT "FizzBuzz"
-    ELSE IF i is divisible by 3 THEN
-        PRINT "Fizz"
-    ELSE IF i is divisible by 5 THEN
-        PRINT "Buzz"
-    ELSE
-        PRINT i
-    END IF
-END FOR
+#### Update the SSH agent
+
+To ensure that the local Git command interface recognizes the new key, run the following command:
+
+```sh
+ssh-add -K ~/.ssh/id_rsa
 ```
 
-The code snippets show that writing pseudocode is based on your pattern.
+### Pushing Changes to a Remote Repository
 
-Note that using this keyword like `FOR`, `IF`, `ELSE IF` `ELSE`, `END`, etc. are not mandatory because Pseudocode is flexible and allows for the use of alternative keywords or descriptive phrases as long as they effectively convey the intended logic and structure of the algorithm.
+To push your local repository to a remote repository (e.g., GitHub), follow these steps:
 
-For example, instead of using `FOR`, you could use `REPEAT` or `LOOP`. Similarly, instead of `END`, you could use `STOP` or `FINISH`. The key is to maintain consistency within your pseudocode and ensure that the chosen keywords or phrases accurately represent the intended flow of the algorithm. The example below is the same as the pseudocode above but with a different approach.
+#### Identify the remote repository
 
-```txt
-Set i as 1
-Repeat until i reaches 20:
-    If i is divisible by both 3 and 5:
-        Output "FizzBuzz"
-    Otherwise, if i is divisible by 3:
-        Output "Fizz"
-    Otherwise, if i is divisible by 5:
-        Output "Buzz"
-    Otherwise:
-        Output i
-    Increment i by 1
-End repeat
+Use the `git remote -v` command to view the remote repositories connected to your local repository.
+
+#### Set the upstream repository
+
+When pushing for the first time, set the upstream repository with the `-u` or `--set-upstream` flag:
+
+```sh
+git push -u origin master
 ```
 
-The code in JavaScript would look like this:
+This tells Git to push to the specified repository by default.
 
-```js
-for (let i = 1; i <= 20; i++) {
-    if (i % 15 === 0) {
-        console.log('FizzBuzz')
-    } else if (i % 3 === 0) {
-        console.log('Fizz')
-    } else if (i % 5 === 0) {
-        console.log('Buzz')
-    } else {
-        console.log(i)
-    }
-}
+#### Subsequent pushes
+
+For subsequent pushes, you can use the simpler command `git push`, as Git remembers the upstream repository.
+
+### Branches
+
+Branches allow for parallel development and isolating specific features or fixes. Let's explore some common branch-related commands:
+
+#### Creating a new branch
+
+To create a new branch, use the `git checkout -b` command followed by the branch name. For example:
+
+```sh
+git checkout -b feature-readme-instructions
 ```
 
-As you can see, the pseudocode resembles a programming language but avoids specific syntax requirements.
+#### Switching between branches
 
-### Tips for Writing Pseudocode
+To switch to a different branch, use the `git checkout` command followed by the branch name. For instance:
 
-#### Familiarize Yourself with Real Code
+```sh
+git checkout master
+```
 
-To effectively write and understand pseudocode, it is crucial to have a foundation in a real programming language. Learning a programming language such as Python or Java will provide you with the necessary knowledge and concepts to express algorithms in pseudocode.
+#### Viewing changes between branches
 
-#### Simplify and Generalize
+To see the code differences between the two branches, use the `git diff` command followed by the branch names:
 
-When writing pseudocode, aim to simplify the code by excluding language-specific details and unnecessary complexities. Make it as general as possible while retaining clarity and readability. Remember, pseudocode is a high-level representation, so focus on expressing the algorithm's logic rather than the specific syntax.
+```sh
+git diff branchname
+```
 
-#### Be Consistent
+The `git diff` command shows the differences between the current branch and the specified branch.
 
-Maintain consistency in your pseudocode by using a uniform style and notation throughout. Choose a convention for variable assignment, function calls, and control structures (such as braces or indentation) and stick to it. Inconsistencies can lead to confusion and may result in lower marks in examinations.
+#### Merging branches
 
-#### Practice Problem Solving
+To merge changes from one branch into another, use the `git merge` command followed by the branch name. For example:
 
-To improve your pseudocode writing skills, engage in problem-solving exercises that require expressing solutions using pseudocode. Work through algorithmic questions and practice implementing the logic in pseudocode. This practice will enhance your ability to translate real-world problems into pseudocode representations.
+```sh
+git merge branchname
+```
 
-#### Learn from Examples and Resources
+#### Deleting a branch
 
-Study examples of pseudocode from textbooks, online resources, and tutorial videos. Analyze how experts express complex algorithms in pseudocode and learn from their approach. Additionally, seek out resources specific to your academic curriculum or exam board for standardized pseudocode guidelines.
+To delete a branch, use the `git branch -d` command followed by the branch name. For instance:
 
-#### Remember, Pseudocode Is Not Executable Code
+```sh
+git branch -d branchname
+```
 
-Always keep in mind that pseudocode is a simplified representation and is not meant to be executed as actual code. It is a tool for communicating algorithmic ideas, not a programming language itself. Therefore, don't stress over small syntax details or worry about the code's executability.
+### Resolving Merge Conflicts
+
+Sometimes, when merging branches, conflicts may arise when Git cannot automatically merge the changes. Here's how to handle merge conflicts:
+
+#### Committing all modified files
+
+Use the `git commit -am "commit message"` command to commit all modified files, including those added to the repository.
+
+#### Unstaging and removing specific files
+
+To unstage and remove specific files, use the `git reset <filename>` command. If no filename is specified, `git reset` will show the files to be reset.
+
+#### Undoing a commit
+
+If you need to undo a commit, use the `git reset HEAD~1` command to move the pointer (`HEAD`) to the previous commit.
+
+#### Resetting to a specific commit
+
+To reset to a specific commit, use the `git reset <commit hash>` command, replacing `<commit hash>` with the hash of the desired commit.
+
+#### Removing all commits and untracked files
+
+In some cases, you may want to completely remove all commits and untracked files. Use `git reset --hard <commit hash>` to accomplish this.
+
+### Collaboration with Forks and Pull Requests
+
+When collaborating on open-source projects, forks and pull requests facilitate contribution. Here's an overview:
+
+#### Forking a repository
+
+To contribute to a repository, you can create a fork of the original repository. This creates a copy of the repository under your account.
+
+#### Making changes and creating a pull request
+
+After forking the repository, make your desired changes in the forked repository. Then, create a pull request to propose your changes to the original repository.
+
+### Additional Useful Commands
+
+### git clone
+
+When cloning a repository in Git, there are a few different ways to specify the source repository. Here are the common methods to clone a repository using the `git clone` command:
+
+#### Cloning via HTTPS
+
+```sh
+git clone https://github.com/user/repo.git
+```
+
+This method uses the HTTPS protocol to clone the repository. You need to replace `user` with the username and `repo` with the name of the repository you want to clone.
+
+#### Cloning via SSH
+
+```sh
+git clone git@github.com:user/repo.git
+```
+
+This method uses the SSH protocol to clone the repository. Again, replace `user` with the username and `repo` with the repository name.
+
+#### Cloning via Git Protocol
+
+```sh
+git clone git://github.com/user/repo.git
+```
+
+The Git protocol is a lightweight protocol specifically for Git. This method clones the repository using the Git protocol.
+
+#### Cloning via Subversion (SVN) Bridge
+
+```sh
+git svn clone svn://svn.example.com/repo
+```
+
+If the repository is a Subversion (SVN) repository, you can use the `git svn clone` command to clone it. Replace `svn://svn.example.com/repo` with the URL of the SVN repository.
+
+#### Cloning a Local Repository
+
+```sh
+git clone /path/to/repository
+```
+
+If the repository is already on your local machine, you can specify the local path to clone it.
+
+#### Cloning a Bare Repository
+
+```sh
+git clone --bare https://github.com/user/repo.git
+```
+
+The `--bare` option is used to clone a repository as a bare repository, which means it will not have a working directory. This is useful when you only need the repository's history and don't plan on making changes directly in the cloned repository.
+
+These are the main methods to clone a repository using the `git clone` command. Choose the appropriate method based on the type and location of the repository you want to clone.
+
+#### Cloning Private Repository
+
+When cloning a private repository on GitHub, you can use a personal access token (PAT) to authenticate and include it in the URL when using the `git clone` command. This allows you to securely clone the repository without having to enter your GitHub username and password.
+
+The syntax for cloning a repository using a personal access token is as follows:
+
+```sh
+git clone https://<token>@github.com/<username>/repo.git
+```
+
+Here's how to use it:
+
+1. Generate a Personal Access Token (PAT) on GitHub:
+   - Go to your GitHub account settings.
+   - Navigate to "Developer settings" and click on "Personal access tokens".
+   - Click on "Generate new token" and provide a meaningful description for the token.
+   - Select the desired scopes/permissions for the token. For cloning a private repository, make sure to include the `repo` scope.
+   - Click on "Generate token" and make a note of the generated token.
+
+2. Clone the repository using the PAT:
+   - In the `git clone` command, replace `<token>` with the personal access token you generated.
+   - Replace `<username>` with your GitHub username.
+   - Replace `repo.git` with the name of the repository you want to clone.
+
+For example:
+
+```sh
+git clone https://your-token@github.com/your-username/repo.git
+```
+
+By including your personal access token in the URL, Git will use it to authenticate and allow you to clone the private repository without any manual authentication steps.
+
+Remember to keep your personal access token secure and avoid sharing it with others, as it provides access to your GitHub account.
+
+#### git add
+
+The `git add` command is used to stage changes for the next commit. You can use it to specify individual files or directories to add. For example:
+
+```sh
+git add file1.txt
+git add directory/
+```
+
+#### git log
+
+The `git log` command displays a history of commits in reverse chronological order. It shows the commit hash, author, date, and commit message. You can use flags like `--oneline` for a more concise output or `--graph` for a graphical representation of branch history. For example:
+
+```sh
+git log --oneline
+git log --graph
+```
+
+#### git diff
+
+The `git diff` command shows the differences between the working directory and the staging area (changes not yet staged) or between the staging area and the repository (changes staged but not yet committed). It helps you review changes before committing. For example:
+
+```sh
+git
+
+ diff              # Show unstaged changes
+git diff --staged     # Show staged changes
+```
+
+#### git pull
+
+The `git pull` command is used to fetch and integrate changes from a remote repository into the current branch. It combines the `git fetch` and `git merge` commands. For example:
+
+```sh
+git pull origin master
+```
+
+This command fetches changes from the `origin` remote repository and merges them into the current branch.
+
+Note: The code snippets provided assume a Unix-based operating system. Windows users may need to adjust certain commands or use alternative commands specific to their environment. For windows users [try installing a good terminal emulator like Git Bash](https://git-scm.com/downloads).
 
 ---
 
 ## References
 
-- [Hashnode](https://blog.techstackmedia.com/writing-pseudocode-a-beginners-guide)
-- [Dev.to](https://dev.to/bello/writing-pseudocode-a-beginners-guide-1b73)
+- [Hashnode](https://blog.techstackmedia.com/files-manipulation)
+- [Dev.to](https://blog.techstackmedia.com/mastering-linux-command-line)
 
 ---
 
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
