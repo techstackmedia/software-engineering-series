@@ -312,8 +312,8 @@ Note: The code snippets provided assume a Unix-based operating system. Windows u
 
 ## References
 
-- [Hashnode](https://blog.techstackmedia.com/files-manipulation)
-- [Dev.to](https://blog.techstackmedia.com/mastering-linux-command-line)
+- [Hashnode](https://blog.techstackmedia.com/a-comprehensive-guide-to-git)
+- [Dev.to](https://dev.to/bello/a-comprehensive-guide-to-git-30a)
 
 ---
 
