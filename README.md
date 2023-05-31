@@ -58,7 +58,7 @@ Pseudocode:
 5. End
 ```
 
-[Checkout the article on Pseudocode](https://blog.techstackmedia.com/writing-pseudocode-a-beginners-guide) to learn more.
+[Check out the article on Pseudocode](https://blog.techstackmedia.com/writing-pseudocode-a-beginners-guide) to learn more.
 
 Flowchart:
 
