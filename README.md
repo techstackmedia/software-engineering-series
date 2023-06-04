@@ -71,4 +71,17 @@ To open Emacs in the terminal, use the `emacs -Q -nw` command. This starts Emacs
 
 Emacs provides extensive commands and shortcuts to enhance your editing experience. By mastering these commands, you can navigate through documents, edit text efficiently, search and replace, manage buffers and frames, and take advantage of advanced features such as zooming and window splitting. With time and practice, Emacs can become a powerful tool in your arsenal, enabling you to become a more productive and efficient software engineer.
 
+---
+
+## References
+
+- [Hashnode](https://blog.techstackmedia.com/mastering-basic-emacs-commands)
+- [Dev.to](https://dev.to/bello/mastering-basic-emacs-commands-5g6p)
+
+---
+
+Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+
+![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
+
 _Happy Emacs editing!_
