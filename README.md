@@ -81,7 +81,9 @@ To open Emacs in the terminal, use the `emacs -Q -nw` command. This starts Emacs
 - `Alt + a` moves the cursor to the beginning of the sentence.
 - `Alt + e` moves the cursor to the end of the sentence.
 - `Alt + Shift + }` moves the cursor to the previous paragraph.
+- `Alt + Shift + {` moves the cursor to the next paragraph.
 - `Alt + Shift + <` moves the cursor to the beginning of the document.
+- `Alt + Shift + >` moves the cursor to the end of the document.
 - `Alt + g g` prompts for a line number and jumps to that line.
 
 ### Copying, Cutting, and Pasting
