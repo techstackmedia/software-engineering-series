@@ -2,9 +2,67 @@
 
 ![Mastering Emacs: Boosting Productivity with Powerful Commands and Shortcuts Cover](https://res.cloudinary.com/bizstak/image/upload/v1685914996/GitHub_Cover_vnkgxo.png)
 
+[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/08-mastering-the-basic-of-emacs-commands)
+
 ## Introduction
 
 Emacs is a versatile and highly customizable text editor that has been a favorite among programmers and writers for decades. With its extensive collection of commands and shortcuts, Emacs provides an efficient and powerful editing experience. This blog post will explore some essential Emacs commands and shortcuts that can significantly enhance your productivity. From basic navigation to advanced features, we will cover a range of commands to help you master Emacs and streamline your workflow.
+
+## Installation
+
+For detailed instructions on installing Emacs, please refer to the [official Emacs website](https://www.gnu.org/software/emacs/download.html). However, if you're a Windows user, I'll provide you with a few commands to help you install Emacs.
+
+### Step 1: Download Chocolatey
+
+To install Chocolatey, follow these steps:
+
+1. Go to the Chocolatey [installation page](https://chocolatey.org/install).
+2. Search for PowerShell and run it as an administrator.
+3. If this is your first time installing Chocolatey on your operating system, execute the following command in your terminal, based on the instructions provided on the installation page:
+
+```powershell
+Get-ExecutionPolicy
+```
+
+- If the output is "Restricted," enter one of the commands below:
+
+```powershell
+Set-ExecutionPolicy AllSigned
+```
+
+or
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
+```
+
+- Regardless of whether "Restricted" was the previous output or not, run the following command (copy and paste it into your terminal):
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+- If there are no errors, check if Chocolatey was successfully installed by running the following command:
+
+```powershell
+choco
+```
+
+If the output displays the version of Chocolatey you are using, it means the installation was successful.
+
+- Now, search for the package you need (in this case, Emacs) by visiting the [package search page](https://community.chocolatey.org/packages). Once you find the Emacs package, execute the following command:
+
+```powershell
+choco install emacs
+```
+
+- Open any terminal of your choice and type `emacs` to start using Emacs:
+
+```sh
+emacs
+```
+
+By following these steps, you will be able to install Emacs on your Windows system and begin using it for your text editing needs.
 
 ## Getting Started with Emacs
 
@@ -71,6 +129,8 @@ To open Emacs in the terminal, use the `emacs -Q -nw` command. This starts Emacs
 
 Emacs provides extensive commands and shortcuts to enhance your editing experience. By mastering these commands, you can navigate through documents, edit text efficiently, search and replace, manage buffers and frames, and take advantage of advanced features such as zooming and window splitting. With time and practice, Emacs can become a powerful tool in your arsenal, enabling you to become a more productive and efficient software engineer.
 
+_Happy Emacs editing!_
+
 ---
 
 ## References
@@ -83,5 +143,3 @@ Emacs provides extensive commands and shortcuts to enhance your editing experien
 Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
-
-_Happy Emacs editing!_
