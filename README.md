@@ -88,7 +88,6 @@ emacs myProject
 
 By following these steps, you will be able to install Emacs on your Windows system and begin using it for your text editing needs.
 
-
 ## Getting Started with Emacs
 
 To open Emacs in the terminal, use the `emacs -Q -nw` command. This starts Emacs in the terminal without loading any configuration files, ensuring a clean environment. Once you have Emacs running, you can access the drop-down menu by pressing `F10`.
