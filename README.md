@@ -14,8 +14,8 @@ For detailed instructions on installing Emacs, please refer to the [official Ema
 
 To install Chocolatey and use it to install Emacs, follow these steps:
 
-1. Go to the Chocolatey [installation page](https://chocolatey.org/install).
-2. Search for PowerShell and run it as an administrator.
+1. Search for PowerShell and run it as an administrator on Windows.
+2. Go to the Chocolatey [installation page](https://chocolatey.org/install).
 3. If this is your first time installing Chocolatey on your operating system, execute the following command in your terminal, based on the instructions provided on the installation page:
 
 ```powershell
