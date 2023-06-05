@@ -1,8 +1,8 @@
-# Mastering Emacs: Boosting Productivity with Powerful Commands and Shortcuts
+# Mastering Vim: Enhancing Efficiency with Essential Commands and Shortcuts
 
-![Mastering Emacs: Boosting Productivity with Powerful Commands and Shortcuts Cover](https://res.cloudinary.com/bizstak/image/upload/v1685914996/GitHub_Cover_vnkgxo.png)
+![Mastering Vim: Enhancing Efficiency with Essential Commands and Shortcuts Cover](https://res.cloudinary.com/bizstak/image/upload/v1685914996/GitHub_Cover_vnkgxo.png)
 
-[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/08-mastering-the-basic-of-emacs-commands)
+[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/08-mastering-vim-commands)
 
 ## Introduction
 
@@ -12,7 +12,7 @@ Emacs is a versatile and highly customizable text editor that has been a favorit
 
 For detailed instructions on installing Emacs, please refer to the [official Emacs website](https://www.gnu.org/software/emacs/download.html). However, if you're a Windows user, I'll provide you with a few commands to help you install Emacs.
 
-### Step 1: Download Chocolatey
+### Steps
 
 To install Chocolatey, follow these steps:
 
@@ -24,7 +24,7 @@ To install Chocolatey, follow these steps:
 Get-ExecutionPolicy
 ```
 
-- If the output is "Restricted," enter one of the commands below:
+- If the output is "Restricted", enter one of the commands below:
 
 ```powershell
 Set-ExecutionPolicy AllSigned
@@ -58,11 +58,36 @@ choco install emacs
 
 - Open any terminal of your choice and type `emacs` to start using Emacs:
 
-```sh
+```powershell
 emacs
 ```
 
+Opening files and directories in Emacs is a straightforward process. To open a specific file, you can use the following command:
+
+```sh
+emacs <filename>
+```
+
+For example, if you want to open the file named "README.md," you would use the command:
+
+```sh
+emacs README.md
+```
+
+On the other hand, if you wish to open a directory, use the following command:
+
+```sh
+emacs <directory>
+```
+
+For instance, let's say you have a directory called "myProject," and you want to open it in Emacs. You would execute the command:
+
+```sh
+emacs myProject
+```
+
 By following these steps, you will be able to install Emacs on your Windows system and begin using it for your text editing needs.
+
 
 ## Getting Started with Emacs
 
