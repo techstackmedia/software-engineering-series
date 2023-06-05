@@ -78,7 +78,7 @@ cp -i README.md contribute.md
 When you run the above code in your terminal, you will be prompted if you want to overwrite the file (if `<file_name2>`already exists). You can enter `y` (or `yes`) to override the content of `<file_name2>` with the content of `<file_name1>`. Enter `n` (or `no`) or just click the enter button if you do not want to overwrite it.
 
 ```sh
-cp: overwrite 'support.md'? 
+cp: overwrite 'contribute.md'? 
 ```
 
 When you need to copy the contents of an existing directory `<dir1>` to a new directory `<dir2>`, including all subdirectories and files, you can utilize the `cp` command with the `-R` flag. This flag enables recursive copying, ensuring that the entire directory structure is preserved.
