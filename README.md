@@ -135,7 +135,7 @@ Marks allow you to quickly navigate to specific locations within a file.
 
 - `m<letter>` sets a mark at the current cursor position (e.g., `ma` sets a mark named `a`).
 - `'` followed by the mark letter jumps to the line where the mark is set (e.g., `'a` jumps to the line of mark `a`).
-- ```` followed by the mark letter jumps to the exact cursor position where the mark is set (e.g., ````a` jumps to the cursor position of mark `a`).
+- **followed by the mark letter jumps to the exact cursor position where the mark is set** (e.g.,`a`jumps to the cursor position of mark `a`).
 
 ### Plugins
 
