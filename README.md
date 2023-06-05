@@ -2,8 +2,6 @@
 
 ![Mastering Vim: Enhancing Efficiency with Essential Commands and Shortcuts Cover](https://res.cloudinary.com/bizstak/image/upload/v1685914996/GitHub_Cover_vnkgxo.png)
 
-[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/08-mastering-vim-commands)
-
 ## Introduction
 
 Emacs is a versatile and highly customizable text editor that has been a favorite among programmers and writers for decades. With its extensive collection of commands and shortcuts, Emacs provides an efficient and powerful editing experience. This blog post will explore some essential Emacs commands and shortcuts that can significantly enhance your productivity. From basic navigation to advanced features, we will cover a range of commands to help you master Emacs and streamline your workflow.
