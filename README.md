@@ -16,6 +16,84 @@ To install Vim on your system, follow the steps below:
 2. Run the installer and follow the on-screen instructions to complete the installation process.
 3. Once the installation is complete, you can open Vim by searching for "Vim" in the Start menu or by running it from the command prompt.
 
+I prefer using Chocolatey (**choco**) to install packages, so check out the installation steps below:
+
+### Steps
+
+To install Chocolatey and use it to install Vim, follow these steps:
+
+1. Search for PowerShell and run it as an administrator on Windows.
+2. Go to the Chocolatey [installation page](https://chocolatey.org/install).
+3. If this is your first time installing Chocolatey on your operating system, execute the following command in your terminal, based on the instructions provided on the installation page:
+
+```powershell
+Get-ExecutionPolicy
+```
+
+- If the output is "Restricted", enter one of the commands below:
+
+```powershell
+Set-ExecutionPolicy AllSigned
+```
+
+or
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
+```
+
+- Regardless of whether "Restricted" was the previous output or not, run the following command (copy and paste it into your terminal):
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+- If there are no errors, check if Chocolatey was successfully installed by running the following command:
+
+```powershell
+choco
+```
+
+If the output displays the version of Chocolatey you are using, it means the installation was successful.
+
+- Now, search for the package you need (in this case, Vim) by visiting the [package search page](https://community.chocolatey.org/packages). Once you find the Vim package, execute the following command:
+
+```powershell
+choco install vim
+```
+
+- Open any terminal of your choice and type `vim` to start using Vim:
+
+```powershell
+vim
+```
+
+Opening files and directories in Vim is a straightforward process. To open a specific file, you can use the following command:
+
+```sh
+vim <filename>
+```
+
+For example, if you want to open the file named "README.md," you would use the command:
+
+```sh
+vim README.md
+```
+
+On the other hand, if you wish to open a directory, use the following command:
+
+```sh
+vim <directory>
+```
+
+For instance, let's say you have a directory called "myProject," and you want to open it in Vim. You would execute the command:
+
+```sh
+vim myProject
+```
+
+By following these steps, you will be able to install Vim on your Windows system and begin using it for your text editing needs.
+
 ### macOS
 
 1. Open the Terminal application.
