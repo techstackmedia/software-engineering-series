@@ -88,7 +88,7 @@ By following these steps, you will be able to install Emacs on your Windows syst
 
 ## Getting Started with Emacs
 
-To open Emacs in the terminal, use the `emacs -Q -nw` command. This starts Emacs in the terminal without loading any configuration files, ensuring a clean environment. Once you have Emacs running, you can access the drop-down menu by pressing `F10`.
+To open Emacs in the terminal, use the `emacs -Q -nw` command, and then use `Ctrl + x Ctrl + f` to open a file by typing the file name at the bottom of the terminal. This command starts Emacs in the terminal without loading any configuration files, ensuring a clean environment. Once Emacs is running, you can access the drop-down menu by pressing `F10`.
 
 ## Navigating and Editing
 
@@ -118,6 +118,11 @@ To open Emacs in the terminal, use the `emacs -Q -nw` command. This starts Emacs
 - `Ctrl + x backspace` cuts text from the cursor position to the beginning of the line.
 - `Alt + Z .` cuts until the first occurrence of a specified character (e.g., `.`).
 - `Esc + 2 Esc + d` deletes the next two words.
+
+## Undoing changes and Quitting
+
+- To undo your last action, press `Ctrl + x u`.
+- To quit Emacs, press `Ctrl + x Ctrl + c`.
 
 ### Searching and Replacing
 
