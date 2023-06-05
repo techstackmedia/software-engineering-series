@@ -88,7 +88,7 @@ By following these steps, you will be able to install Emacs on your Windows syst
 
 ## Getting Started with Emacs
 
-To open Emacs in the terminal, use the `emacs -Q -nw` command, and then use `Ctrl + x Ctrl + f` to open a file by typing the file name at the bottom of the terminal. This command starts Emacs in the terminal without loading any configuration files, ensuring a clean environment. Once Emacs is running, you can access the drop-down menu by pressing `F10`.
+To open Emacs in the terminal, use the `emacs -Q -nw` command, and then use `Ctrl + x Ctrl + f` to open a file by typing the file name at the bottom of the terminal. The command `emacs -Q -nw` starts Emacs in the terminal without loading any configuration files, ensuring a clean environment. Once Emacs is running, you can access the drop-down menu by pressing `F10`.
 
 ## Navigating and Editing
 
