@@ -69,7 +69,7 @@ Write a program that prints the number from 1 to 20:
 For multiples of three print `"FIZZ"` instead of the number
 For the multiple of five print `"Buzz"` instead of the number
 For numbers which are multiples of both three and five print `"FizzBuzz"`
-For numbers not divisible by 3, 5, or both print the number as 15.
+For numbers not divisible by 3, 5, or both print the number as it is.
 ```
 
 The pseudocode would look like this:
