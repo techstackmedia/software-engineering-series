@@ -1,6 +1,6 @@
 # Simplifying Development with Vagrant and VirtualBox: A Comprehensive Guide
 
-[Simplifying Development with Vagrant and VirtualBox Cover](https://res.cloudinary.com/bizstak/image/upload/v1686411947/GitHub_Cover_wwfcmn.png)
+![Simplifying Development with Vagrant and VirtualBox Cover](https://res.cloudinary.com/bizstak/image/upload/v1686411947/GitHub_Cover_wwfcmn.png)
 
 ## Introduction
 
