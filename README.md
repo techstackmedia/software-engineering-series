@@ -21,7 +21,7 @@ Before we proceed with Vagrant and VirtualBox installation, let's first set up t
      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
      ```
 
-## Installing Vagrant and VirtualBox with Choco
+### Installing Vagrant and VirtualBox with Choco
 
 With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows using Choco.
 
@@ -41,7 +41,28 @@ With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows
      choco install virtualbox
      ```
 
-Installing Vagrant and VirtualBox with Brew:
+### Installing Vagrant and VirtualBox with Brew
+
+Before we proceed, Check if Homebrew is already installed.
+
+```sh
+brew -v
+```
+
+If you get don't get the version, run the command below:
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Now check again if it is successfully installed:
+
+```sh
+brew -v
+```
+
+Normally Homebrew will provide further installation commands on the terminal to execute, make sure you executed them.
+
 For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Follow the steps below:
 
 1. Installing Vagrant:
