@@ -61,7 +61,7 @@ Now check again if it is successfully installed:
 brew -v
 ```
 
-Normally Homebrew will provide further installation commands on the terminal to execute, make sure you executed them.
+Normally Homebrew will provide further installation commands on the terminal to execute, make sure you execute them.
 
 For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Follow the steps below:
 
