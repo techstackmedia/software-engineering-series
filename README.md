@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Developers often face challenges when setting up and managing development environments across different machines. However, tools like Vagrant and VirtualBox offer a seamless solution by providing a way to create and manage virtual environments effortlessly. In this blog post, we will walk you through the installation process of Vagrant and VirtualBox on Windows using two popular package managers: Choco and Brew. We'll also highlight commands that work specifically with Vagrant and VirtualBox, showcasing their unique benefits and demonstrating how they outperform commands on Git Bash for Windows users.
+Developers often face challenges when setting up and managing development environments across different machines. However, tools like Vagrant and VirtualBox offer a seamless solution by providing a way to create and manage virtual environments effortlessly. In this blog post, we will walk you through the installation process of Vagrant and VirtualBox on Windows and macOS using two popular package managers: Choco and Brew. We'll also highlight commands that work specifically with Vagrant and VirtualBox, showcasing their unique benefits and demonstrating how they outperform commands on Git Bash for Windows users.
 
 ## Installing Choco and Brew
 
@@ -19,17 +19,6 @@ Before we proceed with Vagrant and VirtualBox installation, let's first set up t
      ```sh
      Set-ExecutionPolicy Bypass -Scope Process -Force; `
      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-     ```
-
-2. Installing Brew:
-   Brew, a package manager for macOS, provides similar functionalities to Choco on Windows. Follow these steps to install Brew on Windows:
-
-   - Open PowerShell as an administrator.
-   - Run the following command to install Brew:
-
-     ```sh
-     Set-ExecutionPolicy Bypass -Scope Process -Force; `
-     iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Homebrew/install/master/install.ps1'))
      ```
 
 ## Installing Vagrant and VirtualBox with Choco
