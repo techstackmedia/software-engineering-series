@@ -170,7 +170,7 @@ In this blog post, we explored the installation and utilization of Vagrant and V
 - [Choco Documentation](https://docs.chocolatey.org/en-us/)
 - [Brew Documentation](https://docs.brew.sh/)
 - [HashiCorp Vagrant GitHub Repository](https://github.com/hashicorp/vagrant)
-- [https://app.vagrantup.com/boxes/search](https://forums.virtualbox.org//)
+- [Vagrant Cloud](https://app.vagrantup.com/boxes/search)
 
 Remember to explore these resources and refer to the official website of [Vagrant](https://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/) or head over to their documentation to ensure accurate and up-to-date information.
 
