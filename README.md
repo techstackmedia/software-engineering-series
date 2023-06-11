@@ -1,6 +1,6 @@
 # Step-by-Step Guide: Configuring Vagrant with AWS and Azure for Cloud-Based Providers
 
-![Vagrant and VirtualBox with AWS and Azura Cover](https://res.cloudinary.com/bizstak/image/upload/v1686511858/GitHub_Cover_p1ariu.png)
+![Vagrant and VirtualBox with AWS and Azura Cover](https://res.cloudinary.com/bizstak/image/upload/v1686517893/GitHub_Cover_ehr90h.png)
 
 ## Introduction
 
