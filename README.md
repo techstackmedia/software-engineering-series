@@ -88,8 +88,8 @@ Using Azure with Vagrant and VirtualBox:
       azure.subscription_id = "YOUR_SUBSCRIPTION_ID"
       azure.location = "YOUR_LOCATION"
       azure.vm_image_urn = "PUBLISHER:OFFER:SKU:VERSION"
-      end
-      end
+    end
+  end
   ```
 
 ## Launch the Azure instance
