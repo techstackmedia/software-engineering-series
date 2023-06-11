@@ -5,7 +5,6 @@
 ## Introduction
 
 To use cloud-based providers like AWS and Azure with Vagrant and VirtualBox, you need to configure Vagrant to work with the chosen cloud provider. Here are step-by-step instructions for using AWS and Azure with Vagrant and VirtualBox:
-
 Using AWS with Vagrant and VirtualBox:
 
 1. Install the necessary dependencies:
