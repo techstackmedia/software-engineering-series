@@ -15,7 +15,7 @@ Common terminals to use are:
 
 ## Common Commands
 
-- `pwd` (print working directory)
+- `pwd` (print working directory) 
 - `cd` (change directory)
 - `ls` (list file and directory)
 - `touch`
@@ -136,7 +136,7 @@ Let's break down the output:
 
 The `touch` command is a versatile and powerful tool that allows you to create and modify files with ease in various operating systems, including Linux, macOS, and Unix. Its simplicity and efficiency make it a fundamental command for managing files and timestamps.
 
-One of the primary functions of the touch command is to create a new file. Using the command is as simple as typing touch followed by the desired filename. For example, to create a file called _example.txt_, you would execute the following command
+One of the primary functions of the touch command is to create a new file. Using the command is as simple as typing touch followed by the desired filename. For example, to create a file called _example.txt_, you would execute the following command: 
 
 ```sh
 touch example.txt
@@ -145,8 +145,30 @@ touch example.txt
 You can also specify the timestamp. In the example below a file named _custom.txt_ with a specific timestamp of _December 31, 2022, at 12:30 PM_, you would execute the following command:
 
 ```sh
-touch -t 202212311230 custom.txt
+touch -t 202312311230 custom.txt
 ```
+In the `touch` command, the timestamp for the `-t` option follows a specific format: `[[CC]YY]MMDDhhmm[.ss]`.
+
+Here's a breakdown of each component:
+
+- `CC`: Represents the first two digits of the year (century).
+- `YY`: Represents the last two digits of the year.
+- `MM`: Represents the month (01-12).
+- `DD`: Represents the day of the month (01-31).
+- `hh`: Represents the hour in 24-hour format (00-23).
+- `mm`: Represents the minute (00-59).
+- `.ss`: (Optional) Represents the second (00-61).
+
+In your example, the timestamp `202312311230` corresponds to the following components:
+
+- `CC`: Not specified, assuming it is the current century.
+- `YY`: `22` (indicating the year 2023).
+- `MM`: `12` (indicating December).
+- `DD`: `31` (indicating the 31st day of the month).
+- `hh`: `12` (indicating 12 PM).
+- `mm`: `30` (indicating 30 minutes).
+
+This command will set the modification and access times of the `custom.txt` file to the specified timestamp, allowing you to manually define the file's timestamp.
 
 ### `less`
 
@@ -163,6 +185,14 @@ less README.md
 ```
 
 ---
+
+### References
+
+[GitHub Repository](https://github.com/techstackmedia/software-engineering-series/tree/01-shell-navigation)
+
+---
+
+
 
 ## References
 
