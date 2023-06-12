@@ -24,7 +24,7 @@ To practice and execute these common commands, you can [set up a virtual machine
 5. Initialize the Vagrant project by creating a `Vagrantfile`
 
    ```sh
-   vagrant init
+   vagrant init ubuntu/focal64
    ```
 
 6. Edit the `Vagrantfile` using a text editor of your choice, and configure the virtual machine settings. For example, you can specify the base box, CPU and memory allocation, network settings, etc.
@@ -45,9 +45,9 @@ To practice and execute these common commands, you can [set up a virtual machine
 
 10. You are now inside the virtual machine, and you can run the Linux commands mentioned below:
 
-**Note**:
+    **Note**:
 
-If you want more help or information about a command use the `man` or `--help` command:
+    If you want more help or information about a command use the `man` or `--help` command:
 
 ```sh
 man [command]
