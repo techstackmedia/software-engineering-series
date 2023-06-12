@@ -63,7 +63,15 @@ brew -v
 
 Normally Homebrew will provide further installation commands on the terminal to execute, make sure you execute them.
 
-For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Follow the steps below:
+For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. If you are in the Virtual Machine (VirtualBox) environment irrespective of your Operating System you can run the command below. Follow the steps below:
+
+**Note**:
+
+If `brew` is not installed run the command below:
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 1. Installing Vagrant:
    - Open Terminal.
