@@ -1,368 +1,322 @@
-# A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands
+# Linux Command Cheat Sheet: Essential Commands for Beginners
 
-![A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands Cover](https://res.cloudinary.com/bizstak/image/upload/v1685360412/GitHub_Cover_weeg2n.png)
+![Linux Command Cheat Sheet: Essential Commands for Beginners Cover](https://res.cloudinary.com/bizstak/image/upload/v1686564123/GitHub_Cover_a6uyuc.png)
 
-## Introduction
+## Vagrant and Virtual Installation
 
-Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
+To practice and execute these common commands, you can [set up a virtual machine using Vagrant and VirtualBox](https://www.vagrantup.com). Here's a step-by-step guide on how to proceed:
 
-## Installation
+1. Install Vagrant and VirtualBox on your machine. You can find the installation instructions for your operating system on the respective websites:
 
-For detailed instructions on installing Git, please refer to the [official Git website](https://git-scm.com/). However, if you're a Windows user, I'll provide you with a few commands to help you install Git.
+   - Vagrant: [vagrantup.com](https://www.vagrantup.com)
+   - VirtualBox: [virtualbox.org](https://www.virtualbox.org)
 
-### Steps
+2. Open a terminal or command prompt on your machine.
 
-To install Chocolatey and use it to install Git, follow these steps:
+3. Create a new directory where you want to set up the Vagrant project, e.g., `/home/user/vagrant-project`.
 
-1. Search for PowerShell and run it as an administrator on Windows.
-2. Go to the Chocolatey [installation page](https://chocolatey.org/install).
-3. If this is your first time installing Chocolatey on your operating system, execute the following command in your terminal, based on the instructions provided on the installation page:
+4. Change to the newly created directory:
 
-```powershell
-Get-ExecutionPolicy
-```
+   ```sh
+   cd /home/user/vagrant-project
+   ```
 
-- If the output is "Restricted", enter one of the commands below:
+5. Initialize the Vagrant project by creating a `Vagrantfile`
 
-```powershell
-Set-ExecutionPolicy AllSigned
-```
+   ```sh
+   vagrant init
+   ```
 
-or
+6. Edit the `Vagrantfile` using a text editor of your choice, and configure the virtual machine settings. For example, you can specify the base box, CPU and memory allocation, network settings, etc.
 
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process
-```
+7. Save the changes to the `Vagrantfile` and exit the text editor.
 
-- Regardless of whether "Restricted" was the previous output or not, run the following command (copy and paste it into your terminal):
+8. Start the virtual machine:
 
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-```
+   ```sh
+   vagrant up
+   ```
 
-- If there are no errors, check if Chocolatey was successfully installed by running the following command:
+9. Once the virtual machine is up and running, you can connect to it using SSH:
 
-```powershell
-choco
-```
+   ```sh
+   vagrant ssh
+   ```
 
-If the output displays the version of Chocolatey you are using, it means the installation was successful.
+10. You are now inside the virtual machine, and you can run the Linux commands mentioned below:
 
-- Now, search for the package you need (in this case, Git) by visiting the [package search page](https://community.chocolatey.org/packages). Once you find the Git package, execute the following command:
+**Note**:
 
-```powershell
-choco install git
-```
-
-### Basic Concepts
-
-Before we delve into the commands, let's quickly review some basic concepts of Git:
-
-#### ls -la
-
-The `ls -la` command (or `ls` on Windows) lists all files and directories, including hidden ones, in the current directory. It helps you get a comprehensive view of the files present.
-
-#### git commit -m "commit msg" -m "desc. msg"
-
-The `git commit` command records changes to the repository. By specifying a commit message (`-m` flag), you provide a concise description of the changes made. It's good practice to include both a short commit message and a more detailed description.
-
-### Generating SSH Keys
-
-You can generate SSH keys to securely connect with remote repositories, such as GitHub. Here's a step-by-step guide:
-
-#### Generate the SSH key
-
-Use the `ssh-keygen` command to generate a new SSH key. For example:
+If you want more help or information about a command use the `man` or `--help` command:
 
 ```sh
-ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
+man [command]
 ```
-
-#### Locate the key file
-
-After generating the key, you can find it using the `ls` command combined with `grep`. For instance:
 
 ```sh
-ls | grep testkey
+[command] --help
 ```
 
-Here, `testkey` is the file name containing the SSH key.
+**Navigation:**
 
-#### Copy the public key
+- Change directory:
 
-The public key (with a `.pub` extension) is the key you'll upload to your GitHub interface. Use the following command to copy it to your clipboard:
+  - `cd /home/user/Documents`
 
-```sh
-pbcopy < ~/testkey.pub
-```
+- List files and directories:
 
-#### Add the SSH key on GitHub
+  - `ls` or `ls -l`
 
-Navigate to your GitHub account's settings, select "SSH and GPG keys," and add a new SSH key. Paste the copied key into the designated field.
+- Print working directory:
 
-#### Configure the local Git command interface
+  - `pwd`
 
-Modify the `~/ssh/config` file to inform the Git command interface about the generated key. Use a text editor like Vim to open the file and add the following lines at the end:
+- Make directory:
 
-```sh
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
-```
+  - `mkdir mydir`
 
-Save the changes and exit the editor.
+- Remove files and directories:
 
-#### Update the SSH agent
+  - `rm myfile.txt` or `rm -r mydir`
 
-To ensure that the local Git command interface recognizes the new key, run the following command:
+- Copy files and directories:
 
-```sh
-ssh-add -K ~/.ssh/id_rsa
-```
+  - `cp file1.txt file2.txt` or `cp -r dir1 dir2`
 
-### Pushing Changes to a Remote Repository
+- Move or rename files and directories:
 
-To push your local repository to a remote repository (e.g., GitHub), follow these steps:
+  - `mv file1.txt file2.txt` or `mv myfile.txt newdir/myfile.txt`
 
-#### Identify the remote repository
+- Search for files and directories:
 
-Use the `git remote -v` command to view the remote repositories connected to your local repository.
+  - `find /home/user -name myfile.txt`
 
-#### Set the upstream repository
+- Search for patterns in files:
 
-When pushing for the first time, set the upstream repository with the `-u` or `--set-upstream` flag:
+  - `grep "keyword" myfile.txt`
 
-```sh
-git push -u origin master
-```
+- Concatenate and display file content:
 
-This tells Git to push to the specified repository by default.
+  - `cat myfile.txt`
 
-#### Subsequent pushes
+- View file content with pagination:
 
-For subsequent pushes, you can use the simpler command `git push`, as Git remembers the upstream repository.
+  - `less myfile.txt`
 
-### Branches
+- Output the beginning of a file:
 
-Branches allow for parallel development and isolating specific features or fixes. Let's explore some common branch-related commands:
+  - `head myfile.txt`
 
-#### Creating a new branch
+- Output the end of a file:
 
-To create a new branch, use the `git checkout -b` command followed by the branch name. For example:
+  - `tail myfile.txt`
 
-```sh
-git checkout -b feature-readme-instructions
-```
+- Create links between files:
 
-#### Switching between branches
+  - `ln -s myfile.txt mylink`
 
-To switch to a different branch, use the `git checkout` command followed by the branch name. For instance:
+- Change file permissions:
+  - `chmod 644 myfile.txt`
 
-```sh
-git checkout master
-```
+**File Manipulation:**
 
-#### Viewing changes between branches
+- Create an empty file:
 
-To see the code differences between the two branches, use the `git diff` command followed by the branch names:
+  - `touch myfile.txt`
 
-```sh
-git diff branchname
-```
+- Text editor (nano):
 
-The `git diff` command shows the differences between the current branch and the specified branch.
+  - `nano myfile.txt`
 
-#### Merging branches
+- Text editor (vi/vim):
 
-To merge changes from one branch into another, use the `git merge` command followed by the branch name. For example:
+  - `vim myfile.txt`
 
-```sh
-git merge branchname
-```
+- Determine file type:
 
-#### Deleting a branch
+  - `file myfile.txt`
 
-To delete a branch, use the `git branch -d` command followed by the branch name. For instance:
+- Word, line, character, and byte count:
 
-```sh
-git branch -d branchname
-```
+  - `wc myfile.txt`
 
-### Resolving Merge Conflicts
+- Archive files:
 
-Sometimes, when merging branches, conflicts may arise when Git cannot automatically merge the changes. Here's how to handle merge conflicts:
+  - `tar -cvf archive.tar file1.txt file2.txt`
 
-#### Committing all modified files
+- Compress files:
 
-Use the `git commit -am "commit message"` command to commit all modified files, including those added to the repository.
+  - `gzip myfile.txt`
 
-#### Unstaging and removing specific files
+- Decompress files:
 
-To unstage and remove specific files, use the `git reset <filename>` command. If no filename is specified, `git reset` will show the files to be reset.
+  - `gunzip myfile.txt.gz`
 
-#### Undoing a commit
+- Package and compress files:
 
-If you need to undo a commit, use the `git reset HEAD~1` command to move the pointer (`HEAD`) to the previous commit.
+  - `zip archive.zip file1.txt file2.txt`
 
-#### Resetting to a specific commit
+- Extract files from a zip archive:
+  - `unzip archive.zip`
 
-To reset to a specific commit, use the `git reset <commit hash>` command, replacing `<commit hash>` with the hash of the desired commit.
+**Process Management:**
 
-#### Removing all commits and untracked files
+- Display running processes:
 
-In some cases, you may want to completely remove all commits and untracked files. Use `git reset --hard <commit hash>` to accomplish this.
+  - `ps aux`
 
-### Collaboration with Forks and Pull Requests
+- Monitor system activity and processes:
 
-When collaborating on open-source projects, forks and pull requests facilitate contribution. Here's an overview:
+  - `top`
 
-#### Forking a repository
+- Terminate processes:
 
-To contribute to a repository, you can create a fork of the original repository. This creates a copy of the repository under your account.
+  - `kill PID`
 
-#### Making changes and creating a pull request
+- Run a process in the background:
 
-After forking the repository, make your desired changes in the forked repository. Then, create a pull request to propose your changes to the original repository.
+  - `command &`
 
-### Additional Useful Commands
+- Bring a background process to the foreground:
 
-### git clone
+  - `fg`
 
-When cloning a repository in Git, there are a few different ways to specify the source repository. Here are the common methods to clone a repository using the `git clone` command:
+- Display current jobs:
+  - `jobs`
 
-#### Cloning via HTTPS
+**System Information:**
 
-```sh
-git clone https://github.com/user/repo.git
-```
+- Print system information:
 
-This method uses the HTTPS protocol to clone the repository. You need to replace `user` with the username and `repo` with the name of the repository you want to clone.
+  - `uname -a`
 
-#### Cloning via SSH
+- Print the current user:
 
-```sh
-git clone git@github.com:user/repo.git
-```
+  - `whoami`
 
-This method uses the SSH protocol to clone the repository. Again, replace `user` with the username and `repo` with the repository name.
+- Print the hostname:
 
-#### Cloning via Git Protocol
+  - `hostname`
 
-```sh
-git clone git://github.com/user/repo.git
-```
+- Disk space usage:
 
-The Git protocol is a lightweight protocol specifically for Git. This method clones the repository using the Git protocol.
+  - `df -h`
 
-#### Cloning via Subversion (SVN) Bridge
+- Estimate file and directory space usage:
 
-```sh
-git svn clone svn://svn.example.com/repo
-```
+  - `du -sh /path/to/directory`
 
-If the repository is a Subversion (SVN) repository, you can use the `git svn clone` command to clone it. Replace `svn://svn.example.com/repo` with the URL of the SVN repository.
+- Display memory usage:
 
-#### Cloning a Local Repository
+  - `free -m`
 
-```sh
-git clone /path/to/repository
-```
+- System uptime:
 
-If the repository is already on your local machine, you can specify the local path to clone it.
+  - `uptime`
 
-#### Cloning a Bare Repository
+- Network configuration:
+  - `ifconfig` or `ip addr show`
 
-```sh
-git clone --bare https://github.com/user/repo.git
-```
+**Package Management:**
 
-The `--bare` option is used to clone a repository as a bare repository, which means it will not have a working directory. This is useful when you only need the repository's history and don't plan on making changes directly in the cloned repository.
+- Package handling utility (Debian-based systems):
 
-These are the main methods to clone a repository using the `git clone` command. Choose the appropriate method based on the type and location of the repository you want to clone.
+  - `sudo apt-get install package_name`
 
-#### Cloning Private Repository
+- Package manager (RHEL-based systems):
 
-When cloning a private repository on GitHub, you can use a personal access token (PAT) to authenticate and include it in the URL when using the `git clone` command. This allows you to securely clone the repository without having to enter your GitHub username and password.
+  - `sudo yum install package_name`
 
-The syntax for cloning a repository using a personal access token is as follows:
+- Package manager (Arch Linux):
+  - `sudo pacman -S package_name`
 
-```sh
-git clone https://<token>@github.com/<username>/repo.git
-```
+**Networking:**
 
-Here's how to use it:
+- Send ICMP echo requests to a network host:
 
-1. Generate a Personal Access Token (PAT) on GitHub:
-   - Go to your GitHub account settings.
-   - Navigate to "Developer settings" and click on "Personal access tokens".
-   - Click on "Generate new token" and provide a meaningful description for the token.
-   - Select the desired scopes/permissions for the token. For cloning a private repository, make sure to include the `repo` scope.
-   - Click on "Generate token" and make a note of the generated token.
+  - `ping www.example.com`
 
-2. Clone the repository using the PAT:
-   - In the `git clone` command, replace `<token>` with the personal access token you generated.
-   - Replace `<username>` with your GitHub username.
-   - Replace `repo.git` with the name of the repository you want to clone.
+- Download files from the web:
 
-For example:
+  - `wget https://example.com/file.txt`
 
-```sh
-git clone https://your-token@github.com/your-username/repo.git
-```
+- Transfer data using various protocols:
 
-By including your personal access token in the URL, Git will use it to authenticate and allow you to clone the private repository without any manual authentication steps.
+  - `curl https://example.com`
 
-Remember to keep your personal access token secure and avoid sharing it with others, as it provides access to your GitHub account.
+- Secure shell client:
 
-#### git add
+  - `ssh user@hostname`
 
-The `git add` command is used to stage changes for the next commit. You can use it to specify individual files or directories to add. For example:
+- Securely copy files between hosts:
 
-```sh
-git add file1.txt
-git add directory/
-```
+  - `scp myfile.txt user@hostname:/path/to/destination`
 
-#### git log
+- File Transfer Protocol (FTP) client:
 
-The `git log` command displays a history of commits in reverse chronological order. It shows the commit hash, author, date, and commit message. You can use flags like `--oneline` for a more concise output or `--graph` for a graphical representation of branch history. For example:
+  - `ftp hostname`
 
-```sh
-git log --oneline
-git log --graph
-```
+- Secure FTP client:
 
-#### git diff
+  - `sftp user@hostname`
 
-The `git diff` command shows the differences between the working directory and the staging area (changes not yet staged) or between the staging area and the repository (changes staged but not yet committed). It helps you review changes before committing. For example:
+- Network configuration:
 
-```sh
-git diff              # Show unstaged changes
-git diff --staged     # Show staged changes
-```
+  - `ifconfig` or `ip addr show`
 
-#### git pull
+- Network statistics:
+  - `netstat`
 
-The `git pull` command is used to fetch and integrate changes from a remote repository into the current branch. It combines the `git fetch` and `git merge` commands. For example:
+**User Management:**
 
-```sh
-git pull origin master
-```
+- Create a new user:
 
-This command fetches changes from the `origin` remote repository and merges them into the current branch.
+  - `sudo adduser newuser`
 
-Note: The code snippets provided assume a Unix-based operating system. Windows users may need to adjust certain commands or use alternative commands specific to their environment. For windows users [try installing a good terminal emulator like Git Bash](https://git-scm.com/downloads).
+- Delete a user:
+
+  - `sudo deluser username`
+
+- Change user password:
+
+  - `sudo passwd username`
+
+- Switch to another user:
+
+  - `su username`
+
+- Grant administrative privileges:
+  - `sudo usermod -aG sudo username`
+
+**System Maintenance:**
+
+- Update package lists and upgrade installed packages:
+
+  - `sudo apt-get update && sudo apt-get upgrade`
+
+- Restart the system:
+
+  - `sudo reboot`
+
+- Shutdown the system:
+
+  - `sudo shutdown now`
+
+- View system logs:
+
+  - `tail /var/log/syslog`
+
+- Check system disk usage:
+
+  - `df -h`
+
+- Check system memory usage:
+
+  - `free -m`
+
+- Monitor system resources and processes:
+  - `top`
+
+These are just a few examples of commonly used Linux commands. There are many more commands available with various options and functionalities. It's always a good idea to refer to the documentation or online resources for more detailed information about specific commands.
 
 ---
-
-## References
-
-- [Hashnode](https://blog.techstackmedia.com/a-comprehensive-guide-to-git)
-- [Dev.to](https://dev.to/bello/a-comprehensive-guide-to-git-30a)
-
----
-
-Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
-
-![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
