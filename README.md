@@ -4,7 +4,7 @@
 
 ## Vagrant and Virtual Installation
 
-To practice and execute these common commands, you can [set up a virtual machine using Vagrant and VirtualBox](https://www.vagrantup.com). Here's a step-by-step guide on how to proceed:
+To practice and execute these common commands, you can [set up a virtual machine using Vagrant and VirtualBox](https://github.com/techstackmedia/software-engineering-series/tree/11-getting-started-to-vagrant-and-virtualbox). Here's a step-by-step guide on how to proceed:
 
 1. Install Vagrant and VirtualBox on your machine. You can find the installation instructions for your operating system on the respective websites:
 
