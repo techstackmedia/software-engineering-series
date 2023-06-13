@@ -152,11 +152,15 @@ When selecting a box, consider factors such as the operating system version, sof
      ```
 
 3. Managing Vagrant Virtual Machines:
+
+Run outside of the virtual machine environement (e.g default OS terminal)
+
    - To stop a running virtual machine, use:
 
      ```sh
      vagrant halt
      ```
+     
 
    - To destroy a virtual machine, use:
 
