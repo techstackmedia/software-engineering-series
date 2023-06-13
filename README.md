@@ -55,23 +55,28 @@ If you get don't get the version, run the command below:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+Normally Homebrew will provide further installation commands on the terminal to execute, make sure you execute them. For example you might be requested to run the commands below. Run the following two commands in your terminal to add Homebrew to your PATH:
+
+```sh
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/vagrant/.profile
+   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+These commands will add the necessary configuration to your profile so that Homebrew can be accessed from your terminal.
+
+Now if you have sudo access, you can install Homebrew's dependencies by running the following command:
+
+```sh
+sudo apt-get install build-essential
+```
+
 Now check again if it is successfully installed:
 
 ```sh
 brew -v
 ```
 
-Normally Homebrew will provide further installation commands on the terminal to execute, make sure you execute them.
-
 For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. If you are in the Virtual Machine (VirtualBox) environment irrespective of your Operating System you can run the command below. Follow the steps below:
-
-**Note**:
-
-If `brew` is not installed run the command below:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
 
 1. Installing Vagrant:
    - Open Terminal.
