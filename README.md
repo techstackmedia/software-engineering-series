@@ -231,6 +231,6 @@ Remember to explore these resources and refer to the official website of [Vagran
 
 ---
 
-Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
