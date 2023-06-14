@@ -74,6 +74,8 @@ sudo apt-get install build-essential
 
 Now check again if it is successfully installed:
 
+Now in the terminal run:
+
 ```sh
 brew -v
 ```
