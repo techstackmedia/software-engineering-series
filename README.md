@@ -2,8 +2,6 @@
 
 ![A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands Cover](https://res.cloudinary.com/bizstak/image/upload/v1685360412/GitHub_Cover_weeg2n.png)
 
-[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/06-a-comprehensive-guide-to-git)
-
 ## Introduction
 
 Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
@@ -109,13 +107,32 @@ ls | grep testkey
 
 Here, `testkey` is the file name containing the SSH key.
 
+Note the `testkey` without the .pub, its content should not be shared with anyone because it is the key you use to interact with GitHub.
+
 #### Copy the public key
 
 The public key (with a `.pub` extension) is the key you'll upload to your GitHub interface. Use the following command to copy it to your clipboard:
 
+Now in the terminal run:
+
 ```sh
-pbcopy < ~/testkey.pub
+cat testkey.pub # copy the entire public key
 ```
+
+Alternatively, you can simply run the command below
+
+```sh
+pbcopy < testkey.pub
+```
+
+You might get the error shown below:
+
+```sh
+'pbcopy' is not recognized as an internal or external command,
+operable program or batch file
+```
+
+If this is the case for you it means you are not using Linux or macOS to run the command. You must likely be on a Windows Operating System or any other Operating System not supporting the command. In such cases use the first method, `cat testkey.pub` and copy whatever is the output.
 
 #### Add the SSH key on GitHub
 
