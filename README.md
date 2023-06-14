@@ -35,7 +35,7 @@ With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows
 
 2. Installing VirtualBox:
    - Open PowerShell or Command Prompt.
-   - Run the following command to install VirtualBox using Choco:
+   - Execute the following command to install VirtualBox using Choco:
 
      ```sh
      choco install virtualbox
@@ -95,10 +95,13 @@ For macOS users, Brew provides a convenient way to install Vagrant and VirtualBo
      ```
 
 2. Installing VirtualBox:
+3. 
    - Open Terminal.
    - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
 
      For macOS:
+
+   - Run the following command to install VirtualBox using `brew` or `choco` based on your Operating System:
 
      ```sh
      brew install --cask virtualbox
@@ -109,7 +112,7 @@ For macOS users, Brew provides a convenient way to install Vagrant and VirtualBo
      ```sh
      choco install virtualbox
      ```
-     
+
 ## Using Vagrant and VirtualBox
 
 Now that we have Vagrant and VirtualBox installed, let's explore their functionalities and see how they simplify development workflows.
@@ -169,7 +172,7 @@ When selecting a box, consider factors such as the operating system version, sof
 
 3. Managing Vagrant Virtual Machines:
 
-   Run outside of the virtual machine environment (e.g., default OS terminal)
+   Run outside of the virtual machine environment (e.g., default OS terminal).
 
    - To stop a running virtual machine, use:
 
