@@ -154,6 +154,17 @@ To create a new branch, use the `git checkout -b` command followed by the branch
 ```sh
 git checkout -b feature-readme-instructions
 ```
+The command above does two actions, it creates a new branch called `feature-readme-instructions` and then checks out to that branch.
+
+Below is the command breakdown:
+
+```sh
+git branch feature-readme-instructions
+```
+
+```sh
+git checkout feature-readme-instructions
+```
 
 #### Switching between branches
 
