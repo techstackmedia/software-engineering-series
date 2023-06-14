@@ -26,6 +26,7 @@ Before we proceed with Vagrant and VirtualBox installation, let's first set up t
 With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows using Choco.
 
 1. Installing Vagrant:
+
    - Open PowerShell or Command Prompt.
    - Execute the following command to install Vagrant using Choco:
 
@@ -34,6 +35,7 @@ With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows
      ```
 
 2. Installing VirtualBox:
+
    - Open PowerShell or Command Prompt.
    - Execute the following command to install VirtualBox using Choco:
 
@@ -79,24 +81,24 @@ brew -v
 For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Now that we have brew and choco in macOs and Windows respectively, run the commands below related to your Operating System.
 
 1. Installing Vagrant:
+
    - Open Terminal.
    - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
 
      For macOS:
-     
+
      ```sh
      brew install vagrant
      ```
-     
+
      For Windows:
-     
+
      ```powershell
      choco install vagrant
      ```
 
 2. Installing VirtualBox:
-3. 
-   - Open Terminal.
+3. Open Terminal.
    - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
 
      For macOS:
@@ -106,9 +108,9 @@ For macOS users, Brew provides a convenient way to install Vagrant and VirtualBo
      ```sh
      brew install --cask virtualbox
      ```
-     
+
      For Windows:
-     
+
      ```sh
      choco install virtualbox
      ```
@@ -122,26 +124,32 @@ Now that we have Vagrant and VirtualBox installed, let's explore their functiona
 When using the `vagrant init` command, the box name represents the base image or template from which Vagrant will create your virtual machine. The box name determines the operating system, pre-installed software, and configurations available for your development environment. Here are a few commonly used box names and their uses:
 
 1. `hashicorp/bionic64`:
+
    - Ubuntu 18.04 LTS (Bionic Beaver) 64-bit base box provided by HashiCorp.
    - Suitable for general-purpose development and testing on Ubuntu.
 
 2. `ubuntu/focal64`:
+
    - Ubuntu 20.04 LTS (Focal Fossa) 64-bit base box provided by Ubuntu.
    - Similar to `hashicorp/bionic64`, but with the newer Ubuntu 20.04 LTS release.
 
 3. `centos/8`:
+
    - CentOS 8 64-bit base box provided by CentOS.
    - Ideal for working with CentOS-specific software and configurations.
 
 4. `debian/buster64`:
+
    - Debian 10 (Buster) 64-bit base box provided by the Debian project.
    - Useful for Debian-based development and testing.
 
 5. `fedora/33-cloud-base`:
+
    - Fedora 33 Cloud Base 64-bit base box provided by the Fedora project.
    - Suitable for Fedora-specific development and testing.
 
 6. `windows-server-2019`:
+
    - Windows Server 2019 base box provided by Microsoft.
    - Enables Windows-based development and testing environments.
 
@@ -154,6 +162,7 @@ It's important to choose a box that aligns with your development needs and match
 When selecting a box, consider factors such as the operating system version, software compatibility, available support, and the community around the box. Reading the documentation and reviews for each box can help you make an informed decision based on your specific use case.
 
 1. Creating and Starting a Vagrant Virtual Machine:
+
    - Open PowerShell or Command Prompt.
    - Navigate to your project directory.
    - Execute the following commands to initialize and start a Vagrant virtual machine:
@@ -164,6 +173,7 @@ When selecting a box, consider factors such as the operating system version, sof
      ```
 
 2. Accessing the Vagrant Virtual Machine:
+
    - To SSH into the virtual machine, use the following command:
 
      ```sh
@@ -179,7 +189,6 @@ When selecting a box, consider factors such as the operating system version, sof
      ```sh
      vagrant halt
      ```
-     
 
    - To destroy a virtual machine, use:
 
@@ -189,7 +198,7 @@ When selecting a box, consider factors such as the operating system version, sof
 
 4. Creating and Managing VirtualBox Virtual Machines:
    - Open VirtualBox Manager to create and manage virtual machines using a graphical interface.
-  
+
 - Alternatively, you can utilize the `VBoxManage` command-line tool for advanced management and automation.
 
 Harnessing the Power of Vagrant and VirtualBox:
@@ -212,7 +221,7 @@ In this blog post, we explored the installation and utilization of Vagrant and V
 ## References
 
 - [Vagrant Documentation](https://www.vagrantup.com/docs)
-- [VirtualBox Documentation]( https://www.virtualbox.org/wiki/Documentation)
+- [VirtualBox Documentation](https://www.virtualbox.org/wiki/Documentation)
 - [Choco Documentation](https://docs.chocolatey.org/en-us/)
 - [Brew Documentation](https://docs.brew.sh/)
 - [HashiCorp Vagrant GitHub Repository](https://github.com/hashicorp/vagrant)
