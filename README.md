@@ -87,15 +87,15 @@ Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/TechstackMedia - Osagie/.ssh/id_rsa):
 ```
 
-Where it asks you to enter a file name, you can enter any file name of your choice but for the case of this tutorial enter `testkey' and press `Enter` or `Return`
+Where it asks you to enter a file name, you can enter any file name of your choice but for the case of this tutorial enter `testkey` and press `Enter` or `Return`.
 
 Now you will probably get another question as shown below:
 
 ```sh
 Enter passphrase (empty for no passphrase):
-``` 
+```
 
-It is asking you to provide a passphrase for encryption or decryption purposes. It is used to protect sensitive data, such as private keys or encrypted files. 
+It is asking you to provide a passphrase for encryption or decryption purposes. It is used to protect sensitive data, such as private keys or encrypted files.
 
 You may click enter meaning `empty for no passphase` but it is generally recommended to set a strong passphrase to enhance the security of your sensitive data.  
 
