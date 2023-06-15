@@ -116,10 +116,16 @@ The public key (with a `.pub` extension) is the key you'll upload to your GitHub
 Now in the terminal run:
 
 ```sh
+type testkey.pub | clip
+```
+
+Or
+
+```sh
 cat testkey.pub # copy the entire public key
 ```
 
-Alternatively, you can simply run the command below
+Alternatively, you can simply run the command below:
 
 ```sh
 pbcopy < testkey.pub
@@ -132,11 +138,11 @@ You might get the error shown below:
 operable program or batch file
 ```
 
-If this is the case for you it means you are not using Linux or macOS to run the command. You must likely be on a Windows Operating System or any other Operating System not supporting the command. In such cases use the first method, `cat testkey.pub` and copy whatever is the output.
+If this is the case for you it means you are not using Linux or macOS to run the command. You must likely be on a Windows Operating System or any other Operating System not supporting the command. In such cases use the first method, `cat testkey.pub` and copy whatever is the output or run `type testkey.pub | clip`.
 
 #### Add the SSH key on GitHub
 
-Navigate to your GitHub account's settings, select "SSH and GPG keys," and add a new SSH key. Paste the copied key into the designated field.
+Navigate to your GitHub account's settings, select ["SSH and GPG keys"](https://github.com/settings/ssh/new), and add a new SSH key. Paste the copied key into the designated field. Don't forget to fill in the "Title" field.
 
 #### Configure the local Git command interface
 
