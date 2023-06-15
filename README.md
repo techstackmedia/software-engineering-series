@@ -133,6 +133,8 @@ Once you have a file open in Vim, you'll be in normal mode, where you can naviga
 
 ## Navigating and Editing
 
+In the commands below make sure you press the `ESC` key before typing or pressing any of the commands.
+
 ### Moving within the Document
 
 - `h` moves the cursor one character to the left.
