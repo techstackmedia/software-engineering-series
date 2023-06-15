@@ -2,6 +2,8 @@
 
 ![A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands Cover](https://res.cloudinary.com/bizstak/image/upload/v1685360412/GitHub_Cover_weeg2n.png)
 
+[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/06-a-comprehensive-guide-to-git)
+
 ## Introduction
 
 Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
@@ -118,7 +120,6 @@ Now in the terminal run:
 ```sh
 type testkey.pub | clip
 ```
-
 Or
 
 ```sh
@@ -146,16 +147,17 @@ Navigate to your GitHub account's settings, select ["SSH and GPG keys"](https://
 
 #### Configure the local Git command interface
 
-Modify the `~/ssh/config` file to inform the Git command interface about the generated key. Use a text editor like Vim to open the file and add the following lines at the end:
+To ensure ssh-agent is running run the command:
 
-```sh
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
+```
+eval "$(ssh-agent -s)"
 ```
 
-Save the changes and exit the editor.
+Now add your SSH private key to the `ssh-agent` as show below:
+
+```sh
+ssh-add testkey
+```
 
 #### Update the SSH agent
 
