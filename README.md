@@ -2,6 +2,8 @@
 
 ![Simplifying Development with Vagrant and VirtualBox: A Comprehensive Guide Cover](https://res.cloudinary.com/bizstak/image/upload/v1686411947/GitHub_Cover_wwfcmn.png)
 
+[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/06-a-comprehensive-guide-to-git)
+
 ## Introduction
 
 Developers often face challenges when setting up and managing development environments across different machines. However, tools like Vagrant and VirtualBox offer a seamless solution by providing a way to create and manage virtual environments effortlessly. In this blog post, we will walk you through the installation process of Vagrant and VirtualBox on Windows and macOS using two popular package managers: Choco and Brew. We'll also highlight commands that work specifically with Vagrant and VirtualBox, showcasing their unique benefits and demonstrating how they outperform commands on Git Bash for Windows users.
