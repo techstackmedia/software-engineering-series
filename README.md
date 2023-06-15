@@ -118,6 +118,7 @@ Now in the terminal run:
 ```sh
 type testkey.pub | clip
 ```
+
 Or
 
 ```sh
@@ -147,9 +148,11 @@ Navigate to your GitHub account's settings, select ["SSH and GPG keys"](https://
 
 To ensure ssh-agent is running run the command:
 
-```
+```sh
 eval "$(ssh-agent -s)"
 ```
+
+#### Update the SSH agent
 
 Now add your SSH private key to the `ssh-agent` as show below:
 
@@ -157,13 +160,7 @@ Now add your SSH private key to the `ssh-agent` as show below:
 ssh-add testkey
 ```
 
-#### Update the SSH agent
-
-To ensure that the local Git command interface recognizes the new key, run the following command:
-
-```sh
-ssh-add -K ~/.ssh/id_rsa
-```
+The command above ensures that the local Git command interface recognizes the new key, run the following command.
 
 ### Pushing Changes to a Remote Repository
 
