@@ -77,7 +77,17 @@ Now check again if it is successfully installed:
 Now in the terminal run:
 
 ```sh
+<<<<<<< HEAD
 brew -v
+=======
+type testkey.pub | clip
+```
+
+Or
+
+```sh
+cat testkey.pub # copy the entire public key
+>>>>>>> ddb8bf19cbec1d65230c17a726ca29f15fd4780f
 ```
 
 For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Now that we have brew and choco in macOs and Windows respectively, run the commands below related to your Operating System.
