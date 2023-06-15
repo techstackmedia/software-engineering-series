@@ -2,8 +2,6 @@
 
 ![A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands Cover](https://res.cloudinary.com/bizstak/image/upload/v1685360412/GitHub_Cover_weeg2n.png)
 
-[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/06-a-comprehensive-guide-to-git)
-
 ## Introduction
 
 Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
@@ -255,6 +253,22 @@ Sometimes, when merging branches, conflicts may arise when Git cannot automatica
 
 Use the `git commit -am "commit message"` command to commit all modified files, including those added to the repository.
 
+Note that `git commit -am "commit message"` is the same as combining the two commands below:
+
+```sh
+git add -A
+```
+
+```sh
+git commit -m "commit message"
+```
+
+`git add -A` is the same as `git add --all`. Most developers prefer using period in place of `--all` or `-A`.
+
+```sh
+git add .
+```
+
 #### Unstaging and removing specific files
 
 To unstage and remove specific files, use the `git reset <filename>` command. If no filename is specified, `git reset` will show the files to be reset.
@@ -411,8 +425,6 @@ git pull origin master
 This command fetches changes from the `origin` remote repository and merges them into the current branch.
 
 Note: The code snippets provided assume a Unix-based operating system. Windows users may need to adjust certain commands or use alternative commands specific to their environment. For Windows users [try installing a good terminal emulator like Git Bash](https://git-scm.com/downloads).
-
----
 
 ## References
 
