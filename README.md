@@ -107,7 +107,7 @@ ls | grep testkey
 
 Here, `testkey` is the file name containing the SSH key.
 
-Note the `testkey` without the .pub, its content should not be shared with anyone because it is the key you use to interact with GitHub.
+Note the `testkey` without the .pub, its content should not be shared with anyone because it is the key you use locally on your PC to interact with GitHub.
 
 #### Copy the public key
 
