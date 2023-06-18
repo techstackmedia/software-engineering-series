@@ -68,8 +68,6 @@ These commands will add the necessary configuration to your profile so that Home
 
 Now check again if it is installed successfully:
 
-Now in the terminal run:
-
 ```sh
 brew -v
 ```
