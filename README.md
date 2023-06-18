@@ -6,7 +6,7 @@
 
 Developers often face challenges when setting up and managing development environments across different machines. However, tools like Vagrant and VirtualBox offer a seamless solution by providing a way to create and manage virtual environments effortlessly. In this blog post, we will walk you through the installation process of Vagrant and VirtualBox on Windows and macOS using two popular package managers: Choco and Brew. We'll also highlight commands that work specifically with Vagrant and VirtualBox, showcasing their unique benefits and demonstrating how they outperform commands on Git Bash for Windows users.
 
-## Installing Choco and Brew
+## Installing Choco (Windows) and Brew (macOS)
 
 Before we proceed with Vagrant and VirtualBox installation, let's first set up the package managers, Choco and Brew, on Windows.
 
@@ -66,13 +66,7 @@ Normally Homebrew will provide further installation commands on the terminal to 
 
 These commands will add the necessary configuration to your profile so that Homebrew can be accessed from your terminal.
 
-Now if you have sudo access, you can install Homebrew's dependencies by running the following command:
-
-```sh
-sudo apt-get install build-essential
-```
-
-Now check again if it is successfully installed:
+Now check again if it is installed successfully:
 
 Now in the terminal run:
 
@@ -85,36 +79,18 @@ For macOS users, Brew provides a convenient way to install Vagrant and VirtualBo
 1. Installing Vagrant:
 
    - Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
-
-     For macOS:
+   - Execute the following command to install Vagrant using `brew`:
 
      ```sh
      brew install vagrant
      ```
 
-     For Windows:
-
-     ```powershell
-     choco install vagrant
-     ```
-
 2. Installing VirtualBox:
-3. Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
-
-     For macOS:
-
-   - Run the following command to install VirtualBox using `brew` or `choco` based on your Operating System:
+   - Open Terminal.
+   - Run the following command to install VirtualBox using `brew`:
 
      ```sh
      brew install --cask virtualbox
-     ```
-
-     For Windows:
-
-     ```sh
-     choco install virtualbox
      ```
 
 ## Using Vagrant and VirtualBox
