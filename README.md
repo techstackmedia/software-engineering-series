@@ -175,6 +175,12 @@ or
 emacs -Q -nw hello.c
 ```
 
+It is the same as `emacs hello.c` except that it might open the GNU graphical interface:
+
+```sh
+emacs hello.c
+```
+
 Save file:
 
 - `Ctrl + X Ctrl + S`
