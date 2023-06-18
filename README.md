@@ -193,7 +193,8 @@ The `-o` option specifies the output file name (in this case, `hello`).
 
 You should see the output **`Hello, World!`** displayed in the terminal or command prompt.
 
-Conclusion:
+## Conclusion
+
 Congratulations! You've learned how to create directories, check if C is installed, install C if needed, and write a simple C program. This knowledge forms the foundation for your C programming journey. As you progress, you can explore more complex programs and dive deeper into the language's capabilities. Have fun coding and building amazing software with C! If you have any further questions, feel free to ask.
 
 ---
