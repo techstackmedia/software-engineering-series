@@ -205,6 +205,8 @@ Congratulations! You've learned how to create directories, check if C is install
 - [C Programming - GeeksforGeeks](https://www.geeksforgeeks.org/c-programming-language/)
 - [C Programming - Codecademy](https://www.codecademy.com/learn/learn-c)
 
+---
+
 Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
