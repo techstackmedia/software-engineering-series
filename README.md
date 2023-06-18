@@ -171,7 +171,7 @@ or
 emacs -Q -nw hello.c
 ```
 
-Save file (emacs -Q -nw):
+Save file:
 
 - `Ctrl + X Ctrl + S`
 - `Ctrl + X Ctrl + C`
