@@ -209,4 +209,6 @@ Congratulations! You've learned how to create directories, check if C is install
 
 Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
 
+---
+
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
