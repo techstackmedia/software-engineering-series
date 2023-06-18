@@ -198,7 +198,7 @@ Congratulations! You've learned how to create directories, check if C is install
 
 ---
 
-### References
+## References
 
 - [Learn C - Free Interactive C Tutorial](https://www.learn-c.org/)
 - [Learn C Programming - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/)
