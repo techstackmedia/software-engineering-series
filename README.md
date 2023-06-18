@@ -116,7 +116,7 @@ choco install mingw
 
 #### Alternative installation on Windows OS
 
-- Visit the [MinGW-w64 website](https://mingw-w64.org/doku.php) and download the installer for your system architecture (32-bit or 64-bit).
+- Visit the [MinGW-w64 website and download the installer](https://www.mingw-w64.org/downloads/) for your system architecture (32-bit or 64-bit).
 - Run the installer and ensure you select the **Add to PATH** option during installation.
 - After installation, open the command prompt or PowerShell.
 - Run the following command to verify the installation:
@@ -175,7 +175,6 @@ Save file:
 
 - `Ctrl + X Ctrl + S`
 - `Ctrl + X Ctrl + C`
-
 - Open the terminal or command prompt and navigate to the directory where the `hello.c` file is located.
 - Use the `gcc` command to compile the program and generate an executable file:
 
