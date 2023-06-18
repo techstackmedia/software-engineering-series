@@ -1,207 +1,200 @@
-# Simplifying Development with Vagrant and VirtualBox: A Comprehensive Guide
+# Getting Started with C Programming: Compiling Programs
 
-![Simplifying Development with Vagrant and VirtualBox: A Comprehensive Guide Cover](https://res.cloudinary.com/bizstak/image/upload/v1686411947/GitHub_Cover_wwfcmn.png)
+![Getting Started with C Programming: Compiling Programs Cover](https://res.cloudinary.com/bizstak/image/upload/v1687113876/GitHub_Cover_adljbk.png)
 
 ## Introduction
 
-Developers often face challenges when setting up and managing development environments across different machines. However, tools like Vagrant and VirtualBox offer a seamless solution by providing a way to create and manage virtual environments effortlessly. In this blog post, we will walk you through the installation process of Vagrant and VirtualBox on Windows and macOS using two popular package managers: Choco and Brew. We'll also highlight commands that work specifically with Vagrant and VirtualBox, showcasing their unique benefits and demonstrating how they outperform commands on Git Bash for Windows users.
+C programming is a versatile language that allows you to build a wide range of applications. Whether you're a beginner or an experienced programmer, it's essential to know how to set up your development environment and get started with basic programming tasks. In this guide, we'll walk you through the process of creating directories and checking for the installation of C on different operating systems. We'll also cover the steps to install C if it's not already available. Finally, we'll demonstrate how to write and compile a simple **`Hello, World!`** program in C. Let's get started!
 
-## Installing Choco (Windows) and Brew (macOS)
+## Creating a Directory
 
-Before we proceed with Vagrant and VirtualBox installation, let's first set up the package managers, Choco and Brew, on Windows.
+To begin, let's create a directory named `c-programming` using the command line. Follow the instructions below based on your operating system:
 
-1. Installing Choco:
-   Choco is a powerful package manager for Windows that simplifies software installation. To install Choco, follow these steps:
-
-   - Launch PowerShell as an administrator.
-   - Execute the following command to enable script execution:
-
-     ```sh
-     Set-ExecutionPolicy Bypass -Scope Process -Force; `
-     iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-     ```
-
-### Installing Vagrant and VirtualBox with Choco
-
-With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows using Choco.
-
-1. Installing Vagrant:
-
-   - Open PowerShell or Command Prompt.
-   - Execute the following command to install Vagrant using Choco:
-
-     ```sh
-     choco install vagrant
-     ```
-
-2. Installing VirtualBox:
-
-   - Open PowerShell or Command Prompt.
-   - Execute the following command to install VirtualBox using Choco:
-
-     ```sh
-     choco install virtualbox
-     ```
-
-### Installing Vagrant and VirtualBox with Brew
-
-Before we proceed, Check if Homebrew is already installed.
+- Open the command prompt or PowerShell.
+- Run the following command
 
 ```sh
-brew -v
+mkdir basic-programming/c-programming
 ```
 
-If you get don't get the version, run the command below:
+- change directory to `c-programming`
+
+```sh
+cd basic-programming/c-programming
+```
+
+## Checking if C is Installed
+
+Before you start writing C programs, it's important to check if C is installed on your system. You can verify this by using the `gcc` or `cc` command, a popular C compiler. Follow the steps below:
+
+- Open the terminal.
+- Run the following command:
+
+```sh
+gcc --version
+```
+
+If C is installed, the version information will be displayed. Otherwise, you'll be prompted to install the necessary tools or package.
+
+### `gcc` or `cc`
+
+- In the article, the `gcc` command will be primarily used for checking the version of the C compiler and compiling C programs. However, it is worth noting that `cc` can be used as an alternative to `gcc` for the same purposes.
+
+- While `gcc` is commonly used as the command-line interface to the GNU Compiler Collection, including the C compiler, `cc` is often set as a symbolic link or alias to `gcc`. Therefore, both commands essentially serve the same purpose and can be used interchangeably in most cases.
+
+The choice between using `gcc` or `cc` may depend on personal preference or specific system configurations. However, in the context of the article, it is safe to assume that the `gcc` command will be predominantly used while acknowledging that the cc command could be used as an alternative.
+
+## Installing C
+
+If C is not installed on your system, follow the appropriate instructions based on your operating system:
+
+### General Installation (VSCode)
+
+- If you prefer to [install and use VSCode on Windows](https://community.chocolatey.org/packages?q=vscode) (choco install vscode) or macOS (brew install --cask visual-studio-code) or on Ubuntu (sudo apt install code), install the extensions [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) and [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- After the installation is complete, you can launch Visual Studio Code by searching for it in the applications menu or by running the `code` command in the terminal (`code` and click `Enter` or `Return`).
+
+### macOS
+
+On macOS, Homebrew can be used to install C-related tools and libraries. However, Homebrew itself is not specifically used to install the C language since macOS already includes the Clang compiler, which supports C. Here's how you can install Homebrew and verify the availability of Clang:
+
+- Open the terminal.
+- Install Homebrew by running the following command:
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Normally Homebrew will provide further installation commands on the terminal to execute, make sure you execute them. For example you might be requested to run the commands below. Run the following two commands in your terminal to add Homebrew to your PATH:
+- After Homebrew is installed, you can install additional C-related tools and libraries if needed by using Homebrew commands. For example, to install the GNU Compiler Collection (GCC), you can run the following command:
 
 ```sh
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/vagrant/.profile
-   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew install gcc
 ```
 
-These commands will add the necessary configuration to your profile so that Homebrew can be accessed from your terminal.
-
-Now check again if it is installed successfully:
+- To verify the availability of Clang, which comes preinstalled on macOS, run the following command:
 
 ```sh
-brew -v
+clang --version
 ```
 
-For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Now that we have brew and choco in macOs and Windows respectively, run the commands below related to your Operating System.
+Remember, on macOS, the default compiler is Clang, which supports C and other programming languages. If you install GCC using Homebrew, you can use it as an alternative to Clang.
 
-1. Installing Vagrant:
+#### Alternative installation on macOS
 
-   - Open Terminal.
-   - Execute the following command to install Vagrant using `brew`:
+- Install Xcode from the App Store.
+- Open Xcode and navigate to Preferences.
+- In the **Downloads** tab, install the Command Line Tools.
 
-     ```sh
-     brew install vagrant
-     ```
+### Ubuntu
 
-2. Installing VirtualBox:
-   - Open Terminal.
-   - Run the following command to install VirtualBox using `brew`:
+- Open the terminal.
+- Run the following commands
 
-     ```sh
-     brew install --cask virtualbox
-     ```
+```sh
+sudo apt-get update
+sudo apt-get install build-essential
+```
 
-## Using Vagrant and VirtualBox
+**Note**: The `sudo` command is used to run the subsequent commands with administrative privileges, which may require you to enter your password.
 
-Now that we have Vagrant and VirtualBox installed, let's explore their functionalities and see how they simplify development workflows.
+### Windows
 
-### Box Names
+To install C on Windows, we'll use the MinGW-w64 development environment, which provides a Windows port of GCC.
+Follow these steps:
 
-When using the `vagrant init` command, the box name represents the base image or template from which Vagrant will create your virtual machine. The box name determines the operating system, pre-installed software, and configurations available for your development environment. Here are a few commonly used box names and their uses:
+On Windows, you can use Chocolatey to install the MinGW-w64 development environment, which provides a Windows port of GCC. Here's how you can do it:
 
-1. `hashicorp/bionic64`:
+- Open the command prompt or PowerShell with administrative privileges.
+- Install Chocolatey by [following the instructions on the official Chocolatey website](https://chocolatey.org/install).
+- Once Chocolatey is installed, run the following command to install MinGW-w64:
 
-   - Ubuntu 18.04 LTS (Bionic Beaver) 64-bit base box provided by HashiCorp.
-   - Suitable for general-purpose development and testing on Ubuntu.
+```powershell
+choco install mingw
+```
 
-2. `ubuntu/focal64`:
+- During the installation, make sure to select the appropriate options as prompted.
+- After the installation is complete, you should have the GCC compiler available on your system. You can verify the installation by running the command gcc --version in the command prompt or PowerShell.
 
-   - Ubuntu 20.04 LTS (Focal Fossa) 64-bit base box provided by Ubuntu.
-   - Similar to `hashicorp/bionic64`, but with the newer Ubuntu 20.04 LTS release.
+#### Alternative installation on Windows OS
 
-3. `centos/8`:
+- Visit the [MinGW-w64 website](https://mingw-w64.org/doku.php) and download the installer for your system architecture (32-bit or 64-bit).
+- Run the installer and ensure you select the **Add to PATH** option during installation.
+- After installation, open the command prompt or PowerShell.
+- Run the following command to verify the installation:
 
-   - CentOS 8 64-bit base box provided by CentOS.
-   - Ideal for working with CentOS-specific software and configurations.
+```sh
+gcc --version
+```
 
-4. `debian/buster64`:
+**Note**:
 
-   - Debian 10 (Buster) 64-bit base box provided by the Debian project.
-   - Useful for Debian-based development and testing.
+- `printf` is used to output (print) the result in the terminal.
 
-5. `fedora/33-cloud-base`:
+## Writing and Compiling a C Program
 
-   - Fedora 33 Cloud Base 64-bit base box provided by the Fedora project.
-   - Suitable for Fedora-specific development and testing.
+Now that you have C installed, let's write a simple **`Hello, World!`** program and compile it. Follow the steps below:
 
-6. `windows-server-2019`:
+- Create a file named `hello.c` and paste (right click) the following code into it and save (based on the editor):
 
-   - Windows Server 2019 base box provided by Microsoft.
-   - Enables Windows-based development and testing environments.
+```c
+#include <stdio.h>
 
-7. Custom Boxes:
-   - Apart from the official boxes, you can also use custom boxes created by the community or yourself.
-   - Custom boxes allow you to tailor the virtual machine to your specific requirements, including pre-installed software, configurations, and provisioning scripts.
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
 
-It's important to choose a box that aligns with your development needs and matches the desired operating system and software stack. Official boxes are typically reliable and regularly updated, but custom boxes can provide more flexibility if you have specific requirements.
+```sh
+vim hello.c
+```
 
-When selecting a box, consider factors such as the operating system version, software compatibility, available support, and the community around the box. Reading the documentation and reviews for each box can help you make an informed decision based on your specific use case.
+Save file:
 
-1. Creating and Starting a Vagrant Virtual Machine:
+- `:wq`
+- `Enter` or `Return`
 
-   - Open PowerShell or Command Prompt.
-   - Navigate to your project directory.
-   - Execute the following commands to initialize and start a Vagrant virtual machine:
+or
 
-     ```sh
-     vagrant init <box-name>
-     vagrant up
-     ```
+```sh
+nano hello.c
+```
 
-2. Accessing the Vagrant Virtual Machine:
+Save file:
 
-   - To SSH into the virtual machine, use the following command:
+- `Ctrl + O Ctrl + C Ctrl + X`
+- `Y`
+- `Enter` or `Return`
 
-     ```sh
-     vagrant ssh
-     ```
+or
 
-3. Managing Vagrant Virtual Machines:
+```sh
+emacs -Q -nw hello.c
+```
 
-   Run outside of the virtual machine environment (e.g., default OS terminal).
+Save file (emacs -Q -nw):
 
-   - To stop a running virtual machine, use:
+- `Ctrl + X Ctrl + S`
+- `Ctrl + X Ctrl + C`
 
-     ```sh
-     vagrant halt
-     ```
+- Open the terminal or command prompt and navigate to the directory where the `hello.c` file is located.
+- Use the `gcc` command to compile the program and generate an executable file:
 
-   - To destroy a virtual machine, use:
+```sh
+gcc hello.c -o hello
+```
 
-     ```sh
-     vagrant destroy
-     ```
+The `-o` option specifies the output file name (in this case, `hello`).
 
-4. Creating and Managing VirtualBox Virtual Machines:
-   - Open VirtualBox Manager to create and manage virtual machines using a graphical interface.
+- Run the program by executing the generated executable file:
 
-- Alternatively, you can utilize the `VBoxManage` command-line tool for advanced management and automation.
+```sh
+./hello
+```
 
-Harnessing the Power of Vagrant and VirtualBox:
-Vagrant and VirtualBox provide a streamlined approach to managing development environments, allowing developers to work in isolated, reproducible setups. These tools offer the following benefits:
+You should see the output **`Hello, World!`** displayed in the terminal or command prompt.
 
-1. Consistency: Vagrant and VirtualBox ensure that every team member has an identical development environment, reducing compatibility issues.
-
-2. Reproducibility: By defining project dependencies and configurations within Vagrant, developers can recreate the same environment across different machines.
-
-3. Collaboration: With Vagrant, teams can easily share development environments, making it effortless to collaborate on projects.
-
-4. Scalability: Vagrant simplifies the process of scaling environments by allowing the provisioning of multiple virtual machines.
-
-## Conclusion
-
-In this blog post, we explored the installation and utilization of Vagrant and VirtualBox on Windows using Choco and Brew. We highlighted the advantages of these tools and provided commands that enhance the development experience for Windows users. With Vagrant and VirtualBox, you can effortlessly create and manage consistent and reproducible virtual environments, simplifying the development process and boosting collaboration within teams. Embrace the power of Vagrant and VirtualBox to enhance your development workflow and take your projects to new heights.
-
-## References
-
-- [Vagrant Documentation](https://www.vagrantup.com/docs)
-- [VirtualBox Documentation](https://www.virtualbox.org/wiki/Documentation)
-- [Choco Documentation](https://docs.chocolatey.org/en-us/)
-- [Brew Documentation](https://docs.brew.sh/)
-- [HashiCorp Vagrant GitHub Repository](https://github.com/hashicorp/vagrant)
-- [Vagrant Cloud](https://app.vagrantup.com/boxes/search)
-
-Remember to explore these resources and refer to the official website of [Vagrant](https://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/) or head over to their documentation to ensure accurate and up-to-date information.
+Conclusion:
+Congratulations! You've learned how to create directories, check if C is installed, install C if needed, and write a simple C program. This knowledge forms the foundation for your C programming journey. As you progress, you can explore more complex programs and dive deeper into the language's capabilities. Have fun coding and building amazing software with C! If you have any further questions, feel free to ask.
 
 ---
 
