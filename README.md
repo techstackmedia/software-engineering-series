@@ -74,39 +74,20 @@ For macOS users, Brew provides a convenient way to install Vagrant and VirtualBo
 
 1. Installing Vagrant:
    - Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
+   - Execute the following command to install Vagrant using `brew`:
 
-     For macOS:
-     
      ```sh
      brew install vagrant
      ```
-     
-     For Windows:
-     
-     ```powershell
-     choco install vagrant
-     ```
 
 2. Installing VirtualBox:
-3. 
    - Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
-
-     For macOS:
-
-   - Run the following command to install VirtualBox using `brew` or `choco` based on your Operating System:
+   - Run the following command to install VirtualBox using `brew`:
 
      ```sh
      brew install --cask virtualbox
      ```
-     
-     For Windows:
-     
-     ```sh
-     choco install virtualbox
-     ```
-
+   
 ## Using Vagrant and VirtualBox
 
 Now that we have Vagrant and VirtualBox installed, let's explore their functionalities and see how they simplify development workflows.
