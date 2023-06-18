@@ -11,7 +11,11 @@ C programming is a versatile language that allows you to build a wide range of a
 To begin, let's create a directory named `c-programming` using the command line. Follow the instructions below based on your operating system:
 
 - Open the command prompt or PowerShell.
-- Run the following command
+- Run the following commands:
+
+```sh
+mkdir basic-programming
+```
 
 ```sh
 mkdir basic-programming/c-programming
