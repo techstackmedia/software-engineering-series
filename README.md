@@ -6,7 +6,9 @@
 
 C programming is a versatile language that allows you to build a wide range of applications. Whether you're a beginner or an experienced programmer, you must know how to set up your development environment and start with basic programming tasks. In this guide, we'll walk you through the process of creating directories and checking for the installation of C on different operating systems. We'll also cover the steps to install C if it's not already available. Finally, we'll demonstrate how to write and compile a simple **`Hello, World!`** program in C. Let's get started!
 
-<script src="https://gist.github.com/techstackmedia/34430b174cdaee1e6681371aa85c4529.js"></script>
+## Code Snippet
+
+Check out [complete code on Gist](https://gist.github.com/techstackmedia/34430b174cdaee1e6681371aa85c4529)
 
 ## Creating a Directory
 
@@ -220,7 +222,7 @@ You should see the output **`Hello, World!`** displayed in the terminal or comma
 
 ## Practice
 
-<iframe src="https://replit.com/@OsagieNoah/helloWorldC?lite=true" height="600px" width="100%" frameborder="0" scrolling="no"></iframe>
+[Try it on Replit](https://replit.com/@OsagieNoah/helloWorldC#hello.c)
 
 ## Conclusion
 
