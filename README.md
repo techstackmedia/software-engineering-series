@@ -224,8 +224,8 @@ You should see the output **`Hello, World!`** displayed in the terminal or comma
 
 [Assuming you have an account](https://replit.com/signup) on Replit.
 
-- [Try Replit](https://replit.com/@OsagieNoah/helloWorldC#hello.c) editor online.
-- Click the **Log in** button.
+- [Try Replit](https://replit.com/@OsagieNoah/helloWorldC#hello.c) Editor online.
+- Click the **Login** button.
 - Click the **Fork** button.
 - Edit the current code.
 
@@ -244,8 +244,12 @@ Congratulations! You've learned how to create directories, check if C is install
 
 ---
 
-Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
+**Happy Coding!!!**
 
 ---
 
+Click the button dropdown to explore my notes from chapter to chapter (branch to branch).
+
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
+
+---
