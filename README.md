@@ -4,7 +4,9 @@
 
 ## Introduction
 
-C programming is a versatile language that allows you to build a wide range of applications. Whether you're a beginner or an experienced programmer, it's essential to know how to set up your development environment and get started with basic programming tasks. In this guide, we'll walk you through the process of creating directories and checking for the installation of C on different operating systems. We'll also cover the steps to install C if it's not already available. Finally, we'll demonstrate how to write and compile a simple **`Hello, World!`** program in C. Let's get started!
+C programming is a versatile language that allows you to build a wide range of applications. Whether you're a beginner or an experienced programmer, you must know how to set up your development environment and start with basic programming tasks. In this guide, we'll walk you through the process of creating directories and checking for the installation of C on different operating systems. We'll also cover the steps to install C if it's not already available. Finally, we'll demonstrate how to write and compile a simple **`Hello, World!`** program in C. Let's get started!
+
+<script src="https://gist.github.com/techstackmedia/34430b174cdaee1e6681371aa85c4529.js"></script>
 
 ## Creating a Directory
 
@@ -54,8 +56,19 @@ If C is not installed on your system, follow the appropriate instructions based 
 
 ### General Installation (VSCode)
 
-- If you prefer to [install and use VSCode on Windows](https://community.chocolatey.org/packages?q=vscode) (choco install vscode) or macOS (brew install --cask visual-studio-code) or on Ubuntu (sudo apt install code), install the extensions [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) and [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- If you prefer to [install and use VSCode on Windows](https://community.chocolatey.org/packages?q=vscode) (choco install vscode) or macOS (brew install --cask visual-studio-code) or on Ubuntu (sudo apt install code), install the extensions [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) and [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner).
 - After the installation is complete, you can launch Visual Studio Code by searching for it in the applications menu or by running the `code` command in the terminal (`code` and click `Enter` or `Return`).
+Once Code Runner is installed, you will see a play icon beside which is a dropdown.
+- Click on the play dropdown icon. See the image below:
+
+![A Snapshot Showing How to Run C with VSCode Code Runner Extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m12c6oozcs2ynaeaxtrg.png)
+
+- Open the terminal by pressing `Ctrl + J`.
+- Click the option that says **Run C/C++**. You will see the result **`Hello World`**.
+
+### Issue
+
+If the installation doesn't work for you, go to the [VS Code download page](https://code.visualstudio.com/download) and click the download button based on your operating system - macOS, Linux, Windows and install (click on the executable file after download - accept all default settings).
 
 ### macOS
 
@@ -185,6 +198,7 @@ Save file:
 
 - `Ctrl + X Ctrl + S`
 - `Ctrl + X Ctrl + C`
+
 - Open the terminal or command prompt and navigate to the directory where the `hello.c` file is located.
 - Use the `gcc` command to compile the program and generate an executable file:
 
@@ -201,6 +215,12 @@ The `-o` option specifies the output file name (in this case, `hello`).
 ```
 
 You should see the output **`Hello, World!`** displayed in the terminal or command prompt.
+
+![executing a c program](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z7jkz5iqhp6gj8q2wglq.png)
+
+## Practice
+
+<iframe src="https://replit.com/@OsagieNoah/helloWorldC?lite=true" height="600px" width="100%" frameborder="0" scrolling="no"></iframe>
 
 ## Conclusion
 
