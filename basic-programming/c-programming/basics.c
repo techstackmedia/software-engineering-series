@@ -3,9 +3,9 @@
 
 /*
  * Run:
- * gcc -Wall -pedantic -Werror -Wextra -std=c99 c-programming/input.c -o c-programming/output
- * gcc c-programming/input.c -o c-programming/output
- * c-programming/output
+ * gcc -Wall -pedantic -Werror -Wextra -std=c99 basics.c -o basics
+ * gcc basics.c -o basics
+ * ./basics
  */
 
 int main(void)
