@@ -8,7 +8,7 @@ C programming is a versatile language that allows you to build a wide range of a
 
 ## Code Snippet
 
-Check out [complete code on Gist](https://gist.github.com/techstackmedia/34430b174cdaee1e6681371aa85c4529)
+Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/34430b174cdaee1e6681371aa85c4529)
 
 ## Creating a Directory
 
