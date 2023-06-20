@@ -222,7 +222,12 @@ You should see the output **`Hello, World!`** displayed in the terminal or comma
 
 ## Practice
 
-[Try it on Replit](https://replit.com/@OsagieNoah/helloWorldC#hello.c)
+[Assuming you have an account](https://replit.com/signup) on Replit.
+
+- [Try the Replit editor online](https://replit.com/@OsagieNoah/helloWorldC#hello.c)
+- Click the **Log in** button
+- Click the **Fork** button
+- Edit the current code
 
 ## Conclusion
 
