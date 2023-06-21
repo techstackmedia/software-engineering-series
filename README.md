@@ -256,6 +256,8 @@ Here's how to handle merge conflicts:
 
 2. Open the conflicted files: Open the conflicted files in a text editor or an integrated development environment (IDE). Inside the files, you'll see the conflicting sections marked with special characters like `<<<<<<<`, `=======`, and `>>>>>>>`.
 
+![resolving merge conflict](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g5aj75jus6sjoskcg123.png)
+
 3. Resolve the conflicts: Manually edit the conflicted sections in the files to keep the desired changes and remove the conflicting content. Modify the files according to your intended final result.
 
   - When manually editing the conflicted sections, you can make decisions about which changes to keep and which to discard. Git provides different options to handle conflicts:
