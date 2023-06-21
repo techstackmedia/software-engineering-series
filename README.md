@@ -218,12 +218,24 @@ Save file:
 gcc hello.c -o hello
 ```
 
+or
+
+```sh
+gcc hello.c -o hello.exe
+```
+
 The `-o` option specifies the output file name (in this case, `hello`).
 
 - Run the program by executing the generated executable file:
 
 ```sh
 ./hello
+```
+
+or
+
+```sh
+./hello.exe
 ```
 
 You should see the output **`Hello, World!`** displayed in the terminal or command prompt.
