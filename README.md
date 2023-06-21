@@ -6,6 +6,8 @@
 
 Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
 
+![staging, committing, checking out in git](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6z4osnlqelxiju9y9b6n.png)
+
 ## Installation
 
 For detailed instructions on installing Git, please refer to the [official Git website](https://git-scm.com/). However, if you're a Windows user, I'll provide you with a few commands to help you install Git.
@@ -95,7 +97,7 @@ Enter passphrase (empty for no passphrase):
 
 It is asking you to provide a passphrase for encryption or decryption purposes. It is used to protect sensitive data, such as private keys or encrypted files.
 
-You may click enter meaning `empty for no passphase` but it is generally recommended to set a strong passphrase to enhance the security of your sensitive data.
+You may click enter meaning `empty for no passphase` but it is generally recommended to set a strong passphrase to enhance the security of your sensitive data.  
 
 #### Locate the key file
 
@@ -244,7 +246,11 @@ git branch -d branchname
 
 ### Resolving Merge Conflicts
 
-Sometimes, when merging branches, conflicts may arise when Git cannot automatically merge the changes. Here's how to handle merge conflicts:
+Sometimes, when merging branches, conflicts may arise when Git cannot automatically merge the changes.
+
+![resolving conflict](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hox6iih4j8w6lxh8n6ze.png)
+
+Here's how to handle merge conflicts:
 
 1. Identify the conflicts: After attempting to merge branches, Git will notify you of any conflicts that occurred. You can use commands like `git status` or `git diff` to identify the conflicted files.
 
@@ -252,10 +258,12 @@ Sometimes, when merging branches, conflicts may arise when Git cannot automatica
 
 3. Resolve the conflicts: Manually edit the conflicted sections in the files to keep the desired changes and remove the conflicting content. Modify the files according to your intended final result.
 
-- When manually editing the conflicted sections, you can make decisions about which changes to keep and which to discard. Git provides different options to handle conflicts:
+  - When manually editing the conflicted sections, you can make decisions about which changes to keep and which to discard. Git provides different options to handle conflicts:
   1.) Accept Current Changes: This means accepting the changes that exist in your local repository before pulling from the remote repository. If you choose this option, you are discarding the incoming changes from the remote branch and keeping your local changes.
   2.) Accept Incoming Changes: This means accepting the changes that exist in the remote repository. If you choose this option, you are discarding your local changes and taking the changes from the remote branch.
   3.) Accept Both Changes: In some cases, you may want to combine both sets of changes from your local and remote repositories. You can manually edit the conflicted sections to incorporate both sets of changes, keeping the parts you want from each version.
+
+![accepting changes in GitHub](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qxxf2q4y95tum83v38d7.png)
 
 The specific options available to you may vary depending on the Git client or the merge tool you are using. It's important to review the conflicting sections carefully and make informed decisions about how to resolve the conflicts based on your desired final result.
 
@@ -380,7 +388,6 @@ git clone https://<token>@github.com/<username>/repo.git
 Here's how to use it:
 
 1. Generate a Personal Access Token (PAT) on GitHub:
-
    - Go to your GitHub account settings.
    - Navigate to "Developer settings" and click on "Personal access tokens".
    - Click on "Generate new token" and provide a meaningful description for the token.
