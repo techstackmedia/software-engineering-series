@@ -76,7 +76,11 @@ Once Code Runner is installed, you will see a play icon beside which is a dropdo
 
 You will see the result `Hello, World!` In your terminal. Notice the new executable file created during execution - `hello.exe`
 
+Note that the Keyboard shortcut is `Ctrl + Shift + B`.
+
 ![C executable file in vscode](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/enivsygnbmx4jykexu1q.png)
+
+Now that you have done the configuration, the next time you want to run a C program just click on the play button or use the keyboard shortcut `Ctrl + Alt + N`.
 
 ### Issue
 
