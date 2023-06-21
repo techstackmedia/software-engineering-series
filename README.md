@@ -2,6 +2,8 @@
 
 ![A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands Cover](https://res.cloudinary.com/bizstak/image/upload/v1685360412/GitHub_Cover_weeg2n.png)
 
+[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/06-a-comprehensive-guide-to-git)
+
 ## Introduction
 
 Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
@@ -95,7 +97,7 @@ Enter passphrase (empty for no passphrase):
 
 It is asking you to provide a passphrase for encryption or decryption purposes. It is used to protect sensitive data, such as private keys or encrypted files.
 
-You may click enter meaning `empty for no passphase` but it is generally recommended to set a strong passphrase to enhance the security of your sensitive data.  
+You may click enter meaning `empty for no passphase` but it is generally recommended to set a strong passphrase to enhance the security of your sensitive data.
 
 #### Locate the key file
 
@@ -246,6 +248,26 @@ git branch -d branchname
 
 Sometimes, when merging branches, conflicts may arise when Git cannot automatically merge the changes. Here's how to handle merge conflicts:
 
+1. Identify the conflicts: After attempting to merge branches, Git will notify you of any conflicts that occurred. You can use commands like `git status` or `git diff` to identify the conflicted files.
+
+2. Open the conflicted files: Open the conflicted files in a text editor or an integrated development environment (IDE). Inside the files, you'll see the conflicting sections marked with special characters like `<<<<<<<`, `=======`, and `>>>>>>>`.
+
+3. Resolve the conflicts: Manually edit the conflicted sections in the files to keep the desired changes and remove the conflicting content. Modify the files according to your intended final result.
+
+- When manually editing the conflicted sections, you can make decisions about which changes to keep and which to discard. Git provides different options to handle conflicts:
+
+  1. Accept Current Changes: This means accepting the changes that exist in your local repository before pulling from the remote repository. If you choose this option, you are discarding the incoming changes from the remote branch and keeping your local changes.
+
+  2. Accept Incoming Changes: This means accepting the changes that exist in the remote repository. If you choose this option, you are discarding your local changes and taking the changes from the remote branch.
+
+  3. Accept Both Changes: In some cases, you may want to combine both sets of changes from your local and remote repositories. You can manually edit the conflicted sections to incorporate both sets of changes, keeping the parts you want from each version.
+
+The specific options available to you may vary depending on the Git client or the merge tool you are using. It's important to review the conflicting sections carefully and make informed decisions about how to resolve the conflicts based on your desired final result.
+
+4.) Add the resolved files: Use the `git add` command to stage the resolved files for the commit. For example, you can use `git add file1.txt file2.txt` to stage-specific files, or `git add .` to stage all modified files in the current directory.
+
+5.) Commit the changes: Finally, use the `git commit` command to create a new commit with the resolved merge conflicts. You can provide a commit message using the `-m` flag, like `git commit -m "Resolve merge conflicts"`.
+
 #### Committing all modified files
 
 Use the `git commit -am "commit message"` command to commit all modified files, including those added to the repository.
@@ -363,6 +385,7 @@ git clone https://<token>@github.com/<username>/repo.git
 Here's how to use it:
 
 1. Generate a Personal Access Token (PAT) on GitHub:
+
    - Go to your GitHub account settings.
    - Navigate to "Developer settings" and click on "Personal access tokens".
    - Click on "Generate new token" and provide a meaningful description for the token.
