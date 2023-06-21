@@ -318,8 +318,6 @@ In this blog post, we explored the basics of C programming by examining data typ
 
 ---
 
----
-
 ## References
 
 - [C Data Types](https://www.learn-c.org/data-types)
