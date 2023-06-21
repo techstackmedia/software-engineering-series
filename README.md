@@ -82,6 +82,8 @@ Note that the Keyboard shortcut is `Ctrl + Shift + B`.
 
 Now that you have done the configuration, the next time you want to run a C program just click on the play button or use the keyboard shortcut `Ctrl + Alt + N`.
 
+![run executable file using the play button](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/13pfq91ln5vjf9ofs2lm.png)
+
 ### Issue
 
 If the installation doesn't work for you, go to the [VS Code download page](https://code.visualstudio.com/download) and click the download button based on your operating system - macOS, Linux, Windows and install (click on the executable file after download - accept all default settings).
