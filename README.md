@@ -1,72 +1,99 @@
-# Simplifying Development with Vagrant and VirtualBox: A Comprehensive Guide
+# A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands
 
-![Simplifying Development with Vagrant and VirtualBox: A Comprehensive Guide Cover](https://res.cloudinary.com/bizstak/image/upload/v1686411947/GitHub_Cover_wwfcmn.png)
-
-[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/06-a-comprehensive-guide-to-git)
+![A Comprehensive Guide to Git: Understanding Basic Concepts and Essential Commands Cover](https://res.cloudinary.com/bizstak/image/upload/v1685360412/GitHub_Cover_weeg2n.png)
 
 ## Introduction
 
-Developers often face challenges when setting up and managing development environments across different machines. However, tools like Vagrant and VirtualBox offer a seamless solution by providing a way to create and manage virtual environments effortlessly. In this blog post, we will walk you through the installation process of Vagrant and VirtualBox on Windows and macOS using two popular package managers: Choco and Brew. We'll also highlight commands that work specifically with Vagrant and VirtualBox, showcasing their unique benefits and demonstrating how they outperform commands on Git Bash for Windows users.
+Git has revolutionized the way developers collaborate and manage their code. Whether you're a beginner or an experienced developer, understanding the basic concepts and essential commands of Git is crucial for efficient version control. In this blog post, we'll explore the fundamental concepts of Git, including push, merge, branches, and more. We'll also provide code snippets to illustrate how these commands are used in practice. Let's dive in!
 
-## Installing Choco and Brew
+## Installation
 
-Before we proceed with Vagrant and VirtualBox installation, let's first set up the package managers, Choco and Brew, on Windows.
+For detailed instructions on installing Git, please refer to the [official Git website](https://git-scm.com/). However, if you're a Windows user, I'll provide you with a few commands to help you install Git.
 
-1. Installing Choco:
-   Choco is a powerful package manager for Windows that simplifies software installation. To install Choco, follow these steps:
+### Steps
 
-   - Launch PowerShell as an administrator.
-   - Execute the following command to enable script execution:
+To install Chocolatey and use it to install Git, follow these steps:
 
-     ```sh
-     Set-ExecutionPolicy Bypass -Scope Process -Force; `
-     iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-     ```
+1. Search for PowerShell and run it as an administrator on Windows.
+2. Go to the Chocolatey [installation page](https://chocolatey.org/install).
+3. If this is your first time installing Chocolatey on your operating system, execute the following command in your terminal, based on the instructions provided on the installation page:
 
-### Installing Vagrant and VirtualBox with Choco
-
-With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows using Choco.
-
-1. Installing Vagrant:
-
-   - Open PowerShell or Command Prompt.
-   - Execute the following command to install Vagrant using Choco:
-
-     ```sh
-     choco install vagrant
-     ```
-
-2. Installing VirtualBox:
-
-   - Open PowerShell or Command Prompt.
-   - Execute the following command to install VirtualBox using Choco:
-
-     ```sh
-     choco install virtualbox
-     ```
-
-### Installing Vagrant and VirtualBox with Brew
-
-Before we proceed, Check if Homebrew is already installed.
-
-```sh
-brew -v
+```powershell
+Get-ExecutionPolicy
 ```
 
-If you get don't get the version, run the command below:
+- If the output is "Restricted", enter one of the commands below:
 
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```powershell
+Set-ExecutionPolicy AllSigned
 ```
 
-Normally Homebrew will provide further installation commands on the terminal to execute, make sure you execute them. For example you might be requested to run the commands below. Run the following two commands in your terminal to add Homebrew to your PATH:
+or
 
-```sh
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/vagrant/.profile
-   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
 ```
 
-These commands will add the necessary configuration to your profile so that Homebrew can be accessed from your terminal.
+- Regardless of whether "Restricted" was the previous output or not, run the following command (copy and paste it into your terminal):
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+- If there are no errors, check if Chocolatey was successfully installed by running the following command:
+
+```powershell
+choco
+```
+
+If the output displays the version of Chocolatey you are using, it means the installation was successful.
+
+- Now, search for the package you need (in this case, Git) by visiting the [package search page](https://community.chocolatey.org/packages). Once you find the Git package, execute the following command:
+
+```powershell
+choco install git
+```
+
+### Basic Concepts
+
+Before we delve into the commands, let's quickly review some basic concepts of Git:
+
+#### ls -la
+
+The `ls -la` command (or `ls` on Windows) lists all files and directories, including hidden ones, in the current directory. It helps you get a comprehensive view of the files present.
+
+#### git commit -m "commit msg" -m "desc. msg"
+
+The `git commit` command records change to the repository. By specifying a commit message (`-m` flag), you provide a concise description of the changes made. It's good practice to include both a short commit message and a more detailed description.
+
+### Generating SSH Keys
+
+You can generate SSH keys to securely connect with remote repositories, such as GitHub. Here's a step-by-step guide:
+
+#### Generate the SSH key
+
+Use the `ssh-keygen` command to generate a new SSH key. For example:
+
+```sh
+ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
+```
+
+Its output will look like below:
+
+```sh
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/TechstackMedia - Osagie/.ssh/id_rsa):
+```
+
+Where it asks you to enter a file name, you can enter any file name of your choice but for the case of this tutorial enter `testkey` and press `Enter` or `Return`.
+
+Now you will probably get another question as shown below:
+
+```sh
+Enter passphrase (empty for no passphrase):
+```
+
+It is asking you to provide a passphrase for encryption or decryption purposes. It is used to protect sensitive data, such as private keys or encrypted files.
 
 You may click enter meaning `empty for no passphase` but it is generally recommended to set a strong passphrase to enhance the security of your sensitive data.
 
@@ -75,160 +102,160 @@ You may click enter meaning `empty for no passphase` but it is generally recomme
 After generating the key, you can find it using the `ls` command combined with `grep`. For instance:
 
 ```sh
-sudo apt-get install build-essential
+ls | grep testkey
 ```
 
-Now check again if it is successfully installed:
+Here, `testkey` is the file name containing the SSH key.
+
+Note the `testkey` without the .pub, its content should not be shared with anyone because it is the key you use to interact with GitHub.
+
+#### Copy the public key
+
+The public key (with a `.pub` extension) is the key you'll upload to your GitHub interface. Use the following command to copy it to your clipboard:
+
+Now in the terminal run:
 
 ```sh
-brew -v
+type testkey.pub | clip
 ```
 
-For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Now that we have brew and choco in macOs and Windows respectively, run the commands below related to your Operating System.
+Or
 
-1. Installing Vagrant:
+```sh
+cat testkey.pub # copy the entire public key
+```
 
-   - Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
+Alternatively, you can simply run the command below:
 
-     For macOS:
+```sh
+pbcopy < testkey.pub
+```
 
-     ```sh
-     brew install vagrant
-     ```
+You might get the error shown below:
 
-     For Windows:
+```sh
+'pbcopy' is not recognized as an internal or external command,
+operable program or batch file
+```
 
-     ```powershell
-     choco install vagrant
-     ```
+If this is the case for you it means you are not using Linux or macOS to run the command. You must likely be on a Windows Operating System or any other Operating System not supporting the command. In such cases use the first method, `cat testkey.pub` and copy whatever is the output or run `type testkey.pub | clip`.
 
-2. Installing VirtualBox:
-3. Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
+#### Add the SSH key on GitHub
 
-     For macOS:
+Navigate to your GitHub account's settings, select ["SSH and GPG keys"](https://github.com/settings/ssh/new), and add a new SSH key. Paste the copied key into the designated field. Don't forget to fill in the "Title" field.
 
-   - Run the following command to install VirtualBox using `brew` or `choco` based on your Operating System:
+#### Configure the local Git command interface
 
-     ```sh
-     brew install --cask virtualbox
-     ```
+To ensure ssh-agent is running run the command:
 
-     For Windows:
+```sh
+eval "$(ssh-agent -s)"
+```
 
-     ```sh
-     choco install virtualbox
-     ```
+#### Update the SSH agent
 
-## Using Vagrant and VirtualBox
+Now add your SSH private key to the `ssh-agent` as show below:
 
-Now that we have Vagrant and VirtualBox installed, let's explore their functionalities and see how they simplify development workflows.
+```sh
+ssh-add testkey
+```
 
-### Box Names
+The command above ensures that the local Git command interface recognizes the new key, run the following command.
 
-When using the `vagrant init` command, the box name represents the base image or template from which Vagrant will create your virtual machine. The box name determines the operating system, pre-installed software, and configurations available for your development environment. Here are a few commonly used box names and their uses:
+### Pushing Changes to a Remote Repository
 
-1. `hashicorp/bionic64`:
+To push your local repository to a remote repository (e.g., GitHub), follow these steps:
 
-   - Ubuntu 18.04 LTS (Bionic Beaver) 64-bit base box provided by HashiCorp.
-   - Suitable for general-purpose development and testing on Ubuntu.
+#### Identify the remote repository
 
-2. `ubuntu/focal64`:
+Use the `git remote -v` command to view the remote repositories connected to your local repository.
 
-   - Ubuntu 20.04 LTS (Focal Fossa) 64-bit base box provided by Ubuntu.
-   - Similar to `hashicorp/bionic64`, but with the newer Ubuntu 20.04 LTS release.
+#### Set the upstream repository
 
-3. `centos/8`:
+When pushing for the first time, set the upstream repository with the `-u` or `--set-upstream` flag:
 
-   - CentOS 8 64-bit base box provided by CentOS.
-   - Ideal for working with CentOS-specific software and configurations.
+```sh
+git push -u origin master
+```
 
-4. `debian/buster64`:
+This tells Git to push to the specified repository by default.
 
-   - Debian 10 (Buster) 64-bit base box provided by the Debian project.
-   - Useful for Debian-based development and testing.
+#### Subsequent pushes
 
-5. `fedora/33-cloud-base`:
+For subsequent pushes, you can use the simpler command `git push`, as Git remembers the upstream repository.
 
-   - Fedora 33 Cloud Base 64-bit base box provided by the Fedora project.
-   - Suitable for Fedora-specific development and testing.
+### Branches
 
-6. `windows-server-2019`:
+Branches allow for parallel development and isolating specific features or fixes. Let's explore some common branch-related commands:
 
-   - Windows Server 2019 base box provided by Microsoft.
-   - Enables Windows-based development and testing environments.
+#### Creating a new branch
 
-7. Custom Boxes:
-   - Apart from the official boxes, you can also use custom boxes created by the community or yourself.
-   - Custom boxes allow you to tailor the virtual machine to your specific requirements, including pre-installed software, configurations, and provisioning scripts.
+To create a new branch, use the `git checkout -b` command followed by the branch name. For example:
 
-It's important to choose a box that aligns with your development needs and matches the desired operating system and software stack. Official boxes are typically reliable and regularly updated, but custom boxes can provide more flexibility if you have specific requirements.
+```sh
+git checkout -b feature-readme-instructions
+```
 
-When selecting a box, consider factors such as the operating system version, software compatibility, available support, and the community around the box. Reading the documentation and reviews for each box can help you make an informed decision based on your specific use case.
+The command above does two actions, it creates a new branch called `feature-readme-instructions` and then checks out to that branch.
 
-1. Creating and Starting a Vagrant Virtual Machine:
+Below is the command breakdown:
 
-   - Open PowerShell or Command Prompt.
-   - Navigate to your project directory.
-   - Execute the following commands to initialize and start a Vagrant virtual machine:
+```sh
+git branch feature-readme-instructions
+```
 
-     ```sh
-     vagrant init <box-name>
-     vagrant up
-     ```
+```sh
+git checkout feature-readme-instructions
+```
 
-2. Accessing the Vagrant Virtual Machine:
+#### Switching between branches
 
-   - To SSH into the virtual machine, use the following command:
+To switch to a different branch, use the `git checkout` command followed by the branch name. For instance:
 
-     ```sh
-     vagrant ssh
-     ```
+```sh
+git checkout master
+```
 
-3. Managing Vagrant Virtual Machines:
+#### Viewing changes between branches
 
-   Run outside of the virtual machine environment (e.g., default OS terminal).
+To see the code differences between the two branches, use the `git diff` command followed by the branch names:
 
-   - To stop a running virtual machine, use:
+```sh
+git diff branchname
+```
 
-     ```sh
-     vagrant halt
-     ```
+The `git diff` command shows the differences between the current branch and the specified branch.
 
-   - To destroy a virtual machine, use:
+#### Merging branches
 
-     ```sh
-     vagrant destroy
-     ```
+To merge changes from one branch into another, use the `git merge` command followed by the branch name. For example:
 
-4. Creating and Managing VirtualBox Virtual Machines:
-   - Open VirtualBox Manager to create and manage virtual machines using a graphical interface.
+```sh
+git merge branchname
+```
 
-- Alternatively, you can utilize the `VBoxManage` command-line tool for advanced management and automation.
+#### Deleting a branch
 
-Harnessing the Power of Vagrant and VirtualBox:
-Vagrant and VirtualBox provide a streamlined approach to managing development environments, allowing developers to work in isolated, reproducible setups. These tools offer the following benefits:
+To delete a branch, use the `git branch -d` command followed by the branch name. For instance:
 
-1. Consistency: Vagrant and VirtualBox ensure that every team member has an identical development environment, reducing compatibility issues.
+```sh
+git branch -d branchname
+```
 
-2. Reproducibility: By defining project dependencies and configurations within Vagrant, developers can recreate the same environment across different machines.
+### Resolving Merge Conflicts
 
-3. Collaboration: With Vagrant, teams can easily share development environments, making it effortless to collaborate on projects.
+Sometimes, when merging branches, conflicts may arise when Git cannot automatically merge the changes. Here's how to handle merge conflicts:
 
-1.) Identify the conflicts: After attempting to merge branches, Git will notify you of any conflicts that occurred. You can use commands like `git status` or `git diff` to identify the conflicted files.
+1. Identify the conflicts: After attempting to merge branches, Git will notify you of any conflicts that occurred. You can use commands like `git status` or `git diff` to identify the conflicted files.
 
-2.) Open the conflicted files: Open the conflicted files in a text editor or an integrated development environment (IDE). Inside the files, you'll see the conflicting sections marked with special characters like `<<<<<<<`, `=======`, and `>>>>>>>`.
+2. Open the conflicted files: Open the conflicted files in a text editor or an integrated development environment (IDE). Inside the files, you'll see the conflicting sections marked with special characters like `<<<<<<<`, `=======`, and `>>>>>>>`.
 
-3.) Resolve the conflicts: Manually edit the conflicted sections in the files to keep the desired changes and remove the conflicting content. Modify the files according to your intended final result.
+3. Resolve the conflicts: Manually edit the conflicted sections in the files to keep the desired changes and remove the conflicting content. Modify the files according to your intended final result.
 
 - When manually editing the conflicted sections, you can make decisions about which changes to keep and which to discard. Git provides different options to handle conflicts:
-
-  1. Accept Current Changes: This means accepting the changes that exist in your local repository before pulling from the remote repository. If you choose this option, you are discarding the incoming changes from the remote branch and keeping your local changes.
-
-  2. Accept Incoming Changes: This means accepting the changes that exist in the remote repository. If you choose this option, you are discarding your local changes and taking the changes from the remote branch.
-
-  3. Accept Both Changes: In some cases, you may want to combine both sets of changes from your local and remote repositories. You can manually edit the conflicted sections to incorporate both sets of changes, keeping the parts you want from each version.
+  1.) Accept Current Changes: This means accepting the changes that exist in your local repository before pulling from the remote repository. If you choose this option, you are discarding the incoming changes from the remote branch and keeping your local changes.
+  2.) Accept Incoming Changes: This means accepting the changes that exist in the remote repository. If you choose this option, you are discarding your local changes and taking the changes from the remote branch.
+  3.) Accept Both Changes: In some cases, you may want to combine both sets of changes from your local and remote repositories. You can manually edit the conflicted sections to incorporate both sets of changes, keeping the parts you want from each version.
 
 The specific options available to you may vary depending on the Git client or the merge tool you are using. It's important to review the conflicting sections carefully and make informed decisions about how to resolve the conflicts based on your desired final result.
 
@@ -237,6 +264,8 @@ The specific options available to you may vary depending on the Git client or th
 5.) Commit the changes: Finally, use the `git commit` command to create a new commit with the resolved merge conflicts. You can provide a commit message using the `-m` flag, like `git commit -m "Resolve merge conflicts"`.
 
 #### Committing all modified files
+
+Use the `git commit -am "commit message"` command to commit all modified files, including those added to the repository.
 
 Note that `git commit -am "commit message"` is the same as combining the two commands below:
 
@@ -411,6 +440,8 @@ git pull origin master
 This command fetches changes from the `origin` remote repository and merges them into the current branch.
 
 Note: The code snippets provided assume a Unix-based operating system. Windows users may need to adjust certain commands or use alternative commands specific to their environment. For Windows users [try installing a good terminal emulator like Git Bash](https://git-scm.com/downloads).
+
+---
 
 ## References
 
