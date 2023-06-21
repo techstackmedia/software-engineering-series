@@ -414,14 +414,8 @@ Note: The code snippets provided assume a Unix-based operating system. Windows u
 
 ## References
 
-- [Vagrant Documentation](https://www.vagrantup.com/docs)
-- [VirtualBox Documentation](https://www.virtualbox.org/wiki/Documentation)
-- [Choco Documentation](https://docs.chocolatey.org/en-us/)
-- [Brew Documentation](https://docs.brew.sh/)
-- [HashiCorp Vagrant GitHub Repository](https://github.com/hashicorp/vagrant)
-- [Vagrant Cloud](https://app.vagrantup.com/boxes/search)
-
-Remember to explore these resources and refer to the official website of [Vagrant](https://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/) or head over to their documentation to ensure accurate and up-to-date information.
+- [Hashnode](https://blog.techstackmedia.com/a-comprehensive-guide-to-git)
+- [Dev.to](https://dev.to/bello/a-comprehensive-guide-to-git-30a)
 
 ---
 
