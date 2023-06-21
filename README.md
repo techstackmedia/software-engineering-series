@@ -66,7 +66,17 @@ Once Code Runner is installed, you will see a play icon beside which is a dropdo
 ![A Snapshot Showing How to Run C with VSCode Code Runner Extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m12c6oozcs2ynaeaxtrg.png)
 
 - Open the terminal by pressing `Ctrl + J`.
-- Click the option that says **Run C/C++**. You will see the result **`Hello World`**.
+- Click the option that says **Run C/C++**.
+
+![run C with VSCode Code runner extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fqv66p5pt8c9duecuuog.png)
+
+- From the debug configuration options, select the option to build and debug an active file.
+
+![build and run in C](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0kp20mgbcy78ounke5ls.png)
+
+You will see the result `Hello, World!` In your terminal. Notice the new executable file created during execution - `hello.exe`
+
+![C executable file in vscode](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/enivsygnbmx4jykexu1q.png)
 
 ### Issue
 
