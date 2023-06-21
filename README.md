@@ -2,8 +2,6 @@
 
 ![Basics of C Programming: Data Types, Constants, Variables, and Arrays Cover](https://res.cloudinary.com/bizstak/image/upload/v1687276778/GitHub_Cover_aoeugb.png)
 
-[![GitHub Logo](https://res.cloudinary.com/bizstak/image/upload/v1685060686/github_f9ljwi.svg)](https://github.com/techstackmedia/software-engineering-series/tree/06-a-comprehensive-guide-to-git)
-
 ## Introduction
 
 Understanding the basics of C programming is essential for any aspiring programmer. In this blog post, we will explore the concept of data types and constants in C programming, taking a hands-on approach to deepen our understanding. We will compile and run the code snippets to observe the results firsthand. Let's get started!
@@ -316,9 +314,9 @@ Assuming you [have an account](https://replit.com/signup) or are already [logged
 - Click the **Fork** button.
 - Edit the current code.
 
-2.) Open the conflicted files: Open the conflicted files in a text editor or an integrated development environment (IDE). Inside the files, you'll see the conflicting sections marked with special characters like `<<<<<<<`, `=======`, and `>>>>>>>`.
-
 In this blog post, we explored the basics of C programming by examining data types and constants. We learned how to declare and initialize variables and constants of various data types, including integers, characters, booleans, and arrays. We also observed the results by printing the values using `printf`. Understanding these fundamental concepts is crucial for building more complex C programs. Stay tuned for future blog posts where we will delve deeper into C programming.
+
+---
 
 ---
 
