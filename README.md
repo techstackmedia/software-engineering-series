@@ -10,6 +10,46 @@ C programming is a versatile language that allows you to build a wide range of a
 
 Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/34430b174cdaee1e6681371aa85c4529)
 
+## Installing Choco
+
+If this is not your first time using Chocolatey or Chocolatey is already installed on your Windows Operating System skip this section.
+
+To install Chocolatey, follow these steps:
+
+1. Search for PowerShell and run it as an administrator on Windows.
+2. Go to the Chocolatey [installation page](https://chocolatey.org/install).
+3. If this is your first time installing Chocolatey on your operating system, execute the following command in your terminal, based on the instructions provided on the installation page:
+
+```powershell
+Get-ExecutionPolicy
+```
+
+- If the output is "Restricted", enter one of the commands below:
+
+```powershell
+Set-ExecutionPolicy AllSigned
+```
+
+or
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
+```
+
+- Regardless of whether "Restricted" was the previous output or not, run the following command (copy and paste it into your terminal):
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+- If there are no errors, check if Chocolatey was successfully installed by running the following command:
+
+```powershell
+choco
+```
+
+If the output displays the version of Chocolatey you are using, it means the installation was successful.
+
 ## Creating a Directory
 
 To begin, let's create a directory named `c-programming` using the command line. Follow the instructions below based on your operating system:
