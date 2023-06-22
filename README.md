@@ -2,7 +2,7 @@
 
 ![Basics of C Programming: Data Types, Constants, Variables, and Arrays Cover](https://res.cloudinary.com/bizstak/image/upload/v1687276778/GitHub_Cover_aoeugb.png)
 
-## Introduction
+## Installations
 
 Understanding the basics of C programming is essential for any aspiring programmer. In this blog post, we will explore the concept of data types and constants in C programming, taking a hands-on approach to deepen our understanding. We will compile and run the code snippets to observe the results firsthand. Let's get started!
 
@@ -112,7 +112,7 @@ In the above code, we can identify three different data types being used:
 
 By utilizing different data types, we can handle various kinds of information in our programs.
 
-### Note
+**Note**:
 
 This are not all the data types we have in C. We will explore others later.
 
