@@ -320,11 +320,9 @@ In this blog post, we explored the basics of C programming by examining data typ
 
 ## References
 
-- [C Data Types](https://www.learn-c.org/data-types)
-- [C Constants](https://www.learn-c.org/constants)
-- [C Arrays](https://www.learn-c.org/arrays)
-- [C Boolean Data Type](https://www.learn-c.org/boolean)
-- [C printf Function](https://www.learn-c.org/printf)
+- [C Data Types](https://www.programiz.com/c-programming/c-data-types)
+- [C Constants](https://www.learn-c.org/en/Variables_and_Types)
+- [C Arrays](https://www.learn-c.org/en/Arrays)
 
 ---
 
