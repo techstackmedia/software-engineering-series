@@ -2,30 +2,56 @@
 
 ![Simplifying Development with Vagrant and VirtualBox: A Comprehensive Guide Cover](https://res.cloudinary.com/bizstak/image/upload/v1686411947/GitHub_Cover_wwfcmn.png)
 
-## Introduction
+## Installations
 
-Developers often face challenges when setting up and managing development environments across different machines. However, tools like Vagrant and VirtualBox offer a seamless solution by providing a way to create and manage virtual environments effortlessly. In this blog post, we will walk you through the installation process of Vagrant and VirtualBox on Windows and macOS using two popular package managers: Choco and Brew. We'll also highlight commands that work specifically with Vagrant and VirtualBox, showcasing their unique benefits and demonstrating how they outperform commands on Git Bash for Windows users.
+### Installing Choco (Windows) and Brew (macOS)
 
-## Installing Choco and Brew
+If this is not your first time using Chocolatey or Chocolatey is already installed on your Windows Operating System skip this section.
 
-Before we proceed with Vagrant and VirtualBox installation, let's first set up the package managers, Choco and Brew, on Windows.
+Choco is a powerful package manager for Windows that simplifies software installation.
 
-1. Installing Choco:
-   Choco is a powerful package manager for Windows that simplifies software installation. To install Choco, follow these steps:
+To install Chocolatey, follow these steps:
 
-   - Launch PowerShell as an administrator.
-   - Execute the following command to enable script execution:
+- Search for PowerShell and run it as an administrator on Windows.
+- Go to the Chocolatey [installation page](https://chocolatey.org/install).
+- If this is your first time installing Chocolatey on your operating system, execute the following command in your terminal, based on the instructions provided on the installation page:
 
-     ```sh
-     Set-ExecutionPolicy Bypass -Scope Process -Force; `
-     iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-     ```
+```powershell
+Get-ExecutionPolicy
+```
+
+If the output is **`Restricted`**, enter one of the commands below:
+
+```powershell
+Set-ExecutionPolicy AllSigned
+```
+
+or
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
+```
+
+- Regardless of whether "Restricted" was the previous output or not, run the following command (copy and paste it into your terminal):
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+If there are no errors, check if Chocolatey was successfully installed by running the following command:
+
+```powershell
+choco
+```
+
+If the output displays the version of Chocolatey you are using, it means the installation was successful.
 
 ### Installing Vagrant and VirtualBox with Choco
 
 With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows using Choco.
 
 1. Installing Vagrant:
+
    - Open PowerShell or Command Prompt.
    - Execute the following command to install Vagrant using Choco:
 
@@ -34,8 +60,9 @@ With Choco installed, let's proceed to install Vagrant and VirtualBox on Windows
      ```
 
 2. Installing VirtualBox:
+
    - Open PowerShell or Command Prompt.
-   - Execute the following command to install VirtualBox using Choco:
+   - Run the following command to install VirtualBox using Choco:
 
      ```sh
      choco install virtualbox
@@ -64,53 +91,28 @@ Normally Homebrew will provide further installation commands on the terminal to 
 
 These commands will add the necessary configuration to your profile so that Homebrew can be accessed from your terminal.
 
-Now if you have sudo access, you can install Homebrew's dependencies by running the following command:
-
-```sh
-sudo apt-get install build-essential
-```
-
-Now check again if it is successfully installed:
+Now check again if it is installed successfully:
 
 ```sh
 brew -v
 ```
 
-For macOS users, Brew provides a convenient way to install Vagrant and VirtualBox. Now that we have brew and choco in macOs and Windows respectively, run the commands below related to your Operating System.
-
 1. Installing Vagrant:
-   - Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
 
-     For macOS:
-     
+   - Open Terminal.
+   - Execute the following command to install Vagrant using `brew`:
+
      ```sh
      brew install vagrant
      ```
-     
-     For Windows:
-     
-     ```powershell
-     choco install vagrant
-     ```
 
 2. Installing VirtualBox:
-3. 
+
    - Open Terminal.
-   - Execute the following command to install Vagrant using `brew` or `choco` based on your Operating System:
-
-     For macOS:
-
-   - Run the following command to install VirtualBox using `brew` or `choco` based on your Operating System:
+   - Execute the following command to install VirtualBox (VM) using `brew`:
 
      ```sh
      brew install --cask virtualbox
-     ```
-     
-     For Windows:
-     
-     ```sh
-     choco install virtualbox
      ```
 
 ## Using Vagrant and VirtualBox
@@ -122,26 +124,32 @@ Now that we have Vagrant and VirtualBox installed, let's explore their functiona
 When using the `vagrant init` command, the box name represents the base image or template from which Vagrant will create your virtual machine. The box name determines the operating system, pre-installed software, and configurations available for your development environment. Here are a few commonly used box names and their uses:
 
 1. `hashicorp/bionic64`:
+
    - Ubuntu 18.04 LTS (Bionic Beaver) 64-bit base box provided by HashiCorp.
    - Suitable for general-purpose development and testing on Ubuntu.
 
 2. `ubuntu/focal64`:
+
    - Ubuntu 20.04 LTS (Focal Fossa) 64-bit base box provided by Ubuntu.
    - Similar to `hashicorp/bionic64`, but with the newer Ubuntu 20.04 LTS release.
 
 3. `centos/8`:
+
    - CentOS 8 64-bit base box provided by CentOS.
    - Ideal for working with CentOS-specific software and configurations.
 
 4. `debian/buster64`:
+
    - Debian 10 (Buster) 64-bit base box provided by the Debian project.
    - Useful for Debian-based development and testing.
 
 5. `fedora/33-cloud-base`:
+
    - Fedora 33 Cloud Base 64-bit base box provided by the Fedora project.
    - Suitable for Fedora-specific development and testing.
 
 6. `windows-server-2019`:
+
    - Windows Server 2019 base box provided by Microsoft.
    - Enables Windows-based development and testing environments.
 
@@ -154,6 +162,7 @@ It's important to choose a box that aligns with your development needs and match
 When selecting a box, consider factors such as the operating system version, software compatibility, available support, and the community around the box. Reading the documentation and reviews for each box can help you make an informed decision based on your specific use case.
 
 1. Creating and Starting a Vagrant Virtual Machine:
+
    - Open PowerShell or Command Prompt.
    - Navigate to your project directory.
    - Execute the following commands to initialize and start a Vagrant virtual machine:
@@ -164,6 +173,7 @@ When selecting a box, consider factors such as the operating system version, sof
      ```
 
 2. Accessing the Vagrant Virtual Machine:
+
    - To SSH into the virtual machine, use the following command:
 
      ```sh
@@ -172,24 +182,24 @@ When selecting a box, consider factors such as the operating system version, sof
 
 3. Managing Vagrant Virtual Machines:
 
-   Run outside of the virtual machine environment (e.g., default OS terminal).
+Run outside of the virtual machine environment (e.g., default OS terminal).
 
-   - To stop a running virtual machine, use:
+- To stop a running virtual machine, use:
 
-     ```sh
-     vagrant halt
-     ```
-     
+  ```sh
+  vagrant halt
+  ```
 
-   - To destroy a virtual machine, use:
+- To destroy a virtual machine, use:
 
-     ```sh
-     vagrant destroy
-     ```
+  ```sh
+  vagrant destroy
+  ```
 
-4. Creating and Managing VirtualBox Virtual Machines:
+4.) Creating and Managing VirtualBox Virtual Machines:
+
    - Open VirtualBox Manager to create and manage virtual machines using a graphical interface.
-  
+
 - Alternatively, you can utilize the `VBoxManage` command-line tool for advanced management and automation.
 
 Harnessing the Power of Vagrant and VirtualBox:
@@ -212,7 +222,7 @@ In this blog post, we explored the installation and utilization of Vagrant and V
 ## References
 
 - [Vagrant Documentation](https://www.vagrantup.com/docs)
-- [VirtualBox Documentation]( https://www.virtualbox.org/wiki/Documentation)
+- [VirtualBox Documentation](https://www.virtualbox.org/wiki/Documentation)
 - [Choco Documentation](https://docs.chocolatey.org/en-us/)
 - [Brew Documentation](https://docs.brew.sh/)
 - [HashiCorp Vagrant GitHub Repository](https://github.com/hashicorp/vagrant)
