@@ -84,6 +84,13 @@ gcc --version
 
 If C is installed, the version information will be displayed. Otherwise, you'll be prompted to install the necessary tools or package.
 
+Note: You may also include the extension to `gcc`. That is `gcc` is the same as `gcc.exe`.
+
+```sh
+gcc.exe --version
+gcc.exe input.c -o output.exe # optionally omit the .exe
+```
+
 ### `gcc` or `cc`
 
 - In the article, the `gcc` command will be primarily used for checking the version of the C compiler and compiling C programs. However, it is worth noting that `cc` can be used as an alternative to `gcc` for the same purposes.
