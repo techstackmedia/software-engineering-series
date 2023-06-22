@@ -196,9 +196,9 @@ Run outside of the virtual machine environment (e.g., default OS terminal).
   vagrant destroy
   ```
 
-4.) Creating and Managing VirtualBox Virtual Machines:
+  4.) Creating and Managing VirtualBox Virtual Machines:
 
-   - Open VirtualBox Manager to create and manage virtual machines using a graphical interface.
+  - Open VirtualBox Manager to create and manage virtual machines using a graphical interface.
 
 - Alternatively, you can utilize the `VBoxManage` command-line tool for advanced management and automation.
 
