@@ -168,7 +168,7 @@ The code above produces the following output:
 
 - `str3greetingCmp`: Similarly, this line shows the result of comparing the `thirdStr` and `greeting` strings using `strcmp`.
 
-## Practive
+## Practice
 
 Assuming you [have an account](https://replit.com/signup) or are already [logged in](https://replit.com/login) on Replit.
 
