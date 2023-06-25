@@ -168,6 +168,14 @@ The code above produces the following output:
 
 - `str3greetingCmp`: Similarly, this line shows the result of comparing the `thirdStr` and `greeting` strings using `strcmp`.
 
+## Practive
+
+Assuming you [have an account](https://replit.com/signup) or are already [logged in](https://replit.com/login) on Replit.
+
+- [Try the Replit](https://replit.com/@OsagieNoah/intermediate#intermediate.c) Editor online.
+- Click the **Fork** button.
+- Edit the current code.
+
 ## Conclusion
 
 In this blog post, we explored the usage of string manipulation functions provided by the `string.h` library in C programming. We discussed functions such as `strlen`, `strcpy`, `strcat`, and `strcmp`, along with their purpose and how they are utilized in the code snippet. Additionally, we examined user input using `scanf` and `fgets`, which allow the program to receive input from the user. Finally, we covered memory addresses and pointers, highlighting their significance and demonstrating their usage in the code snippet.
