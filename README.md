@@ -161,6 +161,14 @@ On macOS, Homebrew can be used to install C-related tools and libraries. However
 - Open the terminal.
 - Install Homebrew by running the following command:
 
+On macOS, brew might be pre-installed on your system, verify by running the command below:
+
+```sh
+brew -v
+```
+
+If it is not installed or it shows an error, run the command below:
+
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
