@@ -222,7 +222,7 @@ choco install mingw
 
 - During the installation, make sure to select the appropriate options as prompted.
 
-For example if asked to run script, typing `a` or `all`. It means you want to run all scripts.
+For example, if asked to run the script, type `a` or `all`. It means you want to run all scripts.
 
 ```powershell
 Do you want to run the script?([Y]es/[A]ll - yes to all/[N]o/[P]rint): a
