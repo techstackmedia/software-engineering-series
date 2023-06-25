@@ -171,3 +171,12 @@ The code above produces the following output:
 ## Conclusion
 
 In this blog post, we explored the usage of string manipulation functions provided by the `string.h` library in C programming. We discussed functions such as `strlen`, `strcpy`, `strcat`, and `strcmp`, along with their purpose and how they are utilized in the code snippet. Additionally, we examined user input using `scanf` and `fgets`, which allow the program to receive input from the user. Finally, we covered memory addresses and pointers, highlighting their significance and demonstrating their usage in the code snippet.
+
+---
+
+## References
+
+[String and Character Array](https://www.studytonight.com/c/string-and-character-array.php)
+[Introduction to C Pointers](https://www.studytonight.com/c/pointers-in-c.php)
+[Using Pointers in C](https://www.studytonight.com/c/declaring-and-initializing-pointer.php)
+[What is return type of getchar(), fgetc() and getc()?](https://www.geeksforgeeks.org/g-fact-11/?ref=lbp)
