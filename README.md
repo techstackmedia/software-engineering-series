@@ -1,4 +1,6 @@
-# Title: Understanding String Manipulation and User Input in C Programming
+# Understanding String Manipulation and User Input in C Programming
+
+![Understanding String Manipulation and User Input in C Programming Cover](https://res.cloudinary.com/bizstak/image/upload/v1687657235/GitHub_Cover_m5vdei.png)
 
 ## Introduction
 
@@ -44,7 +46,7 @@ emacs -Q -nw intermediate.c
 or
 
 ```sh
-nano basics.c # installed by default on Linux
+nano intermediate.c # installed by default on Linux
 ```
 
 **Note**:
