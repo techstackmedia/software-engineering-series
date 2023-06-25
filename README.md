@@ -126,7 +126,7 @@ If C is not installed on your system, follow the appropriate instructions based 
 
 - If you prefer to [install and use VSCode on Windows](https://community.chocolatey.org/packages?q=vscode) (choco install vscode) or macOS (brew install --cask visual-studio-code) or on Ubuntu (sudo apt install code), install the extensions [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) and [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner).
 - After the installation is complete, you can launch Visual Studio Code by searching for it in the applications menu or by running the `code` command in the terminal (`code` and click `Enter` or `Return`).
-Once Code Runner is installed, you will see a play icon beside which is a dropdown.
+  Once Code Runner is installed, you will see a play icon beside which is a dropdown.
 - Click on the play dropdown icon. See the image below:
 
 ![A Snapshot Showing How to Run C with VSCode Code Runner Extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m12c6oozcs2ynaeaxtrg.png)
@@ -213,6 +213,13 @@ choco install mingw
 ```
 
 - During the installation, make sure to select the appropriate options as prompted.
+
+For example if asked to run script, typing `a` or `all`. It means you want to run all scripts.
+
+```powershell
+Do you want to run the script?([Y]es/[A]ll - yes to all/[N]o/[P]rint): a
+```
+
 - After the installation is complete, you should have the GCC compiler available on your system. You can verify the installation by running the command gcc --version in the command prompt or PowerShell.
 
 #### Alternative installation on Windows OS
