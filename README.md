@@ -82,13 +82,32 @@ Before you start writing C programs, it's important to check if C is installed o
 gcc --version
 ```
 
-If C is installed, the version information will be displayed. Otherwise, you'll be prompted to install the necessary tools or package.
+**Note**:
 
-Note: You may also include the extension to `gcc`. That is `gcc` is the same as `gcc.exe`.
+You may also include the extension to `gcc`. That is `gcc` is the same as `gcc.exe`.
 
 ```sh
 gcc.exe --version
 gcc.exe input.c -o output.exe # optionally omit the .exe
+```
+
+If C is installed, the version information will be displayed. Otherwise, you may be prompted to install the necessary tools or package. For example, for Linux, if `gcc` is not installed, running `gcc --version` in the terminal typically results in an error message like this:
+
+```sh
+The program 'gcc' is currently not installed. You can install it by typing:
+sudo apt install gcc
+```
+
+For Windows, the error may look like this shown below:
+
+```sh
+'gcc' is not recognized as an internal or external command, operable program or batch file.
+```
+
+For macOS, the error may look like this shown below:
+
+```sh
+-bash: gcc: command not found
 ```
 
 ### `gcc` or `cc`
