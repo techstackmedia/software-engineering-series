@@ -8,7 +8,7 @@ Understanding the basics of C programming is essential for any aspiring programm
 
 ## Code Snippet
 
-Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/10478de1608d3519e323c53f1a4f971a)
+Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/10478de1608d3519e323c53f1a4f971a).
 
 ## Creating a Directory
 
@@ -39,12 +39,13 @@ or
 emacs -Q -nw basics.c
 ```
 
-```sh
+or
+
+```bash
 nano basics.c # installed by default on Linux
 ```
 
-**Note**
-Make sure you save changes in the file.
+**Note** Make sure you save changes in the file.
 
 ## Entry Point of a Program
 
@@ -52,16 +53,14 @@ In C programming, `int main()` or `int main(void)` is the entry point of a C pro
 
 ```c
 int main(void) {
-  // Code goes here    
+  // Code goes here
 }
 ```
 
 - `int main()`:
-
   - This declaration of `main` specifies that the function takes an unspecified number of arguments.
   - In C, if no arguments are specified in the parentheses, it is assumed that the function can accept any number of arguments.
-  - While this declaration is allowed by the C language, it is generally considered bad practice because it can lead to potential issues related to argument handling and type checking.
-
+  - While this declaration is allowed by the C language, it is generally considered bad practice because it can lead to potential issues related to argument handling and type-checking.
 - `int main(void)`:
   - This declaration of `main` specifies that the function takes no arguments.
   - By explicitly stating `(void)` in the parentheses, it conveys that the `main` function does not expect any input parameters.
@@ -75,9 +74,9 @@ In C programming, the `return 0`; statement at the end of the `main` function is
 
 ```c
 int main(void) {
-  // Code goes here 
+  // Code goes here
 
-  return 0;   
+  return 0;
 }
 ```
 
@@ -85,7 +84,6 @@ int main(void) {
 - By convention, a return value of `0` typically indicates successful execution or termination of the program.
 - If the `return` statement is omitted in the `main` function, the C language automatically inserts an implicit `return 0`; at the end of the function.
 - Including an explicit `return 0;` at the end of the `main` function is considered good practice for the following reasons:
-
   - It makes the code more readable and explicit, clearly indicating the intended termination of the program.
   - It allows for consistency with other functions that may have non-zero return values to indicate specific error conditions.
   - It ensures compatibility with some programming environments that may expect a return value from the `main` function.
@@ -114,7 +112,181 @@ By utilizing different data types, we can handle various kinds of information in
 
 ### Note
 
-This are not all the data types we have in C. We will explore others later.
+These are not all the data types we have in C. We will explore others later.
+
+## Array: List of Characters as a String
+
+The code `char text[] = "This is a text";` represents a character array, which is commonly used to store strings in C. In this case, the array `text` is initialized with the string "This is a text".
+
+```c
+char text[] = "This is a text";
+```
+
+Although it is common to use character arrays to store strings in C, it's important to note that there is no separate data type specifically for strings. Instead, strings are represented as arrays of characters terminated by a null character (`'\0'`), indicating the end of the string.
+
+### Modification of a Character at a specific index
+
+Let's visually represent the interpretation of the given code below and explain the zero-indexed string, modification of the character at index 8, and the memory addresses before and after the modification:
+
+```c
+char text[] = "This is a text";
+text[8] = '1';
+```
+
+1. Declaration and Initialization of the Character Array (String):
+
+```c
+char text[] = "This is a text";
+```
+
+This code declares and initializes a character array `text` with the string "This is a text". The characters of the string are stored in sequential memory locations.
+
+Visual representation:
+
+```c
+Memory:
+-----------------------------------------------------
+| Address |   Value   |          Variable           |
+-----------------------------------------------------
+|  1000   |    'T'    |    text[0] (char, 'T')      |
+|  1001   |    'h'    |    text[1] (char, 'h')      |
+|  1002   |    'i'    |    text[2] (char, 'i')      |
+|  1003   |    's'    |    text[3] (char, 's')      |
+|  1004   |    ' '    |    text[4] (char, ' ')      |
+|  1005   |    'i'    |    text[5] (char, 'i')      |
+|  1006   |    's'    |    text[6] (char, 's')      |
+|  1007   |    ' '    |    text[7] (char, ' ')      |
+|  1008   |    'a'    |    text[8] (char, 'a')      |
+|  1009   |    ' '    |    text[9] (char, ' ')      |
+|  1010   |    't'    |    text[10] (char, 't')     |
+|  1011   |    'e'    |    text[11] (char, 'e')     |
+|  1012   |    'x'    |    text[12] (char, 'x')     |
+|  1013   |    't'    |    text[13] (char, 't')     |
+|  1014   |   '\0'    |    text[14] (char, '\0')    |
+-----------------------------------------------------
+```
+
+1. Modification of Character at Index 8:
+
+```c
+text[8] = '1';
+```
+
+This code replaces the character at index 8 (zero-indexed) of `text` with the character '1'.
+
+Visual representation (after modification):
+
+```c
+Memory:
+-----------------------------------------------------
+| Address |   Value   |          Variable           |
+-----------------------------------------------------
+|  1000   |    'T'    |    text[0] (char, 'T')      |
+|  1001   |    'h'    |    text[1] (char, 'h')      |
+|  1002   |    'i'    |    text[2] (char, 'i')      |
+|  1003   |    's'    |    text[3] (char, 's')      |
+|  1004   |    ' '    |    text[4] (char, ' ')      |
+|  1005   |    'i'    |    text[5] (char, 'i')      |
+|  1006   |   's'     |    text[6] (char, 's')      |
+|  1007   |    ' '    |    text[7] (char, ' ')      |
+|  1008   |    '1'    |    text[8] (char, '1')      |
+|  1009   |    ' '    |    text[9] (char, ' ')      |
+|  1010   |    't'    |    text[10] (char, 't')     |
+|  1011   |    'e'    |    text[11] (char, 'e')     |
+|  1012   |    'x'    |    text[12] (char, 'x')     |
+|  1013   |    't'    |    text[13] (char, 't')     |
+|  1014   |   '\0'    |    text[14] (char, '\0')    |
+-----------------------------------------------------
+```
+
+In a zero-indexed string or array, the first element is accessed using index 0. So, in the given code, `text[8]` represents the character at the ninth position in the string. By assigning `'1'` to `text[8]`, the original character `'a'` at index 8 is replaced with `'1'`.
+
+The memory addresses before and after the modification remain the same, only the values stored at those addresses are changed. This is because the array `text` is mutable, allowing us to modify its elements even if it is declared as a character array (string) or a constant.
+
+## Arrays: Storing Multiple Values
+
+Arrays allow for the storage of multiple values of the same data type. They provide a convenient way to group related data together. Let's analyze the usage of arrays in the code snippet.
+
+```c
+const int myNumbers[] = { 4, 8, 1, 9, 7 }; // array
+const char *myString[] = { "money", "people", "love" }; // array
+```
+
+The code snippet demonstrates the declaration and initialization of two arrays, `myNumbers` and `myString`. `myNumbers` is an array of integers, while `myString` is an array of character pointers (strings).
+
+### Visual Representation of Array
+
+Let's visually represent the given code and explain the concept of zero-based indexing in arrays and strings:
+
+1. Declaration and Initialization of Integer Array:
+
+```c
+const int myNumbers[] = { 4, 8, 1, 9, 7 };
+```
+
+This code declares and initializes an integer array `myNumbers` with 5 elements. The elements are initialized with the provided values.
+
+Visual representation:
+
+```c
+myNumbers:
+| int | index
+--------------
+|  4  | 0
+--------------
+|  8  | 1
+--------------
+|  1  | 2
+--------------
+|  9  | 3
+--------------
+|  7  | 4
+--------------
+```
+
+In C and many programming languages, arrays are zero-based indexed. It means that the index of the first element in the array is 0, the second element is 1, and so on. In the `myNumbers` array, the values are accessed as follows:
+
+```c
+myNumbers[0] = 4
+myNumbers[1] = 8
+myNumbers[2] = 1
+myNumbers[3] = 9
+myNumbers[4] = 7
+```
+
+1. Declaration and Initialization of String Array:
+
+```c
+const char *myString[] = { "money", "people", "love" };
+```
+
+This code declares and initializes a string array `myString` with 3 elements. Each element is a pointer to a string literal.
+
+Visual representation:
+
+```c
+myString:
+| str      | index
+--------------
+| "money"  | 0
+--------------
+| "people" | 1
+--------------
+|  "love"  | 2
+--------------
+```
+
+Similarly, in C, strings are also represented as arrays of characters. Each character in a string has its index starting from 0. In the `myString` array, the values are accessed as follows:
+
+```c
+myString[0] = "money"
+myString[1] = "people"
+myString[2] = "love"
+```
+
+Remember that the index represents the position of an element in the array or a character in a string, starting from 0.
+
+Zero-based indexing is a convention used in programming languages, and it provides a consistent and efficient way to access elements in arrays and strings. Starting the index at 0 aligns with the underlying memory representation and allows for simple arithmetic operations when working with array elements.
 
 ## Constants: Immutable Values
 
@@ -151,7 +323,119 @@ Next, we have the 2D array `myNumbers2D`, which is initialized with two rows and
 
 We have variables such as `indexNumb` and `indexStr`, which store specific elements from the constant arrays.
 
-Finally, we have the variable `replaceIndexMyNumber2D` which initially holds the value of `myNumbers2D[1][0]` and later gets reassigned the value `10`.
+Finally, we have the variable `replaceIndexMyNumber2D` which initially holds the value of `myNumbers2D[1][0]` and later gets reassigned to the value `10`.
+
+### Constants in Array
+
+Let's visually represent the interpretation of the given code and the output after the modification. Then, I will explain why the changes in the array elements are possible despite using `const`.
+
+```c
+const int indexMyNumber2D = myNumbers2D[1][0];
+int replaceIndexMyNumber2D = indexMyNumber2D;
+replaceIndexMyNumber2D = 10;
+```
+
+1. Declaration and Initialization of 2D Array:
+
+```bash
+const int myNumbers2D[2][3] = {
+    {3, 5, 8},
+    {3, 0, 1}
+};
+```
+
+This code declares and initializes a 2D array `myNumbers2D` with 2 rows and 3 columns. The array elements are initialized with the provided values.
+
+Visual representation:
+
+```bash
+myNumbers2D:
+--------------
+| 3 | 5 | 8 |
+--------------
+| 3 | 0 | 1 |
+--------------
+```
+
+1. Accessing Element of the 2D Array:
+
+```bash
+const int indexMyNumber2D = myNumbers2D[1][0];
+```
+
+This code assigns the value at the index `[1][0]` of `myNumbers2D` to the constant variable `indexMyNumber2D`.
+
+Visual representation (after this step):
+
+```bash
+myNumbers2D:
+--------------
+| 3 | 5 | 8 |
+--------------
+| 3 | 0 | 1 |
+--------------
+indexMyNumber2D: 3
+```
+
+1. Assignment of Element to a Non-constant Variable:
+
+```bash
+int replaceIndexMyNumber2D = myNumbers2D[1][0];
+replaceIndexMyNumber2D = 10;
+```
+
+This code assigns the value at the index `[1][0]` of `myNumbers2D` to the variable `replaceIndexMyNumber2D`. Then, it reassigns the value of `replaceIndexMyNumber2D` to `10`.
+
+Visual representation (after this step):
+
+```bash
+myNumbers2D:
+--------------
+| 3 | 5 | 8 |
+--------------
+| 3 | 0 | 1 |
+--------------
+indexMyNumber2D: 3
+replaceIndexMyNumber2D: 10
+```
+
+Even though the array `myNumbers2D` is declared as `const`, the changes in the array elements are possible because the `const` qualifier applies to the elements themselves, not to the variables that hold them. The `const` keyword ensures that the elements cannot be modified through the array variable `myNumbers2D`.
+
+In memory, the array `myNumbers2D` is stored as a contiguous block. Each element in the array has its address. When you assign an element to a non-constant variable, like `replaceIndexMyNumber2D`, the value of that element is copied to the variable, including its address. The variable `replaceIndexMyNumber2D` now holds the value and the address of the element.
+
+When you modify the value of `replaceIndexMyNumber2D`, you are changing the value stored at the address held by the variable. However, the original array elements in `myNumbers2D` remains unchanged. The modification only affects the variable `replaceIndexMyNumber2D` and its associated memory location.
+
+```c
+const int indexMyNumber2D = myNumbers2D[1][0];
+int replaceIndexMyNumber2D = indexMyNumber2D; // myNumbers2D[1][0];
+replaceIndexMyNumber2D = 10;
+```
+
+Visual representation (address illustration):
+
+```c
+Memory:
+---------------------------------------------------
+| Address |  Value  |           Variable          |
+---------------------------------------------------
+|  1000   |    3    | myNumbers2D[0][0] (const)   |
+|  1004   |    5    | myNumbers2D[0][1] (const)   |
+|  1008   |    8    | myNumbers2D[0][2] (const)   |
+|  1012   |    3    | myNumbers2D[1][0] (const)   |
+|  1016   |    0    | myNumbers2D[1][1] (const)   |
+|  1020   |    1    | myNumbers2D[1][2] (const)   |
+|  1024   |    3    | indexMyNumber2D (const)     |
+|  1028   |   10    | replaceIndexMyNumber2D      |
+---------------------------------------------------
+```
+
+In this illustration, the addresses and values of the variables are shown in memory. The `const` variables (`myNumbers2D`, `indexMyNumber2D`) hold the original values without any modifications. The non-constant variable `replaceIndexMyNumber2D` holds the modified value.
+
+```c
+const int indexMyNumber2D = myNumbers2D[1][0];
+int replaceIndexMyNumber2D = indexMyNumber2D; // myNumbers2D[1][0];
+replaceIndexMyNumber2D = 10;
+```
 
 ## Printing the Values: Printing Formatted Output
 
@@ -174,7 +458,7 @@ printf("%d\n", replaceIndexMyNumber2D); // Print the value of replaceIndexMyNumb
 
 Each `printf` statement specifies a format specifier to indicate the data type of the variable or constant being printed. For example, `%d` is used to print integers, `%s` is used to print strings, and `%d` is also used for booleans (where `true` is printed as `1` and `false` is printed as `0`).
 
-### Note -
+**Note**:
 
 - `%d` is the same as `%i`.
 - The format specifier `%c` is used to print a single character in C. However, the value representing the character must be enclosed in single quotes (' '), not backticks. Below is an example:
@@ -191,7 +475,7 @@ Comments are essential for code documentation. They provide information about th
 
 ```c
 // This is a single-line comment
-/* 
+/*
    This is a multi-line comment
    It can span multiple lines
 */
@@ -233,18 +517,7 @@ Similarly, `str` is a character pointer variable storing the address of the stri
 
 `isTrue` is a boolean variable assigned the result of the expression `5 > 3`. It will hold the value `true` since the expression is true.
 
-`text` is a character array initialized with the string `"This is a text."` It allows for manipulation of individual characters within the array.
-
-## Arrays: Storing Multiple Values
-
-Arrays allow for the storage of multiple values of the same data type. They provide a convenient way to group related data together. Let's analyze the usage of arrays in the code snippet.
-
-```c
-const int myNumbers[] = { 4, 8, 1, 9, 7 }; // array
-const char *myString[] = { "money", "people", "love" }; // array
-```
-
-The code snippet demonstrates the declaration and initialization of two arrays, `myNumbers` and `myString`. `myNumbers` is an array of integers, while `myString` is an array of character pointers (strings).
+`text` is a character array initialized with the string `"This is a text."` It allows for the manipulation of individual characters within the array.
 
 ## Modifying Variables: Adding and Replacing Values
 
@@ -273,7 +546,7 @@ When compiling a C program using the GCC compiler, you can pass various options 
 Let's discuss each option:
 
 - `-Wall`: Enables compiler warnings for potential issues in the code. It stands for **all warnings**. When this option is used, the compiler will display a comprehensive set of warning messages to help identify possible problems in the code.
-- `-pedantic`: Enforces strict adherence to the C language standards. It instructs the compiler to be pedantic and only allow code that strictly follows the C standard. It disables certain language extensions and non-standard features.
+- `-pedantic`: Enforces strict adherence to the C language standards. It instructs the compiler to be pedantic and only allows code that strictly follows the C standard. It disables certain language extensions and non-standard features.
 - `-Werror`: Treats all warnings as errors. When this option is enabled, any warning generated by the compiler will be treated as an error, causing the compilation to fail. This ensures that the code is warning-free and encourages developers to write clean and error-free code.
 - `-Wextra`: Enables additional warning messages beyond those enabled by `-Wall`. It provides extra warnings for potentially suspicious code constructs or common programming mistakes.
 - `-std=c99`: Specifies the C language standard to be used. In this case, it specifies the C99 standard. C99 is an ANSI/ISO standard for the C programming language, introduced in 1999. It adds several new features and improvements to the language.
@@ -294,15 +567,13 @@ In the code below, `#include <stdio.h>` and `#include <stdbool.h>` are preproces
 ```
 
 - `#include <stdio.h>`:
-
   - This directive includes the standard input/output library header. It provides functions for input and output operations, such as reading from or writing to the console or files.
   - It allows you to use functions like `printf()` and `scanf()` for formatted output and input operations, respectively.
   - In the given code, `printf()` function is used to print values to the console.
-
 - `#include <stdbool.h>`:
   - This directive includes the header for the C99 standard's Boolean type support.
-  - It provides the definition of the `bool` type, which represents boolean values (`true` and `false`).
-  - In the given code, bool is used to declare the variable isTrue and store a boolean value (true or false).
+  - It defines the `bool` type, which represents boolean values (`true` and `false`).
+  - In the given code, `bool` is used to declare the variable isTrue and store a boolean value (true or false).
 
 Including these headers is necessary to access the functions and definitions provided by the respective libraries. Without including `stdio.h`, you wouldn't be able to use functions like `printf()`, and without including `stdbool.h`, you wouldn't be able to use the `bool` data type.
 
@@ -322,6 +593,11 @@ In this blog post, we explored the basics of C programming by examining data typ
 
 ## References
 
+- [C Data Types](https://www.learn-c.org/data-types)
+- [C Constants](https://www.learn-c.org/constants)
+- [C Arrays](https://www.learn-c.org/arrays)
+- [C Boolean Data Type](https://www.learn-c.org/boolean)
+- [C printf Function](https://www.learn-c.org/printf)
 - [C Data Types](https://www.programiz.com/c-programming/c-data-types)
 - [C Constants](https://www.learn-c.org/en/Variables_and_Types)
 - [C Arrays](https://www.learn-c.org/en/Arrays)
