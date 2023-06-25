@@ -1,6 +1,6 @@
 # Understanding String Manipulation and User Input in C Programming
 
-![Understanding String Manipulation and User Input in C Programming Cover](https://res.cloudinary.com/bizstak/image/upload/v1687657235/GitHub_Cover_m5vdei.png)
+![Understanding String Manipulation and User Input in C Programming Cover](https://res.cloudinary.com/bizstak/image/upload/v1687658663/GitHub_Cover_vwmkgw.png)
 
 ## Introduction
 
