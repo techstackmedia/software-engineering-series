@@ -1,6 +1,6 @@
 # An In-depth Exploration of C Code: Understanding Variables, Conditionals, Loops, and Arrays
 
-![Understanding String Manipulation and User Input in C Programming Cover](https://res.cloudinary.com/bizstak/image/upload/v1689511262/GitHub_Cover_dkh7ud.png)
+![An In-depth Exploration of C Code: Understanding Variables, Conditionals, Loops, and Arrays Cover](https://res.cloudinary.com/bizstak/image/upload/v1689511262/GitHub_Cover_dkh7ud.png)
 
 ## Introduction
 
