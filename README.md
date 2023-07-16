@@ -1,190 +1,192 @@
-# Understanding String Manipulation and User Input in C Programming
+# An In-depth Exploration of C Code: Understanding Variables, Conditionals, Loops, and Arrays
 
-![Understanding String Manipulation and User Input in C Programming Cover](https://res.cloudinary.com/bizstak/image/upload/v1687658663/GitHub_Cover_vwmkgw.png)
+![Understanding String Manipulation and User Input in C Programming Cover](https://res.cloudinary.com/bizstak/image/upload/v1689511262/GitHub_Cover_dkh7ud.png)
 
 ## Introduction
 
-In C programming, the `string.h` library provides several functions for manipulating strings. This blog post will explore the usage of string manipulation functions in C, along with a detailed explanation of user input using `scanf` and `fgets`. We will analyze a code snippet that showcases these concepts and discuss each aspect of the code step by step.
+In this blog post, we'll go through the provided code in C step by step and explain each part in detail. This will help beginners understand the code and its logic. Let's get started!
 
-## Code Snippet
-
-Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/4de8421cea83855053279bcf797500bf)
-
-## Including `string.h`
-
-The first line of the code snippet `#include <string.h>` is a preprocessor directive that includes the `string.h` header file. This file contains function declarations for string manipulation, such as `strlen`, `strcpy`, `strcat`, and `strcmp`. By including this header file, we gain access to these functions, which we will utilize in the code snippet.
-
-## Creating a Directory
-
-To begin, let's create a file named `intermediate.c` using the command line. Follow the instructions below based on your operating system:
-
-- Open the command prompt or PowerShell.
-- Run the following commands:
-
-```sh
-cd basic-programming/c-programming
-```
-
-- Open the file in your favorite text editor.
-
-```sh
-code intermediate.c
-```
-
-or
-
-```sh
-vim intermediate.c # installed by default on macOS
-```
-
-or
-
-```sh
-emacs -Q -nw intermediate.c
-```
-
-or
-
-```sh
-nano intermediate.c # installed by default on Linux
-```
-
-**Note**:
-Make sure you save changes in the file.
-
-## String Manipulation using `string.h` Functions
-
-In this section, we'll analyze the code related to string manipulation functions provided by the `string.h` library.
+## Understanding Variables and Constants
 
 ```c
-// String Manipulation
-strcat(firstText, secondText);
-strcpy(secondStr, thirdStr);
-const int str13Cmp = strcmp(firstStr, thirdStr);
-const int str3greetingCmp = strcmp(thirdStr, greeting);
+const int firstNumber = 30;
+const int secondNumber = 50;
+const int day = 2;
+const int myNumbers[] = { 4, 6, 9, 20, 5, 10 };
+const char* myLanguages[] = { "C", "C++", "Java", "C#", "PHP", "Python", "Ruby", "JavaScript", "Rust", "Go", "Swift", "R", "Kotlin" };
+const int numLanguages = sizeof(myLanguages) / sizeof(myLanguages[0]);
+int counter = 1;
+int counterIndex = 1;
+int index = 0;
+int i = 0;
 ```
 
-In the code above, we perform various string manipulation operations:
+In the above code snippet, we declare and initialize several variables and constants. Here's a breakdown:
 
-- `strcat(firstText, secondText);`: This line uses the`strcat`function to concatenate the`secondText`string at the end of the`firstText`string. The result is that the`firstText` string becomes "Hello World!".
+- `firstNumber` and `secondNumber` are constants representing integer values.
+- `day` represents the current day as an integer.
+- `myNumbers` is an array of integers that stores a collection of numbers.
+- `myLanguages` is an array of strings (character pointers) that stores a collection of programming language names.
+- `numLanguages` is an integer that represents the number of languages in the `myLanguages` array.
+- `counter`, `counterIndex`, `index`, and `i` are integer variables used for looping and counting purposes.
 
-- `strcpy(secondStr, thirdStr);`: Here, we use the `strcpy` function to copy the contents of the `thirdStr` string into the `secondStr` array. This operation creates an independent copy of the string.
-
-- `const int str13Cmp = strcmp(firstStr, thirdStr);`: The `strcmp` function compares the contents of the `firstStr` and `thirdStr` strings. It returns an integer value indicating the result of the comparison. If the two strings are equal, it returns 0. If `firstStr` is lexicographically less than `thirdStr`, it returns a negative value. If `firstStr` is lexicographically greater than `thirdStr`, it returns a positive value. The result is stored in the `str13Cmp` variable.
-
-- `const int str3greetingCmp = strcmp(thirdStr, greeting);`: Similarly, this line compares the `thirdStr` and `greeting` strings using `strcmp` and stores the result in the `str3greetingCmp` variable.
-
-## User Input using `scanf`
-
-Now, let's look at the code related to user input using the `scanf` function.
+## Comparing Numbers using Conditionals
 
 ```c
-// User Input using scanf
-printf("Please type your age and grade: ");
-scanf("%d %c", &myAge, &myChar);
-printf("Please enter your first name: ");
-scanf("%19s", myFirstName);
+if (firstNumber > secondNumber) {
+  printf("%d is greater than secondNumber %d\n", firstNumber, secondNumber);
+} else if (firstNumber < secondNumber) {
+  printf("%d is less than secondNumber %d\n", firstNumber, secondNumber);
+} else {
+  printf("%d is equivalent to secondNumber %d\n", firstNumber, secondNumber);
+}
+
+(firstNumber > secondNumber) ? printf("%d is greater than secondNumber %d\n", firstNumber, secondNumber) : 
+(firstNumber < secondNumber) ? printf("%d is less than secondNumber %d\n", firstNumber, secondNumber) :
+printf("%d is equivalent to secondNumber %d\n", firstNumber, secondNumber);
 ```
 
-In the code above, we use `scanf` to retrieve user input:
+These code blocks demonstrate how to compare two numbers (`firstNumber` and `secondNumber`) using conditional statements (`if-else` and the ternary operator `? :`). The code checks if `firstNumber` is greater than `secondNumber`, less than `secondNumber`, or equivalent to `secondNumber`. The appropriate message is then printed based on the comparison.
 
-- `scanf("%d %c", &myAge, &myChar);`: This line prompts the user to enter their age and grade. The format string `"%d %c"` specifies that we expect an integer followed by a character as input. The `&` operator is used to pass the memory addresses of `myAge` and `myChar` variables to store the values entered by the user.
-
-- `scanf("%19s", myFirstName);`: This line prompts the user to enter their first name. The format string `"%19s"` specifies that we expect a string input with a maximum length of 19 characters (to avoid buffer overflow). The entered string is stored in the `myFirstName` character array.
-
-## User Input using `fgets`
-
-Here's the code that demonstrates user input using the `fgets` function.
+## Using a Switch Statement
 
 ```c
-// User Input using fgets
-printf("Please enter your full name: ");
-getchar();  // Clear the newline character from the previous input
-fgets(myFullName, sizeof(myFullName), stdin);
-myFullName[strcspn(myFullName, "\n")] = '\0';
+switch (day){ 
+  case 1:
+    printf("Monday\n");
+    break;
+  case 2:
+    printf("Tuesday\n");
+    break;
+  case 3:
+    printf("Wednesday\n");
+    break;
+  default:
+    printf("Sunday\n");
+}
 ```
 
-In the code above, we utilize `fgets` to obtain user input:
+This switch statement checks the value of the `day` variable and executes the corresponding code block. If `day` is equal to 1, "Monday" is printed. If it is 2, "Tuesday" is printed. If it is 3, "Wednesday" is printed. If none of these cases match, the `default` case is executed, and "Sunday" is printed.
 
-- `fgets(myFullName, sizeof(myFullName), stdin);`: This line reads a line of input from the user, storing it in the `myFullName` character array. The `sizeof(myFullName)` argument specifies the maximum number of characters to read, preventing buffer overflow. The `stdin` stream indicates that the input is read from the standard input (keyboard).
-
-- `myFullName[strcspn(myFullName, "\n")] = '\0';`: Since `fgets` captures the newline character (`\n`) when the user presses Enter, this line removes the newline character from the `myFullName` string by replacing it with a null character (`\0`). This step ensures that the string ends at the intended input and doesn't include the newline character.
-
-## Memory Address and Pointers
-
-This section focuses on memory addresses and pointers used in the code.
+## Looping with While and Do-While
 
 ```c
-// Memory Address and Pointers
-printf("My age is: %d\n", myAge);
-printf("My character is: %c\n", myChar);
-printf("My first name is: %s\n", myFirstName);
-printf("My full name is: %s\n", myFullName);
-printf("%p\n", (void*)&myAge);
-printf("%p\n", (void*)ptr);
-printf("%d\n", *ptr);
+while (counter < 3) {
+  printf("%d\n", counter);
+  counter++;
+}
+
+printf("-----\n");
+
+do {
+  printf("%d\n", counterIndex);
+  counterIndex++;
+} while (counterIndex < 3);
 ```
 
-In the code above, we work with memory addresses and pointers:
+These code blocks demonstrate the usage of `while` and `do-while` loops. In the first block, the `while` loop executes as long as `counter` is less than 3. It prints the value of `counter` and increments it by 1 in each iteration. In the second block, the `do-while` loop executes at least once and continues until `counterIndex` is less than 3. It prints the value of `counterIndex` and increments it by 1 in each iteration.
 
-- `printf("My age is: %d\n", myAge);`: This line displays the value of the `myAge` variable, representing the age entered by the user.
-
-- `printf("My character is: %c\n", myChar);`: Here, we print the value of the `myChar` variable, which corresponds to the grade entered by the user.
-
-- `printf("My first name is: %s\n", myFirstName);`: This line outputs the contents of the `myFirstName` character array, which contains the user's first name.
-
-- `printf("My full name is: %s\n", myFullName);`: Similarly, we display the content of the `myFullName` character array, which holds the user's full name.
-
-- `printf("%p\n", (void*)&myAge);`: This line prints the memory address of the `myAge` variable using the `%p` format specifier. The `&` operator retrieves the address of the variable.
-
-- `printf("%p\n", (void*)ptr);`: Here, we print the memory address stored in the `ptr` pointer variable. The `(void*)` cast is used to ensure proper formatting of the memory address.
-
-- `printf("%d\n", *ptr);`: This line dereferences the `ptr` pointer and prints the value stored at the memory address it points to. Since `ptr` points to `myAge`, it effectively displays the value of `myAge`.
-
-**Output**
-Finally, the code snippet includes several `printf` statements to display the output.
+## Looping with For
 
 ```c
-// Output
-printf("%d\n", alphabetLength);
-printf("%d\n", alphabetByte);
-printf("%s\n", firstText);
-printf("%s\n", secondStr);
-printf("%d\n", str13Cmp);
-printf("%d\n", str3greetingCmp);
+while (index < 5) {
+  if (index == 2) {
+    index++;
+    continue;
+  }
+
+  printf("%d\n", index);
+  index++;
+}
+
+printf("-----\n");
+
+for (; i < 5; i++) {
+  if (i == 2) {
+    continue;
+  }
+  printf("%d\n", i);
+}
 ```
 
-The code above produces the following output:
+These code blocks showcase the usage of `for` loops. In the first block, the `while` loop continues until `index` is less than 5. It skips the iteration when `index` is equal to 2 using the `continue` statement. In the second block, the `for` loop initializes `i` to 0, executes until `i` is less than 5, increments `i` by 1 in each iteration, and skips the iteration when `i` is equal to 2 using the `continue` statement. In both loops, the current value of the loop variable is printed.
 
-- `alphabetLength`: This line prints the length of the `alphabet` string, which is determined using the `strlen` function.
+## Array Manipulation
 
-- `alphabetByte`: Similarly, this line displays the size (in bytes) of the `alphabet` array, obtained using the `sizeof` operator.
+```c
+printf("%d\n", myNumbers[0]);
 
-- `firstText`: This line outputs the contents of the `firstText` character array, which now contains the concatenated string "Hello World!".
+printf("-----\n");
 
-- `secondStr`: Here, we print the contents of the `secondStr` character array, which was assigned the value of the `thirdStr` string using `strcpy`.
+for (int index = 0; index < numLanguages; index++) {
+  printf("Language %d is %s\n", index + 1, myLanguages[index]);
+}
 
-- `str13Cmp`: This line displays the result of comparing the `firstStr` and `thirdStr` strings using `strcmp`. It indicates whether the two strings are equal or different.
+printf("-----\n");
 
-- `str3greetingCmp`: Similarly, this line shows the result of comparing the `thirdStr` and `greeting` strings using `strcmp`.
+int matrix
 
-## Practice
+[2][3] = { {1, 9, 2}, {7, 6, 8} };
+printf("%d\n", matrix[0][2]);
+matrix[0][2] = 5;
+printf("%d\n", matrix[0][2]);
 
-Assuming you [have an account](https://replit.com/signup) or are already [logged in](https://replit.com/login) on Replit.
+printf("-----\n");
 
-- [Try the Replit](https://replit.com/@OsagieNoah/intermediate#intermediate.c) Editor online.
-- Click the **Fork** button.
-- Edit the current code.
+for (int i = 0; i < 2; i++) {
+  for (int j = 0; j < 3; j++) {
+    printf("%d\n", matrix[i][j]);
+  }
+}
+```
+
+These code blocks demonstrate array manipulation. The first block prints the value of the first element in the `myNumbers` array. The second block uses a `for` loop to iterate over the `myLanguages` array and prints each language's name along with its corresponding index. The third block initializes a 2-dimensional array called `matrix` and prints the value at a specific index. It then modifies that value and prints it again. The final block uses nested `for` loops to iterate over the `matrix` array and print each element.
+
+## String Manipulation
+
+```c
+int x = 0;
+char* name = "Osagie";
+for (; x <= strlen(name); x++) {
+  printf("%c\n", name[x]);
+}
+```
+
+This code block demonstrates string manipulation. It declares an integer variable `x` and a character pointer `name` that points to the string "Osagie". A `for` loop is used to iterate over the characters in the `name` string. It prints each character using the `%c` format specifier.
 
 ## Conclusion
 
-In this blog post, we explored the usage of string manipulation functions provided by the `string.h` library in C programming. We discussed functions such as `strlen`, `strcpy`, `strcat`, and `strcmp`, along with their purpose and how they are utilized in the code snippet. Additionally, we examined user input using `scanf` and `fgets`, which allow the program to receive input from the user. Finally, we covered memory addresses and pointers, highlighting their significance and demonstrating their usage in the code snippet.
+In this blog post, we went through a C code snippet step by step, explaining each part and its logic for beginners. We covered variable declarations, comparisons, conditionals, loops, array manipulation, and string manipulation. Understanding these fundamental concepts will help you in your journey to becoming a proficient C programmer.
 
 ---
 
 ## References
 
-[String and Character Array](https://www.studytonight.com/c/string-and-character-array.php)
-[Introduction to C Pointers](https://www.studytonight.com/c/pointers-in-c.php)
-[Using Pointers in C](https://www.studytonight.com/c/declaring-and-initializing-pointer.php)
-[What is return type of getchar(), fgetc() and getc()?](https://www.geeksforgeeks.org/g-fact-11/?ref=lbp)
+Here are some reference links that can provide additional information and explanations on the topics covered in the blog:
+
+1. **Variables and Constants**:
+   - C Variable Types: [GeeksforGeeks](https://www.geeksforgeeks.org/variables-in-c/)
+   - Understanding Constants in C: [Programiz](https://www.programiz.com/c-programming/c-variables-constants)
+
+2. **Conditionals**:
+   - If-Else Statements: [GeeksforGeeks](https://www.geeksforgeeks.org/decision-making-c-c-else-nested-else/)
+   - Ternary Operator: [GeeksforGeeks](https://www.geeksforgeeks.org/conditional-or-ternary-operator-in-c/)
+
+3. **Switch Statements**:
+   - Switch Statement: [GeeksforGeeks](https://www.geeksforgeeks.org/switch-statement-cc/)
+
+4. **Loops**:
+   - C Loops: [GeeksforGeeks](https://www.geeksforgeeks.org/c-loops/)
+   - While Loop: [GeeksforGeeks](https://www.geeksforgeeks.org/c-while-loop/?)
+   - C while and do...while Loop: [GeeksforGeeks](https://www.programiz.com/c-programming/c-do-while-loops)
+
+5. **Array Manipulation**:
+   - Arrays in C: [GeeksforGeeks](https://www.geeksforgeeks.org/arrays-in-c-cpp/)
+   - 2D Arrays in C: [GeeksforGeeks](https://www.geeksforgeeks.org/multidimensional-arrays-in-c/)
+   - 2D Arrays in C: [Tutorials point](https://www.tutorialspoint.com/cprogramming/c_multi_dimensional_arrays.htm#:~:text=A%20two-dimensional%20array%20is%2C%20in%20essence%2C%20a%20list,type%20and%20arrayNamewill%20be%20a%20valid%20C%20identifier.)
+
+6. **String Manipulation**:
+   - Strings in C: [GeeksforGeeks](https://www.geeksforgeeks.org/strings-in-c-2/)
+   - String Functions: [Programiz](https://www.programiz.com/c-programming/c-strings)
+
+These references should provide additional explanations and examples to enhance the understanding of the concepts covered in the blog post.
