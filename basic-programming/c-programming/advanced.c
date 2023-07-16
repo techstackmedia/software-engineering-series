@@ -99,6 +99,7 @@ int main()
     printf("-----\n");
 
     int matrix[2][3] = {{1, 9, 2}, {7, 6, 8}};
+
     printf("%d\n", matrix[0][2]);
     matrix[0][2] = 5;
     printf("%d\n", matrix[0][2]);
@@ -117,6 +118,7 @@ int main()
 
     int x = 0;
     char *name = "Osagie";
+
     for (; x <= strlen(name); x++)
     {
         printf("%c\n", name[x]);
