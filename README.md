@@ -134,27 +134,27 @@ If C is not installed on your system, follow the appropriate instructions based 
 
 * Click on the play dropdown icon. See the image below:
 
-[![A Snapshot Showing How to Run C with VSCode Code Runner Extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m12c6oozcs2ynaeaxtrg.png align="left")](https://cdn.hashnode.com/res/hashnode/image/upload/v1687227787422/0bbf08f3-aac1-43ad-af49-42f60e1ed76c.png?auto=compress,format&format=webp)
+[![A Snapshot Showing How to Run C with VSCode Code Runner Extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m12c6oozcs2ynaeaxtrg.png)](https://cdn.hashnode.com/res/hashnode/image/upload/v1687227787422/0bbf08f3-aac1-43ad-af49-42f60e1ed76c.png?auto=compress,format&format=webp)
 
 * Open the terminal by pressing `Ctrl + J`.
 
 * Click the option that says **Run C/C++**.
 
-[![run C with VSCode Code runner extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fqv66p5pt8c9duecuuog.png align="left")](https://cdn.hashnode.com/res/hashnode/image/upload/v1687358890481/be5f2e23-8491-4fb2-81dc-6b3368be189b.png?auto=compress,format&format=webp)
+[![run C with VSCode Code runner extension](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fqv66p5pt8c9duecuuog.png)](https://cdn.hashnode.com/res/hashnode/image/upload/v1687358890481/be5f2e23-8491-4fb2-81dc-6b3368be189b.png?auto=compress,format&format=webp)
 
 * From the debug configuration options, select the option to build and debug an active file.
 
-[![build and run in C](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0kp20mgbcy78ounke5ls.png align="left")](https://cdn.hashnode.com/res/hashnode/image/upload/v1687357930679/b02832aa-953f-4eaa-bdd0-ddacc4c73e7a.png?auto=compress,format&format=webp)
+[![build and run in C](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0kp20mgbcy78ounke5ls.png)](https://cdn.hashnode.com/res/hashnode/image/upload/v1687357930679/b02832aa-953f-4eaa-bdd0-ddacc4c73e7a.png?auto=compress,format&format=webp)
 
 You will see the result `Hello, World!` In your terminal. Notice the new executable file created during execution - `hello.exe`
 
 > **Note:** that the Keyboard shortcut is `Ctrl + Shift + B`.
 
-[![C executable file in vscode](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/enivsygnbmx4jykexu1q.png align="left")](https://cdn.hashnode.com/res/hashnode/image/upload/v1687359230393/93476ad3-5fc3-4367-a40b-24f25da03c54.png?auto=compress,format&format=webp)
+[![C executable file in vscode](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/enivsygnbmx4jykexu1q.png)](https://cdn.hashnode.com/res/hashnode/image/upload/v1687359230393/93476ad3-5fc3-4367-a40b-24f25da03c54.png?auto=compress,format&format=webp)
 
 Now that you have done the configuration, the next time you want to run a C program just click on the play button or use the keyboard shortcut `Ctrl + Alt + N`.
 
-[![run executable file using the play button](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/13pfq91ln5vjf9ofs2lm.png align="left")](https://cdn.hashnode.com/res/hashnode/image/upload/v1687363385861/34253899-48e6-420f-8cb8-93e1cbb63bdf.png?auto=compress,format&format=webp)
+[![run executable file using the play button](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/13pfq91ln5vjf9ofs2lm.png)](https://cdn.hashnode.com/res/hashnode/image/upload/v1687363385861/34253899-48e6-420f-8cb8-93e1cbb63bdf.png?auto=compress,format&format=webp)
 
 ### Issue
 
