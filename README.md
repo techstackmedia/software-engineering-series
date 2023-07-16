@@ -33,6 +33,9 @@ In the above code snippet, we declare and initialize several variables and const
 ## Comparing Numbers using Conditionals
 
 ```c
+const int firstNumber = 30;
+const int secondNumber = 50;
+
 if (firstNumber > secondNumber) {
   printf("%d is greater than secondNumber %d\n", firstNumber, secondNumber);
 } else if (firstNumber < secondNumber) {
@@ -44,6 +47,11 @@ if (firstNumber > secondNumber) {
 (firstNumber > secondNumber) ? printf("%d is greater than secondNumber %d\n", firstNumber, secondNumber) : 
 (firstNumber < secondNumber) ? printf("%d is less than secondNumber %d\n", firstNumber, secondNumber) :
 printf("%d is equivalent to secondNumber %d\n", firstNumber, secondNumber);
+
+/*
+30 is less than secondNumber 50
+30 is less than secondNumber 50
+*/
 ```
 
 These code blocks demonstrate how to compare two numbers (`firstNumber` and `secondNumber`) using conditional statements (`if-else` and the ternary operator `? :`). The code checks if `firstNumber` is greater than `secondNumber`, less than `secondNumber`, or equivalent to `secondNumber`. The appropriate message is then printed based on the comparison.
@@ -51,6 +59,8 @@ These code blocks demonstrate how to compare two numbers (`firstNumber` and `sec
 ## Using a Switch Statement
 
 ```c
+const int day = 2;
+
 switch (day){ 
   case 1:
     printf("Monday\n");
@@ -64,6 +74,10 @@ switch (day){
   default:
     printf("Sunday\n");
 }
+
+/*
+Tuesday
+*/
 ```
 
 This switch statement checks the value of the `day` variable and executes the corresponding code block. If `day` is equal to 1, "Monday" is printed. If it is 2, "Tuesday" is printed. If it is 3, "Wednesday" is printed. If none of these cases match, the `default` case is executed, and "Sunday" is printed.
@@ -82,6 +96,14 @@ do {
   printf("%d\n", counterIndex);
   counterIndex++;
 } while (counterIndex < 3);
+
+/*
+1
+2
+-----
+1
+2
+*/
 ```
 
 These code blocks demonstrate the usage of `while` and `do-while` loops. In the first block, the `while` loop executes as long as `counter` is less than 3. It prints the value of `counter` and increments it by 1 in each iteration. In the second block, the `do-while` loop executes at least once and continues until `counterIndex` is less than 3. It prints the value of `counterIndex` and increments it by 1 in each iteration.
@@ -107,6 +129,18 @@ for (; i < 5; i++) {
   }
   printf("%d\n", i);
 }
+
+/*
+0
+1
+3
+4
+-----
+0
+1
+3
+4
+*/
 ```
 
 These code blocks showcase the usage of `for` loops. In the first block, the `while` loop continues until `index` is less than 5. It skips the iteration when `index` is equal to 2 using the `continue` statement. In the second block, the `for` loop initializes `i` to 0, executes until `i` is less than 5, increments `i` by 1 in each iteration, and skips the iteration when `i` is equal to 2 using the `continue` statement. In both loops, the current value of the loop variable is printed.
@@ -114,6 +148,8 @@ These code blocks showcase the usage of `for` loops. In the first block, the `wh
 ## Array Manipulation
 
 ```c
+const int myNumbers[] = { 4, 6, 9, 20, 5, 10 };
+
 printf("%d\n", myNumbers[0]);
 
 printf("-----\n");
@@ -138,6 +174,27 @@ for (int i = 0; i < 2; i++) {
     printf("%d\n", matrix[i][j]);
   }
 }
+
+/*
+4
+-----
+Language 1 is C
+Language 2 is C++
+Language 3 is Java
+Language 4 is C#
+Language 5 is PHP
+Language 6 is Python
+Language 7 is Ruby
+Language 8 is JavaScript
+Language 9 is Rust
+Language 10 is Go
+Language 11 is Swift
+Language 12 is R
+Language 13 is Kotlin
+-----
+2
+5
+*/
 ```
 
 These code blocks demonstrate array manipulation. The first block prints the value of the first element in the `myNumbers` array. The second block uses a `for` loop to iterate over the `myLanguages` array and prints each language's name along with its corresponding index. The third block initializes a 2-dimensional array called `matrix` and prints the value at a specific index. It then modifies that value and prints it again. The final block uses nested `for` loops to iterate over the `matrix` array and print each element.
@@ -147,9 +204,18 @@ These code blocks demonstrate array manipulation. The first block prints the val
 ```c
 int x = 0;
 char* name = "Osagie";
+
 for (; x <= strlen(name); x++) {
   printf("%c\n", name[x]);
 }
+
+/*
+1
+9
+5
+7
+6
+*/
 ```
 
 This code block demonstrates string manipulation. It declares an integer variable `x` and a character pointer `name` that points to the string "Osagie". A `for` loop is used to iterate over the characters in the `name` string. It prints each character using the `%c` format specifier.
@@ -190,3 +256,9 @@ Here are some reference links that can provide additional information and explan
    - String Functions: [Programiz](https://www.programiz.com/c-programming/c-strings)
 
 These references should provide additional explanations and examples to enhance the understanding of the concepts covered in the blog post.
+
+---
+
+Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+
+![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
