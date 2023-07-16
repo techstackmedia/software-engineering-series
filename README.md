@@ -8,7 +8,7 @@ In this blog post, we'll go through the provided code in C step by step and expl
 
 ## Code Snippet
 
-Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/5d16dcfe1cc0a94dd5f69a80196457b6)
+Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/5d16dcfe1cc0a94dd5f69a80196457b6).
 
 ## Understanding Variables and Constants
 
