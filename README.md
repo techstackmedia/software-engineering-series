@@ -184,7 +184,17 @@ In this blog post, we explored the usage of string manipulation functions provid
 
 ## References
 
-[String and Character Array](https://www.studytonight.com/c/string-and-character-array.php)
-[Introduction to C Pointers](https://www.studytonight.com/c/pointers-in-c.php)
-[Using Pointers in C](https://www.studytonight.com/c/declaring-and-initializing-pointer.php)
-[What is return type of getchar(), fgetc() and getc()?](https://www.geeksforgeeks.org/g-fact-11/?ref=lbp)
+- [String and Character Array](https://www.studytonight.com/c/string-and-character-array.php)
+- [Introduction to C Pointers](https://www.studytonight.com/c/pointers-in-c.php)
+- [Using Pointers in C](https://www.studytonight.com/c/declaring-and-initializing-pointer.php)
+- [What is return type of getchar(), fgetc() and getc()?](https://www.geeksforgeeks.org/g-fact-11/?ref=lbp)
+
+---
+
+Happy Coding!
+
+---
+
+Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
+
+![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
