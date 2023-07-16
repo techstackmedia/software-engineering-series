@@ -164,9 +164,7 @@ for (int index = 0; index < numLanguages; index++) {
 
 printf("-----\n");
 
-int matrix
-
-[2][3] = { {1, 9, 2}, {7, 6, 8} };
+int matrix[2][3] = { {1, 9, 2}, {7, 6, 8} };
 printf("%d\n", matrix[0][2]);
 matrix[0][2] = 5;
 printf("%d\n", matrix[0][2]);
