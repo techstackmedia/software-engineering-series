@@ -6,6 +6,10 @@
 
 In this blog post, we'll go through the provided code in C step by step and explain each part in detail. This will help beginners understand the code and its logic. Let's get started!
 
+## Code Snippet
+
+Check out the [complete code on GitHub Gist](https://gist.github.com/techstackmedia/5d16dcfe1cc0a94dd5f69a80196457b6)
+
 ## Understanding Variables and Constants
 
 ```c
@@ -227,6 +231,14 @@ e
 ```
 
 This code block demonstrates string manipulation. It declares an integer variable `x` and a character pointer `name` that points to the string "Osagie". A `for` loop is used to iterate over the characters in the `name` string. It prints each character using the `%c` format specifier.
+
+## Practice
+
+Assuming you [have an account](https://replit.com/signup) or are already [logged in](https://replit.com/login) on Replit.
+
+[Try the Replit](https://replit.com/@OsagieNoah/advanced#advanced.c) Editor online.
+Click the Fork button.
+Edit the current code.
 
 ## Conclusion
 
