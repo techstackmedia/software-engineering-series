@@ -267,6 +267,10 @@ These references should provide additional explanations and examples to enhance 
 
 ---
 
+**Happy Coding!**
+
+---
+
 Click on the button dropdown to see my notes from chapter to chapter (branch to branch).
 
 ![GitHub Button Dropdown Showing Branches](https://res.cloudinary.com/bizstak/image/upload/v1685042613/github-button-dropdown_qu4m2l.jpg)
